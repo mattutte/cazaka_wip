@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs',{titulo:"Agregar Producto", stylesFile:"styles.css"}) %>
+  <link href="/css/productForm v2.css" rel="stylesheet">
+<body>
+  <!-- Header -->
+  <%- include('./partials/header v2.ejs') %>
+    
+    
+  <!-- Main section -->
+  <main>
+
+    <form action="/productSearch" enctype="multipart/form-data" method="POST">
+      <!-- Title -------------------------------------------------------------------------->
+      <div class="title">
+        <h2>
+          <span>
+            Formulario de creación de producto
+          </span>
+        </h2>
+      </div>
+
+      <!-- Name and Description ----------------------------------------------------------->
+      <div class="section-container section-description">
+
+        <div class="listGroup">
+          <div class="listGroupBox" id="page_wrapper_attributes">
+            <h2>
+              Item description
+            </h2>
+            <p>
+              Buyers need these details
+            </p>
+            
+            <div class="grid" id="page_wrapper_grid">
+              <!-- Nombre ------------------------------------------------>
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="name" class="form-label">
+                            <span>Nombre</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <input type="text" id="name" name="name" placeholder="Ej: Remera Juventus" class="form-input">
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                      -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Marca ------------------------------------------------->
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="brand" class="form-label">
+                            <span>Marca</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <!--<textarea type="text" id="description" name="description" placeholder="Agregue una breve descripcion" class="form-input"></textarea>-->
+                        <input type="text" id="brand" name="brand" class="form-input" placeholder="Ej: Nike">
+                        
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Descripción ------------------------------------------->
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="description" class="form-label">
+                            <span>Descripción</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <textarea type="text" id="description" name="description" placeholder="Agregue una breve descripcion" class="form-input"></textarea>
+                        <!--<input type="text" id="name" name="name" placeholder="Ej: Remera Juventus" class="form-input">-->
+                        
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Talles ------------------------------------------------>
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="description" class="form-label">
+                            <span>Talles</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+
+                          <!--
+                          <div class="checkboxWrapper">
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="small" id="talles-small" value="Small" class="input-check">
+                              <label for="small">Small</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="medium" id="talles-medium" value="Medium" class="input-check">
+                              <label for="medium">Medium</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="large" id="talles-large" value="Large" class="input-check">
+                              <label for="large">Large</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="extralarge" id="talles-extralarge" value="Extra-Large" class="input-check">
+                              <label for="extralarge">Extra Large</label>
+                            </span>
+                          </div>
+                          -->
+
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <!--<textarea type="text" id="description" name="description" placeholder="Agregue una breve descripcion" class="form-input"></textarea> -->
+                        <!--<input type="text" id="name" name="name" placeholder="Ej: Remera Juventus" class="form-input">-->
+                        
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+
+                        
+                        <div class="checkboxWrapper">
+                          <span class="check_box inline-item">
+                            <input type="checkbox" name="small" id="talles-small" value="Small" class="input-check">
+                            <label for="small">Small</label>
+                          </span>
+                          <span class="check_box inline-item">
+                            <input type="checkbox" name="medium" id="talles-medium" value="Medium" class="input-check">
+                            <label for="medium">Medium</label>
+                          </span>
+                          <span class="check_box inline-item">
+                            <input type="checkbox" name="large" id="talles-large" value="Large" class="input-check">
+                            <label for="large">Large</label>
+                          </span>
+                          <span class="check_box inline-item">
+                            <input type="checkbox" name="extralarge" id="talles-extralarge" value="Extra-Large" class="input-check">
+                            <label for="extralarge">Extra Large</label>
+                          </span>
+                        </div>
+                        
+
+                        <!--
+                        <select name="talles" id="talles" class="form-input">
+                          <option value="Small">Small</option>
+                          <option value="Medium">Medium</option>
+                          <option value="Large">Large</option>
+                          <option value="Extra-Large">Extra-Large</option>
+                        </select>
+                        -->
+
+                      </div>                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Comentarios adicionales ------------------------------->
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="caption" class="form-label">
+                            <span>Comentarios adicionales</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+
+                          <!--
+                          <div class="checkboxWrapper">
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="small" id="talles-small" value="Small" class="input-check">
+                              <label for="small">Small</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="medium" id="talles-medium" value="Medium" class="input-check">
+                              <label for="medium">Medium</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="large" id="talles-large" value="Large" class="input-check">
+                              <label for="large">Large</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="extralarge" id="talles-extralarge" value="Extra-Large" class="input-check">
+                              <label for="extralarge">Extra Large</label>
+                            </span>
+                          </div>
+                          -->
+
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <textarea type="text" id="caption" name="caption" class="form-input"></textarea>
+                        <!--<input type="text" id="name" name="name" placeholder="Ej: Remera Juventus" class="form-input">-->
+                        
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+                        <!--
+                        <select name="talles" id="talles" class="form-input">
+                          <option value="Small">Small</option>
+                          <option value="Medium">Medium</option>
+                          <option value="Large">Large</option>
+                          <option value="Extra-Large">Extra-Large</option>
+                        </select>
+                        -->
+                      </div>                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Características del producto -------------------------->
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="caption" class="form-label">
+                            <span>Características</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+
+                          <!--
+                          <div class="checkboxWrapper">
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="small" id="talles-small" value="Small" class="input-check">
+                              <label for="small">Small</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="medium" id="talles-medium" value="Medium" class="input-check">
+                              <label for="medium">Medium</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="large" id="talles-large" value="Large" class="input-check">
+                              <label for="large">Large</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="extralarge" id="talles-extralarge" value="Extra-Large" class="input-check">
+                              <label for="extralarge">Extra Large</label>
+                            </span>
+                          </div>
+                          -->
+
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+
+                        <!-- Característica 1 ---------------->
+                        <div class="caract-input">
+                          <label>Linea 1</label>
+                          <textarea type="text" id="caract_1" name="caract_1" class="form-input-caract" placeholder="Ej:  VaporKnit Technology"></textarea>
+                        </div>
+                        <!-- Característica 2 ---------------->
+                        <div class="caract-input">
+                          <label>Linea 2</label>
+                          <textarea type="text" id="caract_2" name="caract_2" class="form-input-caract" placeholder="Ej : 100% polyester"></textarea>
+                        </div>
+                        <!-- Característica 3 ---------------->
+                        <div class="caract-input">
+                          <label>Linea 3</label>
+                          <textarea type="text" id="caract_3" name="caract_3" class="form-input-caract" placeholder="Ej: Heat press"></textarea>
+                        </div>
+                        <!-- Característica 4 ---------------->
+                        <div class="caract-input">
+                          <label>Linea 4</label>
+                          <textarea type="text" id="caract_4" name="caract_4" class="form-input-caract" placeholder="Ej: Officially licensed"></textarea>
+                        </div>
+
+                        <!--<input type="text" id="name" name="name" placeholder="Ej: Remera Juventus" class="form-input">-->
+                        
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+                        <!--
+                        <select name="talles" id="talles" class="form-input">
+                          <option value="Small">Small</option>
+                          <option value="Medium">Medium</option>
+                          <option value="Large">Large</option>
+                          <option value="Extra-Large">Extra-Large</option>
+                        </select>
+                        -->
+                      </div>                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+      <!-- Pricing detail ----------------------------------------------------------------->
+      <div class="section-container section-pricing inner-section">
+
+        <div class="listGroup">
+          <div class="listGroupBox" id="page_wrapper_attributes">
+            <h2>
+              Pricing
+            </h2>
+            <p>
+              Fill all relevant data about price
+            </p>
+            
+            <div class="grid" id="page_wrapper_grid">
+              <!-- Precio ------------------------------------------------>
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="regularPrice" class="form-label">
+                            <span>Precio</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <input type="text" id="regularPrice" name="regularPrice" placeholder="Ej: 5678" class="form-input">
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                      -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Precion con descuento --------------------------------->
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="specialPrice" class="form-label">
+                            <span>Precio con descuento</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <!--<textarea type="text" id="description" name="description" placeholder="Agregue una breve descripcion" class="form-input"></textarea>-->
+                        <input type="text" id="specialPrice" name="specialPrice" placeholder="Ej: 5678" class="form-input">
+                        
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Banco cuotas ------------------------------------------>
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="cuotasbanco" class="form-label">
+                            <span>Banco que ofrece cuotas</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+
+                          <!--
+                          <div class="checkboxWrapper">
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="small" id="talles-small" value="Small" class="input-check">
+                              <label for="small">Small</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="medium" id="talles-medium" value="Medium" class="input-check">
+                              <label for="medium">Medium</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="large" id="talles-large" value="Large" class="input-check">
+                              <label for="large">Large</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="extralarge" id="talles-extralarge" value="Extra-Large" class="input-check">
+                              <label for="extralarge">Extra Large</label>
+                            </span>
+                          </div>
+                          -->
+
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <!--<textarea type="text" id="description" name="description" placeholder="Agregue una breve descripcion" class="form-input"></textarea> -->
+                        <input type="text" id="cuotasbanco" name="cuotasbanco" placeholder="Ej: Santander" class="form-input">
+                        
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+
+                        <!--
+                        <select name="talles" id="talles" class="form-input">
+                          <option value="Small">Small</option>
+                          <option value="Medium">Medium</option>
+                          <option value="Large">Large</option>
+                          <option value="Extra-Large">Extra-Large</option>
+                        </select>
+                        -->
+
+                      </div>                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Cantidad de cuotas ------------------------------------>
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="cuotas" class="form-label">
+                            <span>Cuotas ofrecidas</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+
+                          <!--
+                          <div class="checkboxWrapper">
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="small" id="talles-small" value="Small" class="input-check">
+                              <label for="small">Small</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="medium" id="talles-medium" value="Medium" class="input-check">
+                              <label for="medium">Medium</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="large" id="talles-large" value="Large" class="input-check">
+                              <label for="large">Large</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="extralarge" id="talles-extralarge" value="Extra-Large" class="input-check">
+                              <label for="extralarge">Extra Large</label>
+                            </span>
+                          </div>
+                          -->
+
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <!--<textarea type="text" id="caption" name="caption" class="form-input"></textarea>-->
+                        <input type="number" id="cuotas" name="cuotas" placeholder="Ej: 24" class="form-input">
+                        
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+                        <!--
+                        <select name="talles" id="talles" class="form-input">
+                          <option value="Small">Small</option>
+                          <option value="Medium">Medium</option>
+                          <option value="Large">Large</option>
+                          <option value="Extra-Large">Extra-Large</option>
+                        </select>
+                        -->
+                      </div>                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+      <!-- Photo section ------------------------------------------------------------------>
+      <div class="section-container section-pictures inner-section">
+
+        <div class="listGroup">
+          <div class="listGroupBox" id="page_wrapper_attributes">
+            <h2>
+              Add a photo
+            </h2>
+            <p>
+              Improve your buyer’s confidence by including as many as possible.
+            </p>
+            
+            <div class="grid" id="page_wrapper_grid">
+              <!-- Imagen principal -------------------------------------->
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="images-main" class="form-label">
+                            <span>Imagen principal</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <input type="file" id="images-main" name="images-main" placeholder="Imagen principal" class="form-input">
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                      -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Imagen de frente -------------------------------------->
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="images-front" class="form-label">
+                            <span>Imagen de frente</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <!--<textarea type="text" id="description" name="description" placeholder="Agregue una breve descripcion" class="form-input"></textarea>-->
+                        <input type="file" id="images-front" name="images-front" placeholder="Imagen principal" class="form-input">
+                        
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Imagen de dorso --------------------------------------->
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="images-back" class="form-label">
+                            <span>Imagen de dorso</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+
+                          <!--
+                          <div class="checkboxWrapper">
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="small" id="talles-small" value="Small" class="input-check">
+                              <label for="small">Small</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="medium" id="talles-medium" value="Medium" class="input-check">
+                              <label for="medium">Medium</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="large" id="talles-large" value="Large" class="input-check">
+                              <label for="large">Large</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="extralarge" id="talles-extralarge" value="Extra-Large" class="input-check">
+                              <label for="extralarge">Extra Large</label>
+                            </span>
+                          </div>
+                          -->
+
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <!--<textarea type="text" id="description" name="description" placeholder="Agregue una breve descripcion" class="form-input"></textarea> -->
+                        <input type="file" id="images-back" name="images-back" placeholder="Imagen principal" class="form-input">
+                        
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+
+                        <!--
+                        <select name="talles" id="talles" class="form-input">
+                          <option value="Small">Small</option>
+                          <option value="Medium">Medium</option>
+                          <option value="Large">Large</option>
+                          <option value="Extra-Large">Extra-Large</option>
+                        </select>
+                        -->
+
+                      </div>                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+      <!-- Shipping Data ------------------------------------------------------------------>
+      <div class="section-container section-shipping inner-section">
+
+        <div class="listGroup">
+          <div class="listGroupBox" id="page_wrapper_attributes">
+            <h2>
+              Shipping
+            </h2>
+            <p>
+              Relevant data about logistics
+            </p>
+            
+            <div class="grid" id="page_wrapper_grid">
+              <!-- Cantidad disponible ----------------------------------->
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="disponibilidad" class="form-label">
+                            <span>Cantidad disponible</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <input type="number" id="disponibilidad" name="disponibilidad" placeholder="Ej: 4" class="form-input">
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                      -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Peso -------------------------------------------------->
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="peso_paq" class="form-label">
+                            <span>Peso (kg)</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+
+                          <!--
+                          <div class="checkboxWrapper">
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="small" id="talles-small" value="Small" class="input-check">
+                              <label for="small">Small</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="medium" id="talles-medium" value="Medium" class="input-check">
+                              <label for="medium">Medium</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="large" id="talles-large" value="Large" class="input-check">
+                              <label for="large">Large</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="extralarge" id="talles-extralarge" value="Extra-Large" class="input-check">
+                              <label for="extralarge">Extra Large</label>
+                            </span>
+                          </div>
+                          -->
+
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <!--<textarea type="text" id="description" name="description" placeholder="Agregue una breve descripcion" class="form-input"></textarea> -->
+                        <input type="number" id="peso_paq" name="Peso" placeholder="Ej: 0,85" class="form-input">
+                        
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+
+                        <!--
+                        <select name="talles" id="talles" class="form-input">
+                          <option value="Small">Small</option>
+                          <option value="Medium">Medium</option>
+                          <option value="Large">Large</option>
+                          <option value="Extra-Large">Extra-Large</option>
+                        </select>
+                        -->
+
+                      </div>                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Devolucion -------------------------------------------->
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="devolucion" class="form-label">
+                            <span>Permite devolución</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+
+                          <!--
+                          <div class="checkboxWrapper">
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="small" id="talles-small" value="Small" class="input-check">
+                              <label for="small">Small</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="medium" id="talles-medium" value="Medium" class="input-check">
+                              <label for="medium">Medium</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="large" id="talles-large" value="Large" class="input-check">
+                              <label for="large">Large</label>
+                            </span>
+                            <span class="check_box inline-item">
+                              <input type="checkbox" name="extralarge" id="talles-extralarge" value="Extra-Large" class="input-check">
+                              <label for="extralarge">Extra Large</label>
+                            </span>
+                          </div>
+                          -->
+
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <!--<textarea type="text" id="caption" name="caption" class="form-input"></textarea>-->
+                        <!--<input type="number" id="cuotas" name="cuotas" placeholder="Ej: 24" class="form-input">-->
+                        
+                        <!--
+                        <div class="checkboxWrapper">
+                          <span class="check_box inline-item">
+                            <input type="checkbox" id="devolucion" name="devolucion" value="Si" class="form-input">
+                            <label for="small">Sí</label>
+                          </span>
+                          <span class="check_box inline-item">
+                            <input type="checkbox" id="devolucion" name="devolucion" value="No" class="form-input">
+                            <label for="medium">No</label>
+                          </span>
+                          <span class="check_box inline-item">
+                            <input type="checkbox" name="large" id="talles-large" value="Large" class="input-check">
+                            <label for="large">Large</label>
+                          </span>
+                          <span class="check_box inline-item">
+                            <input type="checkbox" name="extralarge" id="talles-extralarge" value="Extra-Large" class="input-check">
+                            <label for="extralarge">Extra Large</label>
+                          </span> 
+                        </div>
+                        -->
+
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+
+                        <!--
+                        <select name="talles" id="talles" class="form-input">
+                          <option value="Small">Small</option>
+                          <option value="Medium">Medium</option>
+                          <option value="Large">Large</option>
+                          <option value="Extra-Large">Extra-Large</option>
+                        </select>
+                        -->
+
+                        <input type="radio" id="devolucion" name="devolucion" value="Si" class="check-input"><span>Si</span>
+                        <input type="radio" id="devolucion" name="devolucion" value="No" class="check-input left_50"><span>No</span>
+
+                      </div>                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Tiempo de entrega ------------------------------------->
+              <div class="grid_cell">
+                <div class="grid_cell_wrapper">
+                  <div class="listInlineSelect inputField">
+                    <div class="listInlineSelect__selectBox">
+                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                        <div class="inputField__label">
+                          <label for="tiempoEntrega" class="form-label">
+                            <span>Tiempo de Entrega</span>
+                          </label>
+                          <!--
+                          <button class="listInlineSelect__selectBox-help">
+                            Name of product
+                          </button>
+                          -->
+                        </div>
+                      </div>
+                      <div class="listInlineSelect__selectBox-activeRegion">
+                        <!--<input type="number" id="disponibilidad" name="disponibilidad" placeholder="Ej: 4" class="form-input">-->
+
+                        <!--
+                        <button>
+                          <span class="lostInlineSelect__selectBox-value">
+                            <span class="listInlineSelect__selectBox-valueText">
+                              <span>Casual</span>
+                            </span>
+                          </span>
+                        </button>
+                        -->
+
+                        <select name="tiempoEntrega"  class="form-input">
+                          <option value="2hs">Dentro de las 2 hs Siguientes</option>
+                          <option value="24hs">En 24 horas</option>
+                          <option value="48hs">En 48 horas</option>
+                          <option value="1Semana">En una semana</option>
+                          <option value="2Semanas">En dos semana</option>
+                        </select>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <!-- Buttons section ---------------------------------------------------------------->
+      <div class="listGroup" data-key="action-buttons">
+        <div class="grid" data-key="action-buttons-box">
+          <!-- Guardar cambios -------------------------------------->
+          <div class="grid_cell" data-layout="6">
+            <div class="grid_cell_wrapper">
+              <button type="submit" class="post-button" data-type="PRIMARY">Guardar producto</button>
+            </div>
+          </div>
+          <!-- Borrar cambios --------------------------------------->
+          <div class="grid_cell" data-layout="3">
+            <div class="grid_cell_wrapper">
+              <button type="reset" class="post-button" data-type="DEFAULT">Borrar</button>
+            </div>
+          </div>
+          <!-- Cancelar --------------------------------------------->
+          <div class="grid_cell" data-layout="3">
+            <div class="grid_cell_wrapper">
+              <button type="button" class="post-button" data-type="DEFAULT">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </form>
+
+</main>
+
+<!-- Footer -->
+<%- include('./partials/footer v2.ejs') %>
+
+</body>
+
+</html>

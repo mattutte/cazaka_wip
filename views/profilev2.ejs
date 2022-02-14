@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('./partials/head.ejs',{titulo:"Signup",stylesFile:"styles2.css"}) %>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header v2.ejs') %>
+    
+    
+    <!-- Signin -->
+
+<main>
+
+
+
+<form action="/profile/<%= user.email %>?_method=PUT"" enctype="multipart/form-data" style="border:1px solid #ccc" method="POST">
+    <div class="container">
+      <h1>Crear usuario</h1>
+
+      
+      
+      <% if(locals.errores && errores != undefined){ %>
+        <% errores.errors.forEach(error =>{ %>
+          <t3> <%= error.msg %> </t3>
+        <% }) %>
+        
+        
+      <% } %>
+
+      <br>
+
+      <p>Por favor, completar para crear una cuenta:</p>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Ingresar Email" name="email" value="<%= user.email %>">
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Ingrese Password" name="psw">
+  
+      <label for="pswrepeat"><b>Repita el Password</b></label>
+      <input type="password" placeholder="Repita Password" name="pswrepeat">
+  
+      <!-- <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label> -->
+      
+      <br>
+      
+      <h3>Agruegue datos adicionales:</h3>
+         <br>
+   
+         
+         <label for="first_name"><b>Nombre</b></label>
+         <input type="text" placeholder="su nombre..." name="first_name" value="<%= user.first_name %>"> 
+
+
+         <label for="last_name"><b>Apellido</b></label>
+         <input type="text" placeholder="su apellido..." name="last_name" value="<%= user.last_name %>">
+         
+         <label for="pais"><b>Pais</b></label>
+        <input type="text" placeholder="Ingresar pais" name="pais" value="<%= user.country %>">
+         
+         <label for="face_pic"><b>Foto de Cara</b></label>
+         <input type="file" placeholder="Subir foto de cara" name="face_pic" value="<%= user.face_pic %>">
+
+        
+  
+  
+          <!-- <label for="seleccion"><b>Selección favorita</b></label>
+          <input type="text" placeholder="Ingresar equipo" name="seleccion" value="<%= locals.old && old.seleccion? old.seleccion:''%>">
+    
+          <label for="equipo"><b>Equipo local favorito</b></label>
+          <input type="text" placeholder="Ingresar equipo" name="equipo" value="<%= locals.old && old.equipo? old.equipo:''%>">
+    
+          <label for="jugador"><b>Jugador favorito</b></label>
+          <input type="text" placeholder="Ingresar jugador favorito" name="jugador" value="<%= locals.old && old.jugador? old.jugador:''%>"> -->
+    
+          <label>
+          <input type="checkbox" checked="<%= locals.admin && old.admin === 'checked'? 'checked':''%>" name="admin" style="margin-bottom:15px"> Soy usuario administrador
+          </label>
+        
+        <label>
+        <input type="checkbox" checked="<%= locals.old && old.mayor === 'checked'? 'checked':''%>" name="mayor" style="margin-bottom:15px"> Soy mayor de 13 años
+        </label>
+
+  
+      <p>Al crear la cuenta, adhiero a nuestros <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+  
+      <div class="clearfix">
+        <button type="reset" class="signupbtn">Cancelar</button>
+        <button type="submit" class="cancelbtn">Crear cuenta</button>
+      </div>
+    </div>
+  </form>
+
+
+</main>
+
+    <!-- Footer -->
+    <%- include('./partials/footer v2.ejs') %>
+
+</body>
+
+</html>

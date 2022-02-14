@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Head -->
+    <%- include('./partials/head.ejs',{titulo:"Account",stylesFile:"account.css"}) %>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header v2.ejs') %>
+    
+    
+    <!-- Account -->
+    <% sin_dato = 'proximamente' %>
+    <div>
+        <div class='main-container'>
+            <div class='right-container'>
+                <div class='right-wrapper'>
+                    <div class='right-header'>
+                        <div class='profile-pic-header'>
+                            <div class='profile-pic-container'>
+                                <!--<img src='#'>-->
+                                <button class='picture-box s-margin button-picture'>
+                                    <figure class='pic-container border50 s-pic'>
+                                        <img class='profile-pic-icon' src='images/<%= user.face_pic %>'>
+                                    </figure>
+                                    <div class='top-camera-icon-box'>
+                                        <div class='top-camera-icon'></div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <h1 class='welcoming'>
+                            Bienvenido <%= user.first_name + " " + user.last_name %>
+                        </h1>
+                        <div class='manage-info'>
+                            Gestiona tu información, la privacidad y la seguridad para mejorar tu experiencia
+                            <a href='/' class='link'>Más información</a>
+                        </div>
+                    </div>
+                    <section class='right-content'>
+                        <div class='separator'></div>
+                        <!-- Datos de Logueo -->
+                        <div class='box-container'>
+                            <div class='box-wrapper'>
+                                <div class='box-content'>
+                                    <!-- Box Header - Informacion de Ingreso -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box-wrapper pad16 height_auto'>
+                                            <div class='inner-box-header'>
+                                                <div class='inner-box-wrapper'>
+                                                    <h2 class='inner-box-title'>
+                                                        Informacion de ingreso
+                                                    </h2>
+                                                    <div class='inner-box-desc'>
+                                                        <div>
+                                                            Acá puedes ver tu información de logueo
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 1 - Usuario -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box'>
+                                            <a class='link block outline inner-box-wrapper pad16'>
+                                                <div class='inner-box-label-container'>
+                                                    <div class='inner-box-flex'>
+                                                        <div class='inner-box-flex-wrapper'>
+                                                            <div class='inner-box-side inner-box-left'>
+                                                                <h3 class='inner-box-label'>
+                                                                    Usuario
+                                                                </h3>
+                                                            </div>
+                                                            <div class='inner-box-side inner-box-right'>
+                                                                <div class='inner-box-label-right'>
+                                                                    <% user_name = user.email.substring(0, user.email.lastIndexOf('@')); %>
+                                                                    <%= user_name %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 2 - Correo electrónico -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box'>
+                                            <a class='link block outline inner-box-wrapper pad16'>
+                                                <div class='inner-box-label-container'>
+                                                    <div class='inner-box-flex'>
+                                                        <div class='inner-box-flex-wrapper'>
+                                                            <div class='inner-box-side inner-box-left'>
+                                                                <h3 class='inner-box-label'>
+                                                                    Correo electrónico
+                                                                </h3>
+                                                            </div>
+                                                            <div class='inner-box-side inner-box-right'>
+                                                                <div class='inner-box-label-right'>
+                                                                    <%= user.email %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 3 - Contraseña -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box'>
+                                            <a class='link block outline inner-box-wrapper pad16'>
+                                                <div class='inner-box-label-container'>
+                                                    <div class='inner-box-flex'>
+                                                        <div class='inner-box-flex-wrapper'>
+                                                            <div class='inner-box-side inner-box-left'>
+                                                                <h3 class='inner-box-label'>
+                                                                    Contraseña
+                                                                </h3>
+                                                            </div>
+                                                            <div class='inner-box-side inner-box-right'>
+                                                                <div class='inner-box-label-right'>
+                                                                    xxxxxxxxxxxxx
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Datos Personales -->
+                        <div class='box-container'>
+                            <div class='box-wrapper'>
+                                <div class='box-content'>
+                                    <!-- Box Header - Datos Personales -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box-wrapper pad16 height_auto'>
+                                            <div class='inner-box-header'>
+                                                <div class='inner-box-wrapper'>
+                                                    <h2 class='inner-box-title'>
+                                                        Informacion Personal
+                                                    </h2>
+                                                    <div class='inner-box-desc'>
+                                                        <div>
+                                                            Acá puedes ver tu información personal
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 1 - Foto -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box-wrapper pad16'>
+                                            <div class='inner-box-label-container'>
+                                                <div class='inner-box-flex'>
+                                                    <div class='inner-box-flex-wrapper'>
+                                                        <div class='inner-box-side inner-box-left'>
+                                                            <h3 class='inner-box-label'>
+                                                                Foto
+                                                            </h3>
+                                                        </div>
+                                                        <div class='inner-box-side inner-box-right'>
+                                                            <div class='inner-box-label-right'>
+                                                                Puedes editar tu foto
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class='profile-picture-edit'>
+                                                    <figure class='square-pic border profile-pic-box'>
+                                                        <img class='profile-pic-icon' src='/images/<%= user.face_pic %>'>
+                                                    </figure>
+                                                    <div class='camera-icon-box'>
+                                                        <div class='camera-icon'></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 1 - Nombre y Apellido -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box'>
+                                            <a class='link block outline inner-box-wrapper pad16'>
+                                                <div class='inner-box-label-container'>
+                                                    <div class='inner-box-flex'>
+                                                        <div class='inner-box-flex-wrapper'>
+                                                            <div class='inner-box-side inner-box-left'>
+                                                                <h3 class='inner-box-label'>
+                                                                    Nombre y Apellido
+                                                                </h3>
+                                                            </div>
+                                                            <div class='inner-box-side inner-box-right'>
+                                                                <div class='inner-box-label-right'>
+                                                                    <%= user.first_name + " " + user.last_name %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 2 - Fecha de Nacimiento -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box'>
+                                            <a class='link block outline inner-box-wrapper pad16'>
+                                                <div class='inner-box-label-container'>
+                                                    <div class='inner-box-flex'>
+                                                        <div class='inner-box-flex-wrapper'>
+                                                            <div class='inner-box-side inner-box-left'>
+                                                                <h3 class='inner-box-label'>
+                                                                    Fecha de Nacimiento
+                                                                </h3>
+                                                            </div>
+                                                            <div class='inner-box-side inner-box-right'>
+                                                                <div class='inner-box-label-right <%= user.birth? '' : 'no_data' %>'>
+                                                                    <%= user.birth? user.birth : sin_dato %>
+                                                                    <% if(!user.birth){%>
+                                                                        <span><img src='images/construction_cone.png' class='icon'></span>
+                                                                    <% } %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 3 - Sexo -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box'>
+                                            <a class='link block outline inner-box-wrapper pad16'>
+                                                <div class='inner-box-label-container'>
+                                                    <div class='inner-box-flex'>
+                                                        <div class='inner-box-flex-wrapper'>
+                                                            <div class='inner-box-side inner-box-left'>
+                                                                <h3 class='inner-box-label'>
+                                                                    Sexo
+                                                                </h3>
+                                                            </div>
+                                                            <div class='inner-box-side inner-box-right'>
+                                                                <div class='inner-box-label-right <%= user.gender? '' : 'no_data' %>'>
+                                                                    <%= user.gender? user.gender : sin_dato %>
+                                                                    <% if(!user.gender){%>
+                                                                        <span><img src='images/construction_cone.png' class='icon'></span>
+                                                                    <% } %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Información de contacto -->
+                        <div class='box-container'>
+                            <div class='box-wrapper'>
+                                <div class='box-content'>
+                                    <!-- Box Header - Información de Contacto -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box-wrapper pad16 height_auto'>
+                                            <div class='inner-box-header'>
+                                                <div class='inner-box-wrapper'>
+                                                    <h2 class='inner-box-title'>
+                                                        Informacion de Contacto
+                                                    </h2>
+                                                    <div class='inner-box-desc'>
+                                                        <div>
+                                                            Acá puedes ver tu información de contacto
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 1 - Correo electrónico -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box'>
+                                            <a class='link block outline inner-box-wrapper pad16'>
+                                                <div class='inner-box-label-container'>
+                                                    <div class='inner-box-flex'>
+                                                        <div class='inner-box-flex-wrapper'>
+                                                            <div class='inner-box-side inner-box-left'>
+                                                                <h3 class='inner-box-label'>
+                                                                    Correo electrónico
+                                                                </h3>
+                                                            </div>
+                                                            <div class='inner-box-side inner-box-right'>
+                                                                <div class='inner-box-label-right'>
+                                                                    <%= user.email %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 2 - Teléfono -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box'>
+                                            <a class='link block outline inner-box-wrapper pad16'>
+                                                <div class='inner-box-label-container'>
+                                                    <div class='inner-box-flex'>
+                                                        <div class='inner-box-flex-wrapper'>
+                                                            <div class='inner-box-side inner-box-left'>
+                                                                <h3 class='inner-box-label'>
+                                                                    Teléfono
+                                                                </h3>
+                                                            </div>
+                                                            <div class='inner-box-side inner-box-right'>
+                                                                <div class='inner-box-label-right <%= user.phone? '' : 'no_data' %>'>
+                                                                    <%= user.phone? user.phone : sin_dato %>
+                                                                    <% if(!user.phone){%>
+                                                                        <span><img src='images/construction_cone.png' class='icon'></span>
+                                                                    <% } %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 3 - Dirección -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box'>
+                                            <a class='link block outline inner-box-wrapper pad16'>
+                                                <div class='inner-box-label-container'>
+                                                    <div class='inner-box-flex'>
+                                                        <div class='inner-box-flex-wrapper'>
+                                                            <div class='inner-box-side inner-box-left'>
+                                                                <h3 class='inner-box-label'>
+                                                                    Dirección
+                                                                </h3>
+                                                            </div>
+                                                            <div class='inner-box-side inner-box-right'>
+                                                                <div class='inner-box-label-right <%= user.address? '' : 'no_data' %>'>
+                                                                    <%= user.address? user.address : sin_dato %>
+                                                                    <% if(!user.address){%>
+                                                                        <span><img src='images/construction_cone.png' class='icon'></span>
+                                                                    <% } %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Preferencias de producto -->
+                        <div class='box-container'>
+                            <div class='box-wrapper'>
+                                <div class='box-content'>
+                                    <!-- Box Header - Preferencias de Producto -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box-wrapper pad16 height_auto'>
+                                            <div class='inner-box-header'>
+                                                <div class='inner-box-wrapper'>
+                                                    <h2 class='inner-box-title'>
+                                                        Preferencias de producto
+                                                    </h2>
+                                                    <div class='inner-box-desc'>
+                                                        <div>
+                                                            Acá puedes vertus preferencias de compra
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 1 - Seleccion -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box'>
+                                            <a class='link block outline inner-box-wrapper pad16'>
+                                                <div class='inner-box-label-container'>
+                                                    <div class='inner-box-flex'>
+                                                        <div class='inner-box-flex-wrapper'>
+                                                            <div class='inner-box-side inner-box-left'>
+                                                                <h3 class='inner-box-label'>
+                                                                    Selección favorita
+                                                                </h3>
+                                                            </div>
+                                                            <div class='inner-box-side inner-box-right'>
+                                                                <div class='inner-box-label-right <%= user.team? '' : 'no_data' %>'>
+                                                                    <%= user.team? user.team : sin_dato %>
+                                                                    <% if(!user.team){%>
+                                                                        <span><img src='images/construction_cone.png' class='icon'></span>
+                                                                    <% } %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 2 - Equipo Local -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box'>
+                                            <a class='link block outline inner-box-wrapper pad16'>
+                                                <div class='inner-box-label-container'>
+                                                    <div class='inner-box-flex'>
+                                                        <div class='inner-box-flex-wrapper'>
+                                                            <div class='inner-box-side inner-box-left'>
+                                                                <h3 class='inner-box-label'>
+                                                                    Equipo local favorito
+                                                                </h3>
+                                                            </div>
+                                                            <div class='inner-box-side inner-box-right'>
+                                                                <div class='inner-box-label-right <%= user.national_team? '' : 'no_data' %>'>
+                                                                    <%= user.national_team? user.national_team : sin_dato %>
+                                                                    <% if(!user.national_team){%>
+                                                                        <span><img src='images/construction_cone.png' class='icon'></span>
+                                                                    <% } %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Inner box 3 - Jugador Favorito -->
+                                    <div class='inner-box-container'>
+                                        <div class='inner-box'>
+                                            <a class='link block outline inner-box-wrapper pad16'>
+                                                <div class='inner-box-label-container'>
+                                                    <div class='inner-box-flex'>
+                                                        <div class='inner-box-flex-wrapper'>
+                                                            <div class='inner-box-side inner-box-left'>
+                                                                <h3 class='inner-box-label'>
+                                                                    Jugador favorito
+                                                                </h3>
+                                                            </div>
+                                                            <div class='inner-box-side inner-box-right'>
+                                                                <div class='inner-box-label-right <%= user.player? '' : 'no_data' %>'>
+                                                                    <%= user.player? user.player : sin_dato %>
+                                                                    <% if(!user.player){%>
+                                                                        <span><img src='images/construction_cone.png' class='icon'></span>
+                                                                    <% } %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <p class="edit_button">
+            <a href="/editAccount" class="button">Editar</a>
+        </p>
+    </div>
+
+<!-- Footer -->
+<%- include('./partials/footer v2.ejs') %>
+
+</body>
+</html>

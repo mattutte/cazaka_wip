@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('./partials/head.ejs',{titulo:"Signup",stylesFile:"styles2.css"}) %>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header v2.ejs') %>
+    
+    
+    <!-- Signin -->
+
+<main>
+
+
+      
+      
+  <% if(locals.errores && errores != undefined){ %>
+    <% errores.errors.forEach(error =>{ %>
+      <t3> <%= error.msg %> </t3>
+    <% }) %>
+    
+    
+  <% } %>
+
+  <br>
+
+<form action="/signup" enctype="multipart/form-data" method="POST">
+    <div class="container">
+      <h1>Crear usuario</h1>
+      <p>POr favor completar para crear una cuenta.</p>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Ingresar Email" name="email" required>
+  
+      <label for="psw"><b>Contraseña</b></label>
+      <input type="password" placeholder="Ingrese Password" name="psw" required>
+  
+      <label for="psw-repeat"><b>Repita Contraseña</b></label>
+      <input type="password" placeholder="Repita Password" name="psw-repeat" required>
+
+      <label for="pais"><b>Pais</b></label>
+      <input type="text" placeholder="su pais..." name="pais" required>
+
+      <label for="face_pic"><b>Foto de Cara</b></label>
+      <input type="file" id="face_pic" name="face_pic" placeholder="Imagen de cara" >
+        
+      <label>
+        <input type="checkbox" checked="unchecked" name="mayor" style="margin-bottom:15px"> Mayor de edad: 
+      </label>
+
+      <label>
+        <input type="checkbox" checked="unchecked" name="admin" style="margin-bottom:15px"> Administrador: 
+      </label>
+  
+      <p>Al crear su cuenta, usted da su consentimiento a nuestros Terminos y Condiciones de Uso<a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+  
+      <div class="clearfix">
+        <button type="reset" class="cancelbtn">Cancelar</button>
+        <button type="submit" class="signupbtn">Crear cuenta</button>
+      </div>
+    </div>
+  </form>
+
+</main>
+
+    <!-- Footer -->
+    <%- include('./partials/footer v2.ejs') %>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Head -->
+    <%- include('./partials/head.ejs',{titulo:"Signin",stylesFile:"styles1.css"}) %>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header v2.ejs') %>
+    
+    
+    <!-- Signin -->
+
+<main>
+
+<form action="/signin" method="post">
+    <div class="imgcontainer">
+      <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+    </div>
+  
+    <div class="container">
+      <label for="name"><b>Usuario</b></label>
+      <input type="text" placeholder="Ingrese usuario" name="name" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Ingresar Password" name="psw" required>
+  
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Recordarme
+      </label>
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="reset" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+
+</main>
+
+<!-- Footer -->
+<%- include('./partials/footer v2.ejs') %>
+
+</body>
+</html>

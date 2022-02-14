@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('./partials/head.ejs',{titulo:"Page Not Found",stylesFile:"not-found.css"}) %>
+<body>
+    <!-- Header -->
+    
+    <header>
+        <div class='main-header-top-bar' id='top_bar'>
+            <div class="nav-logo nav-logo-bottom">
+                <a href="/">
+                    <img src="/images/Logo-horizontal-f-blanco.png" class="logo-horizontal-b" alt="logo horizontal Casaka">
+                </a> 
+            </div>
+            <div class='nav-search'>
+                <form class='nav-searchbar' action='productsearch'>
+                    <div class="nav-fill">
+                        <input type="text" placeholder="search" class="nav-input">
+                    </div>
+                    <div class="nav-right">
+                        <div class="nav-search-submit">
+                            <input type="submit" class="nav-input" value="Go">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-s">
+            <div class="page-s-wrap">
+                <h2 class="page-s-title">
+                    La página solicitada no está disponible
+                </h2>
+                <p class='page-s-disculpa'>
+                    Disculpe, no pudimos encontrar la pagina solicitada
+                    <br>
+                    Es posible que esté usando una direccion antigua o el vínculo no se encuentre disponible
+                    <br>
+                    Consulte el vínculo para obtener informacion
+                </p>
+                <a href='/' class='link'>
+                    Ir a la página de inicio de Cazaca
+                </a>
+                <img src='/images/adorable-cat.png' class='sorry-img'>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs',{titulo:'Editando: ' +  productToEdit.name ,stylesFile:"styles.css"}) %>
+<body>
+  <!-- Header -->
+  <%- include('./partials/header.ejs') %>
+    
+    
+  <!-- Producto a Editar -->
+  <main>
+
+    <div class="container products-wrapper">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="products-title">Formulario de edicion de productos</h2>
+        </div>
+      </div>
+      <div class="col-12">
+        <form action="/product/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data" method="POST">
+          <div class="row product-detail">
+            <div class="col-12 col-md-6">
+              <label for="name" class="form-label">Nombre del producto:</label>
+              <input type="text" id="name" name="name" class="form-input" value=<%= productToEdit.name %>>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="brand" class="form-label">Marca:</label>
+              <input type="text" id="brand" name="brand value=<%= productToEdit.brand %>" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="description" class="form-label">Descricpion del producto:</label>
+              <textarea type="text" id="description" name="description" class="form-input" value=<%= productToEdit.description %>></textarea>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="caracteristicas" class="form-label">Caracteristicas del Producto:</label>
+              <input type="text" id="caracteristicas" name="caracteristicas" class="form-input" value=<%= productToEdit.caracteristicas %>>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="talles" class="form-label">Talles:</label>
+
+              
+              <input type="checkbox" name="small" id="talles-small" value="Small" class="form-input" <% productToEdit.talles.includes('Small') ? 'selected' : '' %>>
+              <label for="small">Small</label><br>
+              <input type="checkbox" name="medium" id="talles-medium" value="Medium" class="form-input" <% productToEdit.talles.includes('Medium') ? 'selected' : '' %>>
+              <label for="medium">Medium</label><br>
+              <input type="checkbox" name="large" id="talles-large" value="Large" class="form-input" <% productToEdit.talles.includes('Large') ? 'selected' : '' %>>
+              <label for="large">Large</label><br>
+              <input type="checkbox" name="extralarge" id="talles-extralarge" value="Extra-Large" class="form-input" <% productToEdit.talles.includes('Extra') ? 'selected' : '' %>>
+              <label for="extralarge">Extra Large</label><br>
+
+
+              <!-- <select name="talles" id="talles" class="form-input">
+                <option value="Small" <% productToEdit.talles == 'Small' ? 'selected' : '' %>>Small</option>
+                <option value="Medium" <% productToEdit.talles == 'Medium' ? 'selected' : '' %>>Medium</option>
+                <option value="Large" <% productToEdit.talles == 'Large' ? 'selected' : '' %>>Large</option>
+                <option value="Extra-Large" <% productToEdit.talles == 'Extra-Large' ? 'selected' : '' %>>Extra-Large</option>
+              </select> -->
+            <div class="col-12 col-md-6">
+              <label for="regularPrice" class="form-label">Precio del producto:</label>
+              <input type="text" id="regularPrice" name="regularPrice" class="form-input" value=<%= productToEdit.regularPrice %>>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="specialPrice" class="form-label">Precio con Descuento:</label>
+              <input type="text" id="specialPrice" name="specialPrice"  class="form-input" value=<%= productToEdit.specialPrice %>>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="cuotasbanco" class="form-label">Cuotas con Banco:</label>
+              <input type="text" id="cuotasbanco" name="cuotasbanco" class="form-input" value=<%= productToEdit.cuotas.banco %>>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="cuotas" class="form-label">Cantidad de Cuotas:</label>
+              <input type="number" id="cuotas" name="cuotas" class="form-input" value=<%= productToEdit.cuotas.cantidad %>>
+            </div>
+            <div class="col-12 col-md-6">
+              <img src="/images/<%= productToEdit.images.main %>" alt="Imagen Principal" width="100" height="100">
+              <br>
+              <label for="images-main" class="form-label">Cambiar Imagen Principal:</label>
+              <br>
+              <input type="file" id="images-main" name="images-main"  class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <img src="/images/<%= productToEdit.images.front %>" alt="Imagen de Frente" width="100" height="100">
+              <br>
+                <label for="images-front" class="form-label">Cambiar Imagen de Frente:</label>
+              <br>
+              <input type="file" id="images-front" name="images-front"  class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <img src="/images/<%= productToEdit.images.back %>" alt="Imagen de Espalda" width="100" height="100">
+              <br>
+                <label for="images-back" class="form-label">Cambiar Imagen de Dorso:</label>
+              <br>
+              <input type="file" id="images-back" name="images-back"  class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="caption" class="form-label">Comentarios adicionales:</label>
+              <textarea type="text" id="caption" name="caption" class="form-input" value=<%= productToEdit.caption %>></textarea>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="disponibilidad" class="form-label">Cantidad diponible:</label>
+              <input type="number" id="disponibilidad" name="disponibilidad" class="form-input" value=<%= productToEdit.inventario.disponibilidad %>>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="peso_paq" class="form-label">Peso en kg:</label>
+              <input type="number" id="peso_paq" name="Peso" class="form-input" value=<%= productToEdit.inventario.peso_paq %>>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="devolucion" class="form-label">Permite devolucion:</label>
+              <input type="checkbox" id="devolucion" name="devolucion" value="Si" class="form-input" <% productToEdit.devolucion == 'Si' ? 'selected' : '' %>>Si
+              <input type="checkbox" id="devolucion" name="devolucion" value="No" class="form-input" <% productToEdit.devolucion == 'No' ? 'selected' : '' %>>No
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="tiempoEntrega" class="form-label">Tiempo de Entrega:</label>
+              <select name="tiempoEntrega"  class="form-input">
+                <option value="2hs" <% productToEdit.tiempoEntrega == '2hs' ? 'selected' : '' %>>Dentro de las 2 hs Siguientes</option>
+                <option value="24hs" <% productToEdit.tiempoEntrega == '24hs' ? 'selected' : '' %>>En 24 horas</option>
+                <option value="48hs"<% productToEdit.tiempoEntrega == '48hs' ? 'selected' : '' %>>En 48 horas</option>
+                <option value="1Semana" <% productToEdit.tiempoEntrega == '1Semana' ? 'selected' : '' %>>En una semana</option>
+                <option value="2Semanas" <% productToEdit.tiempoEntrega == '2Semanas' ? 'selected' : '' %>>En dos semana</option>
+            </div>
+            <br>
+            <div class="col-12 col-md-6">
+              <label for="rating" class="form-label">Ranking de opiniones:</label>
+              <input type="number" id="rating" name="rating" class="form-input" value=<%= productToEdit.rating.value %>>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="quantity" class="form-label">Cantidad de opiniones:</label>
+              <input type="number" id="quantity" name="quantity"  class="form-input" value=<%= productToEdit.quantity %>>
+            </div>
+            
+  
+            <div class="col-12">
+              <button type="submit" class="buy-now-button">Guardar producto</button>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+    </div>
+    
+
+</main>
+
+<!-- Footer -->
+<%- include('./partials/footer.ejs') %>
+
+</body>
+
+</html>

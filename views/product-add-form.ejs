@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs',{titulo:"Agregar Producto", stylesFile:"styles.css"}) %>
+  <link href="/css/productForm.css" rel="stylesheet">
+<body>
+  <!-- Header -->
+  <%- include('./partials/header.ejs') %>
+    
+    
+  <!-- Profile -->
+  <main>
+
+    <div class="flexcontainer">
+      <div class="divs div1">div1</div>
+      <div class="divs div2">div2</div>
+      <div class="divs div3">div3</div>
+      <div class="divs div4">div4</div>
+    </div>
+
+    <div class="container products-wrapper">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="products-title">Formulario de creación de productos</h2>
+        </div>
+      </div>
+      <div class="col-12">
+        <form action="/productSearch" enctype="multipart/form-data" method="POST">
+          <div class="row product-detail">
+            <div class="col-12 col-md-6 common-input">
+              <label for="name" class="form-label">Nombre del producto:</label>
+              <input type="text" id="name" name="name" placeholder="Ej: Remera Juventus" class="form-input">
+            </div>
+            <div class="col-12 col-md-6 common-input">
+              <label for="description" class="form-label">Descripción del producto:</label>
+              <textarea type="text" id="description" name="description" placeholder="Agregue una breve descripcion" class="form-input"></textarea>
+            </div>
+            <div class="col-12 col-md-6 common-input">
+              <label for="caracteristicas" class="form-label">Descripción del producto:</label>
+              <textarea type="text" id="caracteristicas" name="caracteristicas" placeholder="Caracteristicas particulares del producto" class="form-input"></textarea>
+            </div>
+            <div class="col-12 col-md-6 select-input">
+              <label for="talles" class="form-label">Talles:</label><br>
+              <input type="checkbox" name="small" id="talles-small" value="Small" class="form-input">
+              <label for="small">Small</label><br>
+              <input type="checkbox" name="medium" id="talles-medium" value="Medium" class="form-input">
+              <label for="medium">Medium</label><br>
+              <input type="checkbox" name="large" id="talles-large" value="Large" class="form-input">
+              <label for="large">Large</label><br>
+              <input type="checkbox" name="extralarge" id="talles-extralarge" value="Extra-Large" class="form-input">
+              <label for="extralarge">Extra Large</label><br>
+              <!-- <select name="talles" id="talles" class="form-input">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="Extra-Large">Extra-Large</option>
+              </select> -->
+            <div class="col-12 col-md-6">
+              <label for="regularPrice" class="form-label">Precio del producto:</label>
+              <input type="text" id="regularPrice" name="regularPrice" placeholder="Ej: 5678" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="specialPrice" class="form-label">Precio con Descuento:</label>
+              <input type="text" id="specialPrice" name="specialPrice" placeholder="Ej: 5678" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="cuotasbanco" class="form-label">Cuotas con Banco:</label>
+              <input type="text" id="cuotasbanco" name="cuotasbanco" placeholder="Ej: Santander" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="cuotas" class="form-label">Cantidad de Cuotas:</label>
+              <input type="number" id="cuotas" name="cuotas" placeholder="Ej: 24" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="images-main" class="form-label">Imagen Principal:</label>
+              <input type="file" id="images-main" name="images-main" placeholder="Imagen principal" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="images-front" class="form-label">Imagen de Frente:</label>
+              <input type="file" id="images-front" name="images-front" placeholder="Imagen principal" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="images-back" class="form-label">Imagen de Dorso:</label>
+              <input type="file" id="images-back" name="images-back" placeholder="Imagen principal" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="caption" class="form-label">Comentarios adicionales:</label>
+              <textarea type="text" id="caption" name="caption" class="form-input"></textarea>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="disponibilidad" class="form-label">Cantidad diponible:</label>
+              <input type="number" id="disponibilidad" name="disponibilidad" placeholder="Ej: 4" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="peso_paq" class="form-label">Peso en kg:</label>
+              <input type="number" id="peso_paq" name="Peso" placeholder="Ej: 0,85" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="devolucion" class="form-label">Permite devolucion:</label>
+              <input type="checkbox" id="devolucion" name="devolucion" value="Si" class="form-input">Si
+              <input type="checkbox" id="devolucion" name="devolucion" value="No" class="form-input">No
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="tiempoEntrega" class="form-label">Tiempo de Entrega:</label>
+              <select name="tiempoEntrega"  class="form-input">
+                <option value="2hs">Dentro de las 2 hs Siguientes</option>
+                <option value="24hs">En 24 horas</option>
+                <option value="48hs">En 48 horas</option>
+                <option value="1Semana">En una semana</option>
+                <option value="2Semanas">En dos semana</option>
+            </div>
+            <!-- <div class="col-12 col-md-6">
+              <label for="rating" class="form-label">Rating de usuarios:</label>
+              <input type="number" id="rating" name="rating" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="quantity" class="form-label">Cantidad de opiniones:</label>
+              <input type="number" id="quantity" name="quantity"  class="form-input">
+            </div> -->
+
+  
+            <div class="col-12">
+              <button type="submit" class="buy-now-button">Guardar producto</button>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+    </div>
+    
+
+</main>
+
+<!-- Footer -->
+<%- include('./partials/footer.ejs') %>
+
+</body>
+
+</html>

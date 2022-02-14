@@ -1,0 +1,430 @@
+/* HERRAMIENTAS ------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+.cW {
+    color: #fff;
+}
+
+.cB {
+    color: black;
+}
+
+.c1 {
+    color: rgb(235, 235, 235);
+}
+
+.c2 {
+    color: rgb(48, 180, 233) !important;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.clearfix {
+    position: relative;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.span12 {
+    width: 48.6111111111%;
+    float: left;
+    margin-left: .6944444444%;
+    margin-right: .6944444444%;
+    margin-bottom: 2%;
+}
+
+.push6 {
+    margin-left: 25%;
+}
+
+.push7 {
+    margin-left: 5%;
+}
+
+.link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: red;
+}
+
+/* TAGS --------------------------------------- */
+
+#whoWeAre p {
+    font-family: "Open Sans", "Helvetica", sans-serif;
+    font-size: 14px;
+    line-height: 28px;
+    color: #0c0c0c;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Bryant,Helvetica,sans-serif;
+    color: #0c0c0c;
+    text-transform: uppercase;
+}
+
+h1 {
+    letter-spacing: 4px;
+    font-size: 36px;
+    line-height: 34px;
+    font-weight: 500;
+}
+
+h2 {
+    letter-spacing: 2px;
+    font-size: 26px;
+    line-height: 26px;
+    font-weight: 500;
+    margin: 25px 0px 25px 0px;
+}
+
+img {
+    max-width: 100%;
+}
+
+section {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+/* CSS ---------------------------------------- */
+
+body {
+    font-family: "Open Sans",Helvetica,sans-serif;
+    font-weight: 300;
+    /* font-size: 23px; */
+    color: #333132;
+    /* line-height: 36px; */
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.main-content {
+    position: relative;
+
+}
+
+article, main, nav, section {
+    display: block;
+}
+
+.background-cover {
+    background-image: url('/images/portada.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.inner-background {
+    background: rgba(156, 117, 117, 0.2);
+}
+
+.inner-background-mission {
+    background: rgba(75, 95, 66, 0.4);
+}
+
+
+.inner-wrapper {
+    padding: 0 20px;
+    max-width: 944px;
+    margin: auto;
+    clear: both;
+}
+
+.inner-wrapper.pad-top {
+    padding-top: 50px;
+}
+
+.inner-wrapper.pad-bottom {
+    padding-bottom: 50px;
+}
+
+.story-page .story-title {
+    padding: 130px 0;
+    position: relative;
+    border-bottom: none;
+    text-align: left;
+    top: -100px;
+}
+
+.story-page .story-title h1 {
+    text-align: left;
+}
+
+.story-page .story-title nav {
+    font-family: Bryant;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+ol.init {
+    counter-reset: item;
+    margin: 0;
+    padding: 0;
+}
+
+ol.init li:before {
+    content: "0" counter(item) " ";
+    counter-increment: item;
+    margin-right: 30px;
+    min-width: 30px;
+    display: inline-block;
+}
+
+.story-content {
+    overflow: hidden;
+}
+
+.story-content .chapter {
+    border-radius: 100%;
+    color: #b00607;
+    border: solid 2px #b00607;
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height: 32px;
+    font-size: 16px;
+    text-align: center;
+    font-family: BryantMedium;
+}
+
+.story-content .full-width-mobile {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.story-content .mm-container {
+    clear: both;
+    padding-top: 56.25%;
+    position: relative;
+}
+
+.story-content .mm-container>* {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.story-content .mm-container .button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%,-50%);
+}
+
+.story-content .button, .story-content button {
+    color: #fff;
+    display: inline-block;
+    background: 0 0;
+    border: 0;
+    padding: 15px 40px;
+    font-family: Bryant,Helvetica,sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .14s;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button.button-2a {
+    line-height: 18px;
+    border-radius: 6px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-family: Bryant,Helvetica,sans-serif;
+    padding: 12px 20px;
+    font-weight: 500;
+}
+
+.button.button-2a, button.button-2a {
+    background: #fff;
+    border-color: #fff;
+    color: #333132;
+}
+
+.story-content .mission {
+    background-image: url('/images/SoccerField01.jpg');
+    background-size: cover;
+    background-position: center right;
+}
+
+.outer-wrapper {
+    overflow: hidden;
+    clear: both;
+}
+
+.story-content .chapter.cW {
+    border-color: #fff;
+    color: #fff;
+}
+
+.story-content .chapter {
+    border-radius: 100%;
+    color: #b00607;
+    border: solid 2px #b00607;
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height: 32px;
+    font-size: 16px;
+    text-align: center;
+    font-family: BryantMedium;
+}
+
+.story-content ol.init {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.story-content ol.init li {
+    display: block;
+    margin-bottom: 0;
+}
+
+.story-content ol.init li:before {
+    min-width: 20px;
+    margin-right: 10px;
+}
+
+.story-content ol.init+.button {
+    margin-left: 30px;
+}
+
+.story-content .responsability {
+    background-image: url('/images/seapollution3.jpg');
+    background-size: cover;
+    background-position: center right;
+}
+
+.story-content .team .grid-item {
+    padding: 0 12px;
+    width: 33.33%;
+    margin: 0 0 16px;
+}
+
+.story-content .team {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+    width: calc(100% + 24px);
+}
+
+.story-content .team article img {
+    display: block;
+}
+
+.story-content .margin-top-lg {
+    margin-top: 50px;
+}
+
+.story-content .team article p span {
+    display: block;
+    color: #585956;
+    line-height: 18px;
+}
+
+
+
+/* HOVER -------------------------------------- */
+
+.button.button-2a:not(:disabled):focus, .button.button-2a:not(:disabled):hover {
+    background-color: #999;
+    border-color: #999;
+    color: #fff;
+}
+
+.button:hover, button:hover {
+    background: #c93831;
+    color: #fff;
+}
+
+
+/* TAGS --------------------------------------- */
+
+
+@media (min-width: 768px){
+    h1 {
+        font-size: 52px;
+        line-height: 52px;
+    }
+
+    ol.init li {
+        display: block;
+        font-size: 26px;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    ol.init li:before {
+        margin-right: 60px;
+        min-width: 40px;
+    }
+
+    .inner-wrapper.pad-top {
+        padding-top: 130px;
+    }
+
+    .inner-wrapper.pad-bottom {
+        padding-bottom: 130px;
+    }
+
+    .inner-wrapper .span12:first-child {
+        padding-right: 25px;
+    }
+
+    .inner-wrapper .span12:last-child {
+        padding-left: 25px;
+    }
+
+    .story-content .full-width-mobile {
+        margin: auto;
+    }
+
+    .story-content ol.init li {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+    .story-content .team {
+        margin-left: -25px;
+        margin-right: -25px;
+        width: calc(100% + 50px);
+    }
+
+    .story-content .team .grid-item {
+        padding: 0 25px;
+        width: 25%;
+    }
+
+
+}
+
+@media (min-width: 1024px) {
+    .inner-wrapper {
+        padding: 0;
+    }
+}

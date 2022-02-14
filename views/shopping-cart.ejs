@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Head -->
+    <%- include('./partials/head.ejs',{titulo:"Tu Carrito",stylesFile:"styles-shopping-cart.css"}) %>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header v2.ejs') %>
+    
+    
+    <!-- Shopping cart -->
+    <main>
+    
+        <section class="Cart">
+            <h2>Su Carrito:</h2>
+
+            <div class="Titles-Cart">
+                <p class="items-title">Items</p>
+                <p class="precio-title">Precio</p>
+                <p class="cantidad-title">Cantidad</p>
+            </div>
+
+            <div class="Cart-Content">
+                <img src="/images/camiseta1.jpeg" alt="item comprado" class="imagen-item">
+                <div class="detalle-producto">
+                    <p class="nombre-producto">Remera ABC</p>
+                    <p class="talle">Talla XL</p>
+                </div>
+                <p class="precio-producto">$120.00</p>
+                <div class="dropdown-unidades">
+                    <label for="unidades"></label>
+                    <select name="unidades" id="unidades">
+
+                    
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>   
+                </div>
+            </div>
+
+            <div class="subtotal">
+                    <p class="subtotal-titulo">Subtotal:</p>
+                    <p class="subtotal-precio">$1200.00</p>
+            </div>
+            
+
+        </section>
+
+        <section class="Summary">
+            <h2>Summary (1 item)</h2>
+            <div class="subtotal-summary">
+                <h4>Subtotal</h4>
+                <h5>$1200.00</h5>
+            </div>
+
+            <div class="shipping">
+                <h4>Shipping</h4>
+                <h5>$200.00</h5>
+            </div>
+
+            <div class="taxes">
+                <h4>Impuestos</h4>
+                <h5>$240.70</h5>
+            </div>
+
+            <div class="total-a-pagar">
+                <h4>Total</h4>
+                <h5>$1440.70</h5>
+            </div>
+
+            <form class="submit-purchase" action:"/" method="POST">    
+                <button type="submit">Checkout</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <%- include('./partials/footer v2.ejs') %>
+
+</body>

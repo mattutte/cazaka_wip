@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+        
+    <%- include('./partials/head.ejs',{titulo:"Busqueda Producto",stylesFile:"productSearch.css"}) %>
+    <script type="text/javascript" src="js/productSearch.js"></script>
+
+        <body>
+            <!-- Header -->
+            <%- include('./partials/header v2.ejs') %>
+            <!--MAIN BODY-->
+            <main>
+                <!--Pagina principal: permite configurar el cuerpo central-->
+
+                <!--Main Container-->
+                <div class="main-container container">
+
+                    <!--First row: encabezado del cuerpo principal-->
+                    <div class="row-upper">
+                        <div class="row">
+                            <div class="col hflex">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="/"> Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a href="#" class="last-visited" aria-current="page"> Resultados de búsqueda </a>
+                                    </li>
+                                </ol>
+                                <% if(locals.session.loggedin){
+                                    if(locals.session.admin==1){ %>
+                                    <div class='btn-admin vflex'>
+                                        <button type="button" class="button">
+                                            <a href='/admin'>
+                                                <span>Editar productos</span> 
+                                            </a>
+                                        </button>
+                                    </div>
+                                <% }} %>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--Middle row: cuerpo principal. Contiene imagen, detalle y canasta del producto-->
+                    <div class="row">
+                        <div class="row-content col-12">
+                            <div class="tab-pane container active">
+                                <div class="row grid-header">
+                                    <div class="result-count text-center col-12 col-md-9 col-sm-6 order-sm-2">
+                                        <span class="search-result-count">
+                                            <span class="count">250</span> Resultados
+                                        </span>
+                                    </div>
+                                    <div class="col-6 col-sm-3 order-sm-1">
+                                        <select class="custom-select">
+                                            <option class="most-relevant"> Mas relevantes</option>
+                                            <option class="most-sold"> Mas vendidos</option>
+                                            <option class="newest-product"> Lanzamientos</option>
+                                            <option class="lowest-price"> Precio más bajo</option>
+                                            <option class="highest-price"> Precio más alto</option>
+                                        </select>
+                                        <img src="/images/up-and-down-icon.jpg" class="sort-icon">
+                                    </div>
+                                    <div class="col-6 col-sm-3 text-right order-sm-3 d-md-none">
+                                        <button type="button" class="btn btn-primary filter-results col-12">
+                                            Filtro
+                                        </button>
+
+                                    </div>
+
+                                </div>
+                                <% if(locals.session.loggedin){
+                                    if(locals.session.admin==1){ %>
+                                        <div class='btn-admin vflex ss'>
+                                            <button type="button" class="button">
+                                                <a href='/admin'>
+                                                    <span>Editar productos</span> 
+                                                </a>
+                                            </button>
+                                        </div>
+                                <% }} %>
+                                <div class="row">
+                                    <div class="refinement-bar col-md-3">
+                                        <div class="filter-header">
+                                            <div class="header-bar d-md-none">
+                                                <div class="pull-left d-md-none">
+                                                    <img src="/images/Logo-sm.png" class="d-md-none logo">
+                                                </div>
+                                                <div class="pull-right close">
+                                                    &#x2716
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="refinements-container">
+                                            <div class="refinements">
+                                                <!--Tipo de producto-->
+                                                <div class="card collapsible-sm refinement refinement-tipo-de-producto">
+                                                    <div class="card-header col-sm-12">
+                                                        <button class="title btn text-left btn-block d-md-none">
+                                                            <span>Tipo de Producto</span>
+                                                            <span><i class="fas fa-chevron-down"></i></span>    
+                                                        </button>
+                                                        <h2 class="d-none d-md-block"> Tipo de producto</h2>
+                                                    </div>
+                                                    <div class="card-body content value">
+                                                        <ul class="values content">
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Short-sleeve Jersey</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Long-sleeve Jersey</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Team Jersey</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Signed Jersey</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                                <!--Genero-->
+                                                <div class="card collapsible-sm refinement refinement-tipo-de-producto">
+                                                    <div class="card-header col-sm-12">
+                                                        <button class="title btn text-left btn-block d-md-none">
+                                                            <span>Genero</span>
+                                                            <span><i class="fas fa-chevron-down"></i></span>   
+                                                        </button>
+                                                        <h2 class="d-none d-md-block"> Genero</h2>
+                                                    </div>
+                                                    <div class="card-body content value">
+                                                        <ul class="values content">
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Hombre</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Mujer</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Niña</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Niño</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                                <!--Categoria-->
+                                                <div class="card collapsible-sm refinement refinement-tipo-de-producto">
+                                                    <div class="card-header col-sm-12">
+                                                        <button class="title btn text-left btn-block d-md-none">
+                                                            <span>Categoria</span>
+                                                            <span><i class="fas fa-chevron-down"></i></span>   
+                                                        </button>
+                                                        <h2 class="d-none d-md-block"> Categoria</h2>
+                                                    </div>
+                                                    <div class="card-body content value">
+                                                        <ul class="values content">
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Moda</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Running</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Entrenamiento</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Secondary</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                                <!--Marca-->
+                                                <div class="card collapsible-sm refinement refinement-tipo-de-producto">
+                                                    <div class="card-header col-sm-12">
+                                                        <button class="title btn text-left btn-block d-md-none">
+                                                            <span>Marca</span>
+                                                            <span><i class="fas fa-chevron-down"></i></span>   
+                                                        </button>
+                                                        <h2 class="d-none d-md-block"> Marca</h2>
+                                                    </div>
+                                                    <div class="card-body content value">
+                                                        <ul class="values content">
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Nike</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Adidas</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Fila</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span>Le Coq Sportif</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                                <!--Talle-->
+                                                <div class="card collapsible-sm refinement refinement-tipo-de-producto">
+                                                    <div class="card-header col-sm-12">
+                                                        <button class="title btn text-left btn-block d-md-none">
+                                                            <span>Talle</span>
+                                                            <span><i class="fas fa-chevron-down"></i></span>   
+                                                        </button>
+                                                        <h2 class="d-none d-md-block"> Talle</h2>
+                                                    </div>
+                                                    <div class="card-body content value">
+                                                        <ul class="values content">
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-2 col-md-5 list-inline-item">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> 14</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-2 col-md-5 list-inline-item">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> 17.5</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-2 col-md-5 list-inline-item">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> 18.5</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-2 col-md-5 list-inline-item">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> 19</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-2 col-md-5 list-inline-item">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> 19.5</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-2 col-md-5 list-inline-item">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> 20</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-2 col-md-5 list-inline-item">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> 20.5</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-2 col-md-5 list-inline-item">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> 21</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                                <!--Precio-->
+                                                <div class="card collapsible-sm refinement refinement-tipo-de-producto">
+                                                    <div class="card-header col-sm-12">
+                                                        <button class="title btn text-left btn-block d-md-none">
+                                                            <span>Precio</span>
+                                                            <span><i class="fas fa-chevron-down"></i></span>   
+                                                        </button>
+                                                        <h2 class="d-none d-md-block"> Precio</h2>
+                                                    </div>
+                                                    <div class="card-body content value">
+                                                        <ul class="values content">
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> $0 - $999</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> $1000 - $1999</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> $2000 - $4999</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> $5000 - 9999</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> $10000 - $14999</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                            <span class="filter-options">
+                                                                <li class="col-sm-4 col-md-12">
+                                                                    <button>
+                                                                        <i class="far fa-square">
+                                                                            <span> $15000 o más</span>
+                                                                        </i>
+                                                                    </button>
+                                                                </li>
+                                                            </span>
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="resultado-busqueda col-sm-12 col-md-9">
+                                        <div class="row filter-bar">
+                                            <div class="pills-container">
+
+                                            </div>
+                                        </div>
+                                        <div id='product-section' class="row product-grid">
+                                            
+                                            <% for (let i = 0; i < Math.min(
+                                                products.length, resultsPerPage); i++) {
+
+                                                product = products[i];
+
+                                                var formatter = new Intl.NumberFormat('es-AR', {
+                                                style: 'currency',
+                                                currency: 'ARS',
+                                                minimumFractionDigits: 0,
+
+                                                });
+
+                                                //let regular_price = product.regularPrice.replace('$', '')*1000;
+                                                //let special_price = product.specialPrice.replace('$', '')*1000;
+                                                let regular_price = products[i].regular_price;
+                                                let special_price = products[i].special_price
+                                                let discount = (1 - special_price/regular_price)*100;
+                                                let price_discount = discount.toFixed(0);
+                                                let price_difference = formatter.format(regular_price - special_price);
+                                                //console.log('regular price is: '+regular_price);
+                                            %>
+
+                                            <!--Product <%=i+1%>-->
+                                            <div class="col-6 col-sm-4">
+                                                <div class="product">
+                                                    <div class="product-tile">
+                                                        <!-- Imagen -->
+                                                        <div class="image-container">
+                                                            <a href="product/<%= products[i].id %>">
+                                                                <div class="product-image-container">
+                                                                    <img class="tile-image" src="/images/<%= products[i].image_main %>">
+                                                                </div>
+                                                            </a>
+                                                            <a class="wishlistTile">
+                                                                <span class="fa-stack fa-lg">
+                                                                    <i class="far fa-heart fa-stack-1x"></i>
+                                                                    <i class="fas fa-circle fa-inverse fa-stack-2x"></i>
+                                                                </span>
+                                                            </a>
+                                                            <a class="quickview hidden-sm-down">
+                                                                <span class="fa-stack fa-lg">
+                                                                    <i class="fas fa-expand-alt fa-stack-1x"></i>
+                                                                    <i class="fas fa-circle fa-inverse fa-stack-2x"></i>
+                                                                </span>
+                                                            </a>
+
+                                                        </div>
+                                                        <!-- Cuerpo -->
+                                                        <div class="tile-body">
+                                                            <!-- Descripcion -->
+                                                            <div class="description">
+                                                                <a href="product/<%= products[i].id %>">
+                                                                    <%= products[i].name_product%>
+                                                                </a>
+                                                            </div>
+                                                            <!-- Precio wide screens-->
+                                                            <div class="tile-op-1">
+                                                                <div class="price-box">
+                                                                    <p class="old-price">
+                                                                        <span class="price-label value price"><%= formatter.format(products[i].regular_price) %></span>
+                                                                    </p>
+                                                                    <p class="special-price">
+                                                                        <span class="price-label value price"><%= formatter.format(products[1].special_price) %></span>
+                                                                    </p>
+                                                                </div>
+                                                                <form class="form-box">
+                                                                    <p class="text-center qty-label">Cantidad</p>
+                                                                    <div class="input-group">
+                                                                        <select class='input-number'>
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="7">7</option>
+                                                                            <option value="8">8</option>
+                                                                            <option value="9">9</option>
+                                                                            <option value="10">10</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="button-div">
+                                                                        <button type="button" class="button btn-cart">
+                                                                            <i class="fas fa-shopping-cart"></i>
+                                                                            <span>Comprar</span>
+                                                                        </button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <!-- Precio small screens-->
+                                                            <div class="tile-op-2">
+                                                                <div class="bfg-price-badge">
+                                                                    <span class="bfg-price-text">
+                                                                        <button type="button" class="bfg-price-button btn-unstyled">
+                                                                            Black Friday Prices <span>Guaranteed</span>
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="price">
+                                                                    <span class="sales">
+                                                                        <span class="value">
+                                                                            <%= product.specialPrice %>
+                                                                        </span>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="price-savings-box">
+                                                                    <div class="price-savings">
+                                                                        <div class="price-savings-value">
+                                                                            Save <%= price_difference %>
+                                                                        </div>
+                                                                    </div>
+                                                                    <span>
+                                                                        <div class="regular-price">
+                                                                            Was $8.401
+                                                                        </div>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="add-to-cart">
+                                                                    <button type="button" class="button btn-cart-sm">
+                                                                        <i class="fas fa-shopping-cart"></i>
+                                                                        <span>Comprar</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                            </div> 
+
+                                            <% } %>
+
+                                            <!--End Page-->
+                                            <div class="col-12 grid-footer">
+                                                <div class="end-page-container pagination-lg">
+                                                    <div class="text-center">
+                                                        <span class="page">Páginas:</span>
+                                                        <button class="btn pagination-page btn-active"> 1</button>
+                                                        <button class="btn pagination-page"> 2</button>
+                                                        <span class="ellipsis btn-padding">...</span>
+                                                        <button class="btn pagination-page"> 24</button>
+                                                        <button id='nextPageBtn' class="btn btn-padding"> > </button>
+                                                    </div>
+                                                </div>
+                                                <div class="end-page-container pagination-sm">
+                                                    <div class="text-center">
+                                                        <button class="btn pagination-page btn-padding" disabled>Anterior</button>
+                                                        <button class="btn pagination-page btn-active"> 1</button>
+                                                        <button class="btn btn-padding"> Siguiente ></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  <!--Middle row-->
+
+                    <!--Bottom row-->
+                    <!-- ... -->
+
+
+                </div>  <!--Main container-->
+
+            </main>
+
+            <!-- Footer -->
+            <%- include('./partials/footer v2.ejs') %>
+
+        </body>
+
+    </html>

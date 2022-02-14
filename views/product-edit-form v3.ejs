@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs',{titulo:"Agregar Producto", stylesFile:"styles.css"}) %>
+  <link href="/css/productForm v2.css" rel="stylesheet">
+
+  <body>
+    <!-- Header -->
+    <%- include('./partials/header v2.ejs') %>
+    <script type="text/javascript" src="js/productValidation2.js"></script>
+   
+
+      <!-- Main section -->
+      <main>
+        <form action="/product/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data" method="POST">
+          <!-- Title -------------------------------------------------------------------------->
+          <div class="title">
+            <h2>
+              <span>
+                Formulario de edición de producto
+              </span>
+            </h2>
+            <p>
+              <% if(locals.errores && errores != undefined){ %>
+                <% errores.errors.forEach(error =>{ if(typeof error.msg != 'object'){ %>
+                    <t3> <%= error.msg %> </t3>
+                    <br>
+                <% }}) %>
+                
+                
+              <% } %>
+            </p>
+          </div>
+
+          <!-- Name and Description ----------------------------------------------------------->
+          <div class="section-container section-description">
+
+            <div class="listGroup">
+              <div class="listGroupBox" id="page_wrapper_attributes">
+                <h2>
+                  Item description
+                </h2>
+                <p>
+                  Buyers need these details
+                </p>
+                <div class="grid" id="page_wrapper_grid">
+
+                  <!-- Nombre ------------------------------------------------>
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="name" class="form-label">
+                                <span>Nombre</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+                            <input type="text" id="name" name="name" placeholder="Ej: Remera Juventus"
+                              class="form-input" value='<%= productToEdit.name_product %>'>
+                          </div>
+                          <p class="errorLabel" id="errorNameLabel"> </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Categoria ------------------------------------------------>
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="description" class="form-label">
+                                <span></span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+                            <select id="category" name="category" class="form-input">
+                              <option value="" selected>Selecciona una categoria</Option>
+                              <option value="Jersey" selected>Remera</Option>
+                              <option value="Shoes">Botines</Option>
+                              <option value="Ball">Balon</Option>
+                              <option value="Others">Otros</Option>
+                            </select>
+                            <p class="errorLabel" id="errorCategoryLabel"> </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Marca ------------------------------------------------->
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="brand" class="form-label">
+                                <span>Marca</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+                            <select id="brand" name="brand" class="form-input">
+                              <% for (let i=0; i < brands.length; i++){ %>
+                                <option value=<%=brands[i].id %>
+                                  <% brands[i].id==productToEdit.brand_id? "selected" :"" %> ><%= brands[i].name_brand
+                                      %>
+                                </option>
+                                <% } %>
+                            </select>
+                            <p class="errorLabel" id="errorBrandLabel"> </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Descripción ------------------------------------------->
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="description" class="form-label">
+                                <span>Descripción</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+                            <textarea type="text" id="description" name="description" class="form-input"
+                              value=<%=productToEdit.description_product %>></textarea>
+                          </div>
+                          <p class="errorLabel" id="errordescriptionLabel"> </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Año Correspondiente ------------------------------->
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="caption" class="form-label">
+                                <span>Año correspondiente</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+                            <input type="number" id="year" name="year" class="form-input"
+                              value=<%=productToEdit.year_created %>></input>
+                          </div>
+                          <p class="errorLabel" id="errorYearLabel"> </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Características del producto -------------------------->
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="caption" class="form-label">
+                                <span>Características Adicionales</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+
+                            <!-- Característica 1 ---------------->
+                            <div class="caract-input">
+                              <label>Estilo</label>
+                              <div class="grid_cell">
+                                <div class="grid_cell_wrapper">
+                                  <div class="listInlineSelect inputField">
+                                    <div class="listInlineSelect__selectBox">
+                                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                                        <div class="inputField__label">
+                                          <label for="description" class="form-label">
+                                            <span></span>
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <div class="listInlineSelect__selectBox-activeRegion">
+                                        <select id="features_style" name="features_style" class="form-input">
+                                          <option value="Long-sleeved" <% productToEdit.features_style=="Long-sleeved"
+                                            ? "selected" :"" %>>Mangas Largas</Option>
+                                          <option value="Short-sleeved" <% productToEdit.features_style=="Short-sleeved"
+                                            ? "selected" :"" %>>Mangas Cortas</Option>
+                                          <option value="Other" <% productToEdit.size_available=="Other" ? "selected"
+                                            :"" %>>Otros</Option>
+                                        </select>
+                                        <p class="errorLabel" id="errorStyleLabel"> </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- Característica 2 ---------------->
+                            <div class="caract-input">
+                              <label>Genero</label>
+                              <div class="grid_cell">
+                                <div class="grid_cell_wrapper">
+                                  <div class="listInlineSelect inputField">
+                                    <div class="listInlineSelect__selectBox">
+                                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                                        <div class="inputField__label">
+                                          <label for="description" class="form-label">
+                                            <span></span>
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <div class="listInlineSelect__selectBox-activeRegion">
+                                        <select id="features_gender" name="features_gender" class="form-input">
+                                          <option value="Male" <% productToEdit.features_gender=="Male" ? "selected" :""
+                                            %>>Masculino</Option>
+                                          <option value="Female" <% productToEdit.features_gender=="Female" ? "selected"
+                                            :"" %>>Femenino</Option>
+                                          <option value="Kids" <% productToEdit.features_gender=="Kids" ? "selected" :""
+                                            %>>Infantiles</Option>
+                                          <option value="Alternative" <% productToEdit.features_gender=="Alternative"
+                                            ? "selected" :"" %>>Alternativo</Option>
+                                        </select>
+                                        <p class="errorLabel" id="errorGenreLabel"> </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Característica 3 ---------------->
+                            <div class="caract-input">
+                              <label>Uso</label>
+                              <div class="grid_cell">
+                                <div class="grid_cell_wrapper">
+                                  <div class="listInlineSelect inputField">
+                                    <div class="listInlineSelect__selectBox">
+                                      <div class="listInlineSelect__selectBoxLabelWrapper">
+                                        <div class="inputField__label">
+                                          <label for="description" class="form-label">
+                                            <span></span>
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <div class="listInlineSelect__selectBox-activeRegion">
+                                        <select id="features_use" name="features_use" class="form-input">
+                                          <option value="Main" <% productToEdit.features_use=="Main" ? "selected" :"" %>
+                                            >Principal</Option>
+                                          <option value="Alternative" <% productToEdit.features_use=="Alternative"
+                                            ? "selected" :"" %>>Alternativo</Option>
+                                          <option value="Training" <% productToEdit.features_use=="Training"
+                                            ? "selected" :"" %>>Entrenamiento</Option>
+                                          <option value="Others" <% productToEdit.features_gender=="Others" ? "selected"
+                                            :"" %>>Otros</Option>
+                                        </select>
+                                        <p class="errorLabel" id="errorUseLabel"> </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Característica 4 ---------------->
+                            <div class="caract-input">
+                              <label>Otras</label>
+                              <textarea type="text" id="features_others" name="features_others"
+                                class="form-input-caract" placeholder="Otras caracteristicas del producto..."
+                                %>"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pricing detail ----------------------------------------------------------------->
+          <div class="section-container section-pricing inner-section">
+
+            <div class="listGroup">
+              <div class="listGroupBox" id="page_wrapper_attributes">
+                <h2>
+                  Pricing
+                </h2>
+                <p>
+                  Informacion relevante sobre precios
+                </p>
+
+                <div class="grid" id="page_wrapper_grid">
+                  <!-- Precio ------------------------------------------------>
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="regularPrice" class="form-label">
+                                <span>Precio</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+                            <span>$ </span><input type="text" id="regularPrice" name="regularPrice"
+                              placeholder="Ej: 5678" class="form-input" value=<%=productToEdit.regular_price %>>
+                          </div>
+                          <p class="errorLabel" id="errorPriceLabel"></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Precio con descuento --------------------------------->
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="specialPrice" class="form-label">
+                                <span>Precio con descuento</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+                            <span>$ </span><input type="text" id="specialPrice" name="specialPrice"
+                              placeholder="Ej: 5678" class="form-input" value=<%=productToEdit.special_price %>>
+                          </div>
+                          <p class="errorLabel" id="errorSpecialPriceLabel"> </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Devolucion -------------------------------------------->
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="devolucion" class="form-label">
+                                <span>Permite devolución</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+                            <input type="radio" id="devolucion-si" name="devolucion" value="1" class="check-input"
+                              selected=<% productToEdit.devolucion==1 ? true : false %>><span>Si</span>
+                            <input type="radio" id="devolucion-no" name="devolucion" value="0" class="check-input left_50"
+                              selected=<% productToEdit.devolucion=='0' ? true : false %>><span>No</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Tiempo de entrega ------------------------------------->
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="tiempoEntrega" class="form-label">
+                                <span>Tiempo de Entrega</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+                            <select name="delivery_time" class="form-input">
+                              <option value="2hs" selected=<% productToEdit.delivery_time=="2hs" ? "selected" : "" %>
+                                >Dentro de las 2 hs Siguientes</option>
+                              <option value="24hs" selected=<% productToEdit.delivery_time=="24hs" ? "selected" : "" %>
+                                >En 24 horas</option>
+                              <option value="48hs" selected=<% productToEdit.delivery_time=="48hs" ? "selected" : "" %>
+                                >En 48 horas</option>
+                              <option value="1Semana" selected=<% productToEdit.delivery_time=="1Semana" ? "selected"
+                                : "" %>>En una semana</option>
+                              <option value="2Semanas" selcted=<% productToEdit.delivery_time=="2Semanas" ? "selected"
+                                : "" %>>En dos semanas</option>
+                            </select>
+                            <p class="errorLabel" id="errorDeliveryTimeLabel"> </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Physical Characteristics section ------------------------------------------------------------------>
+          <div class="section-container section-pictures inner-section">
+            <div class="listGroup">
+              <div class="listGroupBox" id="page_wrapper_attributes">
+                <h2>
+                  Editar caracteristicas fisicas del producto
+                </h2>
+                <p>
+                </p>
+                <div class="grid" id="page_wrapper_grid">
+
+                  <!-- Peso Paquete ------------------------------------------------>
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="regularPrice" class="form-label">
+                                <span>Peso del paquete (en Kg)</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+                            <span>Kg </span><input type="text" id="weight_package" name="weight_package"
+                              placeholder="Ej: 1.25" class="form-input" value=<%=productToEdit.weight_package %>>
+                          </div>
+                          <p class="errorLabel" id="errorWeightLabel"> </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Color Disponible ------------------------------------------------>
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="regularPrice" class="form-label">
+                                <span>Color Disponible</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+                            <input type="text" id="color_available" name="color_available" placeholder="Rojo"
+                              class="form-input" value=<%=productToEdit.color_available %>>
+                          </div>
+                          <p class="errorLabel" id="errorColorLabel"> </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Talle ------------------------------------------------>
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField">
+                        <div class="listInlineSelect__selectBox">
+                          <div class="listInlineSelect__selectBoxLabelWrapper">
+                            <div class="inputField__label">
+                              <label for="description" class="form-label">
+                                <span>Talle</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="listInlineSelect__selectBox-activeRegion">
+                            <select id="size_available" name="size_available" class="form-input">
+                              <option value="Small" <% productToEdit.size_available=="Small" ? "selected" :"" %>>Small
+                              </Option>
+                              <option value="Medium" <% productToEdit.size_available=="Medium" ? "selected" :"" %>
+                                >Medium</Option>
+                              <option value="Large" <% productToEdit.size_available=="Large" ? "selected" :"" %>>Large
+                              </Option>
+                              <option value="Extra-Large" <% productToEdit.size_available=="Extra-Large" ? "selected"
+                                :"" %>>Extra-Large</Option>
+                            </select>
+                          </div>
+                          <p class="errorLabel" id="errorSizeLabel"> </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo section ------------------------------------------------------------------>
+          <div class="section-container section-pictures inner-section">
+            <div class="listGroup">
+              <div class="listGroupBox" id="page_wrapper_attributes">
+                <h2>
+                  Editar fotos
+                </h2>
+                <p>
+                  La confianza del comprador aumentara cuando mas fotos haya
+                </p>
+                <div class="grid" id="page_wrapper_grid">
+                  <!-- Imagen principal -------------------------------------->
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField h_align">
+                        <% if(productToEdit.image_main){ %>
+                          <img src="/images/<%= productToEdit.image_main %>" alt="Imagen Principal" width="50"
+                            height="50">
+                          <% } %>
+                            <div class="listInlineSelect__selectBox">
+                              <div class="listInlineSelect__selectBoxLabelWrapper">
+                                <div class="inputField__label">
+                                  <label for="image-main" class="form-label">
+                                    <span>Imagen principal</span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="listInlineSelect__selectBox-activeRegion">
+                                <input type="file" id="image-main" name="image-main" value=<%=productToEdit.image_main
+                                  %> placeholder="Imagen principal" class="form-input">
+                              </div>
+                              <p class="errorLabel" id="errorImageLabel"></p>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Imagen de frente -------------------------------------->
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField h_align">
+                        <% if(productToEdit.image_back){ %>
+                          <img src="/images/<%= productToEdit.image_back %>" alt="Imagen de Frente" width="50"
+                            height="50">
+                          <% } %>
+                            <div class="listInlineSelect__selectBox">
+                              <div class="listInlineSelect__selectBoxLabelWrapper">
+                                <div class="inputField__label">
+                                  <label for="image-front" class="form-label">
+                                    <span>Imagen de frente</span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="listInlineSelect__selectBox-activeRegion">
+                                <input type="file" id="image-front" name="image-front"
+                                  value=<%=productToEdit.image_front %> placeholder="Imagen principal"
+                                class="form-input">
+                              </div>
+                              <p class="errorLabel" id="errorImageFrontLabel"></p>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Imagen de dorso --------------------------------------->
+                  <div class="grid_cell">
+                    <div class="grid_cell_wrapper">
+                      <div class="listInlineSelect inputField h_align">
+                        <% if(productToEdit.image_front){ %>
+                          <img src="/images/<%= productToEdit.image_back %>" alt="Imagen de Espalda" width="50"
+                            height="50">
+                          <% } %>
+                            <div class="listInlineSelect__selectBox">
+                              <div class="listInlineSelect__selectBoxLabelWrapper">
+                                <div class="inputField__label">
+                                  <label for="image-back" class="form-label">
+                                    <span>Imagen de dorso</span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="listInlineSelect__selectBox-activeRegion">
+                                <input type="file" id="image-back" name="image-back" value=<%=productToEdit.image_back
+                                  %> placeholder="Imagen principal" class="form-input">
+                              </div>
+                              <p class="errorLabel" id="errorImageBackLabel"></p>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Buttons section ---------------------------------------------------------------->
+          <div class="listGroup" data-key="action-buttons">
+            <div class="grid" data-key="action-buttons-box">
+              <!-- Guardar cambios -------------------------------------->
+              <div class="grid_cell" data-layout="6">
+                <div class="grid_cell_wrapper">
+                  <button type="submit" class="post-button" data-type="PRIMARY">Guardar producto</button>
+                </div>
+              </div>
+              <!-- Borrar cambios --------------------------------------->
+              <div class="grid_cell" data-layout="3">
+                <div class="grid_cell_wrapper">
+                  <button type="reset" class="post-button" data-type="DEFAULT">Borrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </main>
+
+      <!-- Footer -->
+      <%- include('./partials/footer v2.ejs') %>
+
+  </body>
+
+
+</html>

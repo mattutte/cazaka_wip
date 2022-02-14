@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Head -->
+    <%- include('./partials/head.ejs',{titulo:"Signin",stylesFile:"cart.css"}) %>
+    <link href="/css/cart.css" rel="stylesheet">
+<body>
+    <!-- Header -->
+    <%- include('./partials/header.ejs') %>
+    
+
+
+<main>
+    <div class="main-container col1-layout">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="main-row">
+                        <div class="col-main">
+                            <div class="padding-s">
+                                <div class="page-title">
+                                    <h1>
+                                        "Mi carrito - "
+                                        <span>
+                                            Haz click en “Finalizar compra” para ingresar tus datos.
+                                        </span>
+                                    </h1>
+                                    <button type="button" title="Finalizar la compra" class="button btn-checkout">
+                                        <span>
+                                            <span>
+                                                Finalizar compra
+                                            </span>
+                                        </span>
+                                    </button>
+                                    <a href='/' class="continuar-comprando">
+                                        Continua comprando y ahorra en tu envío
+                                    </a>
+                                </div>
+                                <form>
+                                    <div id="shopping-cart-table-container" class="data-table-container cart-table-container">
+                                        <!-- Tabla -->
+                                        <table id= "shopping-cart-table" class="data-table cart-table">
+                                            <!-- Diseño tabla -->
+                                            <colgroup>
+                                                <col width="1">
+                                                <col>
+                                                <col>
+                                                <col>
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <!-- Cabecera -->
+                                            <thead>
+                                                <tr class="first last">
+                                                    <td colspan="2" class="a-center">Producto</td>
+                                                    <td class="a-center">Cantidad</td>
+                                                    <td class="a-center">Eliminar</td>
+                                                    <td class="a-center">Valor unitario</td>
+                                                    <td class="a-center">Valor total</td>
+                                                </tr>
+                                            </thead>
+                                            <!-- Cuerpo -->
+                                            <tbody>
+                                                <!-- Producto 1 -->
+                                                <tr>
+                                                    <td class="block-img">
+                                                        <div style="text-align:center">
+                                                            <a>
+                                                                <img src="/images/camiseta3.jpeg">
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <h2 class="product-name">
+                                                            <a>
+                                                                Nike Liverpool...
+                                                            </a>
+                                                        </h2>
+                                                        <ul class="item-options">
+                                                            <li>
+                                                                Size: 
+                                                                <em>Medium</em>
+                                                            </li>
+                                                            <li>
+                                                                Peso: 
+                                                                <em>0.56kg</em>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="a-center cart-qty-container">
+                                                        <div class="cart-qty">
+                                                            <button type="button btn-change" class="button btn-change restar">
+                                                                <span>-</span>
+                                                            </button>
+                                                            <input class="input-text qty">
+                                                            <button type="button btn-change" class="button btn-change sumar">
+                                                                <span>+</span>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td class="a-center td-delete">
+                                                        <div class="cart-remove">
+                                                            <a class="btn-remove">
+                                                                Eliminar
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td class="a-center">
+                                                        <span class="cart-price">
+                                                            AR$ 31.83
+                                                        </span>
+                                                    </td>
+                                                    <td class="a-center">
+                                                        <span class="cart-price">
+                                                            AR$ 31.83
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <!-- Producto 2 -->
+                                                <tr>
+                                                    <td class="block-img">
+                                                        <div style="text-align:center">
+                                                            <a>
+                                                                <img src="/images/camiseta3.jpeg">
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <h2 class="product-name">
+                                                            <a>
+                                                                Nike Liverpool...
+                                                            </a>
+                                                        </h2>
+                                                        <ul class="item-options">
+                                                            <li>
+                                                                Size: 
+                                                                <em>Medium</em>
+                                                            </li>
+                                                            <li>
+                                                                Peso: 
+                                                                <em>0.56kg</em>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td class="a-center cart-qty-container">
+                                                        <div class="cart-qty">
+                                                            <button type="button btn-change" class="button btn-change restar">
+                                                                <span>-</span>
+                                                            </button>
+                                                            <input class="input-text qty">
+                                                            <button type="button btn-change" class="button btn-change sumar">
+                                                                <span>+</span>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td class="a-center td-delete">
+                                                        <div class="cart-remove">
+                                                            <a class="btn-remove">
+                                                                Eliminar
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td class="a-center">
+                                                        <span class="cart-price">
+                                                            AR$ 31.83
+                                                        </span>
+                                                    </td>
+                                                    <td class="a-center">
+                                                        <span class="cart-price">
+                                                            AR$ 31.83
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="cart-summary">
+                                        <div class="summary sumarry-static">
+                                            <div class="summary-row-container">
+                                                <div class="summary-row-content">
+                                                    <div class="summary-row summary-row-shipping">
+                                                        <span class="summary-label">
+                                                        </span>
+                                                        <span class="summary-price">
+                                                            <span class="summary-shipping-total">
+                                                                <span class="price-tag price-tag-discount">
+                                                                    $1.314
+                                                                </span>
+                                                            </span>
+                                                            <span class="price-tag">
+                                                                $540
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="summary-row summary-row-total">
+                                                    <span class="summary-label">Total con envío</span>
+                                                    <span class="summary-price">
+                                                        <span class="price-tag">
+                                                            $8.540
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="summary-actions">
+                                                <button>
+                                                    Continuar compra
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<%- include('./partials/footer.ejs') %>
+
+</body>
+</html>

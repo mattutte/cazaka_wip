@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Head -->
+    <%- include('./partials/head.ejs',{titulo:"Signin",stylesFile:"cart v2.css"}) %>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header v2.ejs') %>
+
+    <div class='banner'>
+        <a class='cursor-pointer'>
+            <div class='site-notes clearfix'>
+                <div class='site-note info clearfix'>
+                    <div class='deals fs30'>
+                        <span class='deals-event onHover'>BLACK FRIDAY</span>
+                        <span class='deals-tag c47'>DEALS</span>
+                        <span class='deal-container'>
+                            <div class='deal-button'>
+                                <span class='deal-text'>Shop Now</span>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+
+<main>
+    <svg xmlns="http://www.w3.org/2000/svg" style='display:none'>
+        <symbol id='accessories' viewBox='0 0 100 90'>
+            <path d='M90,15h-5v75h5c5.5,0,10-4.5,10-10V25C100,
+            19.5,95.5,15,90,15z M0,25v55c0,5.5,4.5,10,10,10h5V15h-5C4.5,
+            15,0,19.5,0,25z M67,4.5C63.6,3,58.2,0,50,0S36.4,3,33,
+            4.5V15H22v75h56V15H67V4.5z M61,15H39V8.3C41.7,7.2,45.5,6,50,
+            6s8.3,1.2,11,2.3V15z'>
+            </path>
+        </symbol>
+        <symbol id='printer' viewBox='0 0 98 85'>
+            <path d="M6.5 25h85c2.854 0 2.385-3.04 0.965-3.535C91.045 21 75.2 15 72.5 15H68V0H30v15h-4.5 c-2.75 0-18.545 5.969-19.965 6.465C4.115 22 3.6 25 6.5 25z M92.5 30.5h-87c-2.75 0-5.5 3.25-5.5 6V54c0 2.8 2.8 6 5.5 6 h9.912L11 85h76l-4.412-25H92.5c2.75 0 5.5-3.25 5.5-6V36.5C98 33.8 95.2 30.5 92.5 30.5z M21 75l7-32.5h42L77 75H21z">
+            </path>
+        </symbol>
+        <symbol id='protection' viewBox="0 0 1024 1024">
+            <path d="M837.546667 155.733333a42.666667 42.666667 0 0 0-35.84-8.533333 341.333333 341.333333 0 0 1-265.386667-54.186667 42.666667 42.666667 0 0 0-48.64 0 341.333333 341.333333 0 0 1-265.386667 54.186667 42.666667 42.666667 0 0 0-35.84 8.533333 42.666667 42.666667 0 0 0-15.786666 33.28v317.866667a384 384 0 0 0 160.853333 312.746667l155.733333 110.933333a42.666667 42.666667 0 0 0 49.493334 0l155.733333-110.933333A384 384 0 0 0 853.333333 506.88V189.013333a42.666667 42.666667 0 0 0-15.786666-33.28zM768 506.88a298.666667 298.666667 0 0 1-125.013333 243.2L512 843.52l-130.986667-93.44A298.666667 298.666667 0 0 1 256 506.88v-268.8a426.666667 426.666667 0 0 0 256-59.306667 426.666667 426.666667 0 0 0 256 59.306667z"></path>
+        </symbol>
+        <symbol id='lock' viewBox='0 0 21.5 9.4'>
+            <path d="M17,10V7c0,0,0-0.1,0-0.2C17,5.1,16.7,0,10,0C3.4,0,3,5,3,6.7C3,6.9,3,7,3,7v3H0v14h20V10H17z M11,17.7V21H9v-3.3c-0.6-0.3-1-1-1-1.7c0-1.1,0.9-2,2-2c1.1,0,2,0.9,2,2C12,16.7,11.6,17.4,11,17.7z M14.6,10H5.4V6.6c0-1,0-4.6,4.6-4.6c4.6,0,4.6,3.6,4.6,4.6V10z"></path>
+        </symbol>
+        <symbol id='paypal_logo' viewBox='0 0 101 32'>
+            <path fill="#003087" d="M 12.237 2.8 L 4.437 2.8 C 3.937 2.8 3.437 3.2 3.337 3.7 L 0.237 23.7 C 0.137 24.1 0.437 24.4 0.837 24.4 L 4.537 24.4 C 5.037 24.4 5.537 24 5.637 23.5 L 6.437 18.1 C 6.537 17.6 6.937 17.2 7.537 17.2 L 10.037 17.2 C 15.137 17.2 18.137 14.7 18.937 9.8 C 19.237 7.7 18.937 6 17.937 4.8 C 16.837 3.5 14.837 2.8 12.237 2.8 Z M 13.137 10.1 C 12.737 12.9 10.537 12.9 8.537 12.9 L 7.337 12.9 L 8.137 7.7 C 8.137 7.4 8.437 7.2 8.737 7.2 L 9.237 7.2 C 10.637 7.2 11.937 7.2 12.637 8 C 13.137 8.4 13.337 9.1 13.137 10.1 Z"/>
+            <path fill="#003087" d="M 35.437 10 L 31.737 10 C 31.437 10 31.137 10.2 31.137 10.5 L 30.937 11.5 L 30.637 11.1 C 29.837 9.9 28.037 9.5 26.237 9.5 C 22.137 9.5 18.637 12.6 17.937 17 C 17.537 19.2 18.037 21.3 19.337 22.7 C 20.437 24 22.137 24.6 24.037 24.6 C 27.337 24.6 29.237 22.5 29.237 22.5 L 29.037 23.5 C 28.937 23.9 29.237 24.3 29.637 24.3 L 33.037 24.3 C 33.537 24.3 34.037 23.9 34.137 23.4 L 36.137 10.6 C 36.237 10.4 35.837 10 35.437 10 Z M 30.337 17.2 C 29.937 19.3 28.337 20.8 26.137 20.8 C 25.037 20.8 24.237 20.5 23.637 19.8 C 23.037 19.1 22.837 18.2 23.037 17.2 C 23.337 15.1 25.137 13.6 27.237 13.6 C 28.337 13.6 29.137 14 29.737 14.6 C 30.237 15.3 30.437 16.2 30.337 17.2 Z"/>
+            <path fill="#003087" d="M 55.337 10 L 51.637 10 C 51.237 10 50.937 10.2 50.737 10.5 L 45.537 18.1 L 43.337 10.8 C 43.237 10.3 42.737 10 42.337 10 L 38.637 10 C 38.237 10 37.837 10.4 38.037 10.9 L 42.137 23 L 38.237 28.4 C 37.937 28.8 38.237 29.4 38.737 29.4 L 42.437 29.4 C 42.837 29.4 43.137 29.2 43.337 28.9 L 55.837 10.9 C 56.137 10.6 55.837 10 55.337 10 Z"/>
+            <path fill="#009cde" d="M 67.737 2.8 L 59.937 2.8 C 59.437 2.8 58.937 3.2 58.837 3.7 L 55.737 23.6 C 55.637 24 55.937 24.3 56.337 24.3 L 60.337 24.3 C 60.737 24.3 61.037 24 61.037 23.7 L 61.937 18 C 62.037 17.5 62.437 17.1 63.037 17.1 L 65.537 17.1 C 70.637 17.1 73.637 14.6 74.437 9.7 C 74.737 7.6 74.437 5.9 73.437 4.7 C 72.237 3.5 70.337 2.8 67.737 2.8 Z M 68.637 10.1 C 68.237 12.9 66.037 12.9 64.037 12.9 L 62.837 12.9 L 63.637 7.7 C 63.637 7.4 63.937 7.2 64.237 7.2 L 64.737 7.2 C 66.137 7.2 67.437 7.2 68.137 8 C 68.637 8.4 68.737 9.1 68.637 10.1 Z"/>
+            <path fill="#009cde" d="M 90.937 10 L 87.237 10 C 86.937 10 86.637 10.2 86.637 10.5 L 86.437 11.5 L 86.137 11.1 C 85.337 9.9 83.537 9.5 81.737 9.5 C 77.637 9.5 74.137 12.6 73.437 17 C 73.037 19.2 73.537 21.3 74.837 22.7 C 75.937 24 77.637 24.6 79.537 24.6 C 82.837 24.6 84.737 22.5 84.737 22.5 L 84.537 23.5 C 84.437 23.9 84.737 24.3 85.137 24.3 L 88.537 24.3 C 89.037 24.3 89.537 23.9 89.637 23.4 L 91.637 10.6 C 91.637 10.4 91.337 10 90.937 10 Z M 85.737 17.2 C 85.337 19.3 83.737 20.8 81.537 20.8 C 80.437 20.8 79.637 20.5 79.037 19.8 C 78.437 19.1 78.237 18.2 78.437 17.2 C 78.737 15.1 80.537 13.6 82.637 13.6 C 83.737 13.6 84.537 14 85.137 14.6 C 85.737 15.3 85.937 16.2 85.737 17.2 Z"/>
+            <path fill="#009cde" d="M 95.337 3.3 L 92.137 23.6 C 92.037 24 92.337 24.3 92.737 24.3 L 95.937 24.3 C 96.437 24.3 96.937 23.9 97.037 23.4 L 100.237 3.5 C 100.337 3.1 100.037 2.8 99.637 2.8 L 96.037 2.8 C 95.637 2.8 95.437 3 95.337 3.3 Z"/>
+        </symbol>
+        <symbol id='help' viewBox='0 0 92 92'>
+            <path d="M45.4,0C20,0.3-0.3,21.2,0,46.6C0.3,72,21.2,92.3,46.6,92C72,91.7,92.3,70.8,92,45.4C91.7,20,70.8-0.3,45.4,0z M45.3,74L45,74c-3.9-0.1-6.7-3-6.6-6.9c0.1-3.8,2.9-6.5,6.7-6.5l0.2,0c4,0.1,6.7,3,6.6,6.9C51.9,71.3,49.1,74,45.3,74z M61.7,41.3c-0.9,1.3-2.9,2.9-5.5,4.9l-2.8,1.9c-1.5,1.2-2.5,2.3-2.8,3.4c-0.3,0.9-0.4,1.1-0.4,2.9l0,0.5H39.4l0-0.9c0.1-3.7,0.2-5.9,1.8-7.7c2.4-2.8,7.8-6.3,8-6.4c0.8-0.6,1.4-1.2,1.9-1.9c1.1-1.6,1.6-2.8,1.6-4c0-1.7-0.5-3.2-1.5-4.6c-0.9-1.3-2.7-2-5.3-2c-2.6,0-4.3,0.8-5.4,2.5c-1.1,1.7-1.6,3.5-1.6,5.3v0.5H27.9l0-0.5c0.3-6.8,2.7-11.6,7.2-14.5c2.8-1.8,6.3-2.7,10.4-2.7c5.3,0,9.9,1.3,13.4,3.9c3.6,2.6,5.4,6.5,5.4,11.6C64.4,36.3,63.5,38.9,61.7,41.3z"></path>
+        </symbol>
+    </svg>
+
+    <div class='main-content'>
+        <div class='new-page-width'>
+            <div>
+                <div class='cart-top'>
+                    <div class='cart-header-left'>
+                        <h1>
+                            <span class='fs30 upper c1 light'>
+                                <span>
+                                    My Cart
+                                </span>
+                            </span>
+                        </h1>
+                        <div class='cart-toolbar header-left'>
+                            <span class='remove-all'>
+                                Remove All
+                            </span>
+                        </div>
+                    </div>
+                    <div class='cart-header-right'>
+                        <div class='cart-toolbar header-right'>
+                            <span class='remove-all'>
+                                Remove All
+                            </span>
+                        </div>
+                        <div class="upper-right clearfix">
+                            <a class='open-new-window right noUnderline fs14'>
+                                <svg><use xlink:href="#printer"></use></svg>
+                                <span class='printBtn'>Print</span>
+                            </a>
+                            <a class='openInOnePopUpLayer right noUnderline fs14'>
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+                    <br class='clearfix from_769 displayNone'>
+                </div>
+                <div id="cartWrapper" class="borderBox clearfix">
+                    <div class='cart-items'>
+
+                        <% 
+                            var formatter = new Intl.NumberFormat('es-AR', {
+                                style: 'currency',
+                                currency: 'ARS',
+                                minimumFractionDigits: 0,
+                            });
+
+                            let productos=[];
+                            let total = 0;
+                            let shipping = 544.42;
+
+                            for (let i = 0; i < cart_basket.length; i++) {
+
+                                if((cart_basket[i].user_id == user) && (cart_basket[i].status == 'open')){
+                                    productos = cart_basket[i].products;
+                                    break;  
+                                }
+                            }
+
+                            let taxes;
+                            console.log('productos vale:');
+                            console.log(productos);
+                            console.log('cart_basket vale:');
+                            console.log(cart_basket);
+
+                        %>
+                        
+                        <%  for(let i =0; i<cart_basket.length; i++) {
+
+                                let nombre;
+                                let marca;
+                                let descripcion;
+                                let imagen;
+                                let regular_price = cart_basket[i].regular_price;
+                                let special_price = cart_basket[i].special_price;
+                                let cantidad = cart_basket[i].qty;
+                                let cantidad_disponible = cart_basket[i].available;
+                                let regular_amount = formatter.format(regular_price * cantidad);
+                                let special_amount = formatter.format(special_price * cantidad);
+                                let saving = (regular_price - special_price)*cantidad;
+                                let display;
+                                let displayNot;
+                                let colorNotInStock;
+
+                                total = total + special_price * cantidad;
+                                taxes = 0.1 * special_price * cantidad;
+
+                                for(let j=0; j<products.length; i++) {
+                                    if (products[j].id == cart_basket[i].id){
+                                        nombre = products[j].name_product;
+                                        marca = products[j].name_brand;
+                                        descripcion = products[j].description_product;
+                                        imagen = products[j].images_main;
+                                    }
+                                };  
+
+                                if (cantidad > cantidad_disponible){
+                                    displayNot = 'displayNone';
+                                    display = ''
+                                    colorNotInStock = 'notInStock';
+                                }else{
+                                    displayNot = '';
+                                    display = 'displayNone';
+                                    colorNotInStock = '';
+                                }
+
+                        %>  
+
+                        <div class="itemInCart">
+                            <div class='table'>
+                                <div class="table-row">
+                                    <div class='item-details'>
+                                        <div class='table'>
+                                            <div class='item-image'>
+                                                <span class='itemImg'>
+                                                    <a href='/'>
+                                                        <img src='/images/<%= imagen %>'>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                            <div class='table-row'>
+                                                <div class='item-title'>
+                                                    <a class='itemName bold fs16 upper underline-on-hover'>
+                                                        <span class='cName'><%= marca %></span>
+                                                        <%= nombre %>
+                                                    </a>
+                                                    <p class='  ctNumbers c9 fs12'>
+                                                        <span><%= descripcion %></span>
+                                                    </p>
+                                                    <p class='shipping-data'>
+                                                        <a>
+                                                            <span class='bold'>Shipping options</span>
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                                <div class='inventario'>
+                                                    <div class='not-in-stock <%= display %>'>
+                                                        <p class='bold c41'>
+                                                            <span class='c33 fs16 bold notStock'>
+                                                                Proximamente
+                                                            </span>
+                                                        </p>
+                                                        <div class='shipping-time'>
+                                                            <span>
+                                                                <span>Expected availability:</span>
+                                                            </span>
+                                                            2-4 weeks
+                                                        </div>
+                                                    </div>
+                                                    <div class='in-stock <%= displayNot %> '>
+                                                        <p class='bold c41'>
+                                                            <span class='c29 fs16 bold'>
+                                                                In Stock
+                                                            </span>
+                                                        </p>
+                                                        <div class='shipping-time'>
+                                                            Ready to ship
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class='item-qty'>
+                                                    <form method='post' class='updateCart'>
+                                                        <input type="hidden" name="is" value="REG">
+                                                        <input type="hidden" name="sku" value="12666">
+                                                        <input type="hidden" name="cli">
+                                                        <span class='qty qty-input-wrap'>
+                                                            <input type='text' class='input <%= colorNotInStock %>' value='<%= cantidad %>'>
+                                                            <a class='update-qty displayNone fs13 c5'>Update</a>
+                                                        </span>
+                                                    </form>
+                                                </div>
+                                                <div class='item-price'>
+                                                    <p class='regular-price'><%= regular_amount %></p>
+                                                    <span><%= special_amount %></span>
+                                                </div>
+                                                <div class='item-offers'>
+                                                    <div class='related-items underline-on-hover'>
+                                                        <a class='showRelated related-link'>
+                                                            <svg>
+                                                                <use xlink:href="#accessories"></use>
+                                                            </svg>
+                                                            Related products
+                                                        </a>
+                                                    </div>
+                                                    <span class='clearfix'></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='item-adons'>
+                                            <div class='cart-item-warranties'>
+                                                <div class='item-protections-wrapper'>
+                                                    <div class='item-protections-label'>
+                                                        Protection plans
+                                                    </div>
+                                                    <div class='item-protections fs14 c39'>
+                                                        <div class='pp-choose-plan'>
+                                                            <div class='pp-icon'>
+                                                                <svg>
+                                                                    <use xlink:href="#protection"></use>
+                                                                </svg>
+                                                            </div>
+                                                            <div class='pp-starting-from'>
+                                                                Protection plans starting at 
+                                                                <span class='bold'>$15.99</span>
+                                                            </div>
+                                                            <button class='s-btn s-small s-style-2'>
+                                                                See options
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class='item-ctas-container'>
+                                            <a class='save-item'>
+                                                <i class="fas fa-history"></i>
+                                                <span>Save for later</span>
+                                            </a>
+                                            <a class='remove-item'>
+                                                <i class="far fa-trash-alt"></i>
+                                                <span>Remove</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br class='clearfix'>
+                            </div>
+                            <div class='item-total-wrapper'>
+                                <div class='item-total clearfix'>
+                                    <p class='subL subL-rebate fs15 c41'>
+                                        <span class='priceTitle c1 item-total-label'>Instant Savings:</span>
+                                        <span class='bold lPrice item-total-value'>
+                                            <span class='fs14'>$</span>
+                                            <span class='itemTitlePrice'><%= saving %></span>
+                                        </span>
+                                    </p>
+                                    <p class='subL fs18 c1 bold'>
+                                        <span class='priceTitle item-total-label'>Item Total:</span>
+                                        <span class='lPrice item-total-value'>
+                                            <span class='fs14'></span>
+                                            <span class='itemTitleprice'><%= special_amount%></span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                        <section id='saveForLaterBox'>
+                            <div>
+                                <div class='header-container'>
+                                    <h2>
+                                        <i class='fas fa-history'></i>
+                                        Saved for later
+                                    </h2>
+                                    <p>
+                                        bla bla
+                                    </p>
+                                </div>
+                                <div class='no-items-container'>
+                                    <span>
+                                        Any items you "Save for Later" will appear here
+                                    </span>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div class='totals-col'>
+                        <div class='left cartTotalContainer'>
+                            <div class='cartAppContainer'>
+                                <div>
+                                    <div class='shipping-cost'>
+                                        <h3 class='bold upper fs20'>
+                                            Estimate shipping and tax 
+                                            <spa class='estimate-tooltip'>
+                                                <svg></svg>
+                                            </span>
+                                        </h3>
+                                        <div class='form-container'>
+                                            <form>
+                                                <div>
+                                                    <div class='store-pickup clearfix'>
+                                                        <p class='inlineBlock'>
+                                                            <span class='styled-checkbox big'>
+                                                                <input class='displayNone'>
+                                                            </span>
+                                                            <span class='light store-pickup-header fs14'>
+                                                                NYC SuperStore Pickup
+                                                            </span>
+                                                        </p>
+                                                        <a class='fs14 c46 storeLocationLink underline-on-hover'>
+                                                            See details
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class='cart-totals-wrapper'>
+                                        <div>
+                                            <div class='cart-shipping-totals'>
+                                                <div class='totals clearfix'>
+                                                    <!-- Subtotal -->
+                                                    <div class='clearfix'>
+                                                        <span class='left bold'>
+                                                            Subtotal:
+                                                        </span>
+                                                        <span class='bold right'>
+                                                            <span class='fs14'>ARS</span>
+                                                            <%= formatter.format(total) %>
+                                                        </span>
+                                                    </div>
+                                                    <!-- Shipping -->
+                                                    <div class='clearfix fs16'>
+                                                        <span class='left clearfix'>
+                                                            <span>Shipping</span>
+                                                            <i class='fs12 c4'>starting from</i>
+                                                        </span>
+                                                        <span class='right'>
+                                                            ARS <%= formatter.format(shipping) %>
+                                                        </span>
+                                                    </div>
+                                                    <div class='clearfix'>
+                                                        <div>
+                                                            <span class='left clearfix'>
+                                                                <span>Sales Tax</span>
+                                                            </span>
+                                                            <span class='right'>
+                                                                <span class='fs14'>
+                                                                    ARS
+                                                                </span>
+                                                                <%= formatter.format(taxes) %>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='line'></div>
+                                                    <div class='clearfix'>
+                                                        <span class='you-pay left clearfix bold'>
+                                                            Total
+                                                        </span>
+                                                        <span class='bold right'>
+                                                            <span class='fs14'>ARS </span>
+                                                            <%= formatter.format(total + taxes) %>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <span class='checkout-button'>
+                                                    <form name='updateCart' class='updateCart'>
+                                                        <a class='bold'>
+                                                            <input id='loginCart' name='checkoutLogin' type='submit' value='Begin Checkout' class='btn s-btn-theme s-style-4 upper'>
+                                                            <svg class='checkout-icon'>
+                                                                <use xlink:href='#lock'></use>
+                                                            </svg>
+                                                        </a>
+                                                    </form>
+                                                </span>
+                                                <div class='other-checkout-method'>
+                                                    <span>or</span>
+                                                </div>
+                                                <div class='alt-payment'>
+                                                    <div id='paypalButton'>
+                                                        <div class='paypal-button-container'>
+                                                            <div id='paypal-buttons-box' class='paypal-buttons'>    
+                                                                <svg class='paypal-logo'>
+                                                                    <use xlink:href='#paypal_logo'></use>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id='totalWrapper'>
+                                                <div id='cartOptions'>
+                                                    <div id='cartLinks'>
+                                                        <div>
+                                                            <ul class='helpful-links clearfix'>
+                                                                <li class='first-column'>
+                                                                    <a class='c46 underline-on-hover'>
+                                                                        Extended holiday returns
+                                                                    </a>
+                                                                </li>
+                                                                <li class='second-column right'>
+                                                                    <a class='c46 underline-on-hover'>
+                                                                        Shipping information
+                                                                    </a>
+                                                                </li>
+                                                                <li class='first-column'>
+                                                                    <a class='c46 underline-on-hover'>
+                                                                        Payment options
+                                                                    </a>
+                                                                </li>
+                                                                <li class='second-column right'>
+                                                                    <a class='c46 underline-on-hover'>
+                                                                        Your Privacy & Security
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                            <div class='clearfix cart-contact-links'>
+                                                                <div class='cart-liveChat left'>
+                                                                    <a class='noUnderline cursor-pointer'>
+                                                                        <div class='inlineBlock'>
+                                                                            <div class='cart-links-chatIcon inlineBlock'>
+                                                                                <i class="far fa-comment-alt"></i>
+                                                                            </div>
+                                                                            <div class='inlineBlock'>
+                                                                                <div class='fs20 c38 smbold upper cart-liveChatLink'>
+                                                                                    live chat
+                                                                                </div>
+                                                                                <div class='fs10 c38 light upper'>
+                                                                                    &nbsp
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                <div class='cart-callCS right-align inlineBlock'>
+                                                                    <a class='noUnderline relative'>
+                                                                        <div class='inlineBlock right'>
+                                                                            <div class='fs20 c38 smbold upper cart-phoneLink'>
+                                                                                4834.6521
+                                                                            </div>
+                                                                            <div class='fs10 c38 light upper'>
+                                                                                &nbsp
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                <div class='clearfix fs14 c4 text-center OpenSans-400-normal'>
+                                                                    Your Cart ID # 385 662 767 28
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<%- include('./partials/footer v2.ejs') %>
+
+</body>
+</html>
+

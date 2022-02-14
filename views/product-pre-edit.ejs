@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+        <!-- Head -->
+        <%- include('./partials/head.ejs',{titulo:"Editando: " +  productToEdit.name,stylesFile:"product.css"}) %>
+    <body>
+        
+
+        <!-- Header -->
+        <%- include('./partials/header v2.ejs') %>        
+
+        <!-- Main -->
+            <% productDetail = productToEdit %>
+            
+
+            <div class="clear10px"></div>
+
+            <main>
+                <!--Pagina principal: permite configurar el cuerpo central-->
+                <div class="main-container">
+
+                    <!--First row: encabezado del cuerpo principal-->
+                    <div class="row-upper">
+                        <div class="go_back">
+                            <a href="../" class="go_back-button">
+                                <i class="fas fa-chevron-left"></i>
+                                Volver atrás
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--Middle row: cuerpo principal. Contiene imagen, detalle y canasta del producto-->
+                    <div class="row-middle">
+
+                        <!--Imagen: es un cuadro con todo lo que refiere a imagen del producto-->
+                        <div class="col-imagen">
+                            <div class="product-img-block">
+                                <!--Galeria: imágenes disponibles del producto en formato pequeño-->
+                                <div class="product-img-box">
+                                    <div class="more-views">
+                                        <% 
+                                        
+                                        if(productDetail.images.front != ""){
+                                            image_front = productDetail.images.front;
+                                        }else{
+                                            image_front = productDetail.images.main;
+                                        }
+                                        
+                                        %>
+
+                                        <img id="img-gal-ppal" class="gallery-thumb" src="/images/<%= image_front %>">
+                                        <% if(productDetail.images.back != ""){ %>
+                                            <img id="img-gal-ppal" class="gallery-thumb" src="/images/<%= productDetail.images.back %>">
+                                        <% } %>
+                                    </div>
+                                    <div class="product-img">
+                                        <img id="img-ppal" class="mainimg-big" src="/images/<%= productDetail.images.main %>" width="100%">
+                                    </div>
+                                </div>
+
+                                <p class="caption">Pasa el mouse sobre la imagen para resaltar y haz click para hacer zoom</p>   
+                            </div>
+                        </div>  <!--Col-imagen-->
+                            
+                        <!--Detalle: este cuadro contiene unicamente detalles técnicos del producto-->
+                        <div class="col-detalle">
+
+                            <div class="product-name">
+                                <h1><%= productDetail.name %></h1>
+                                <h3><%= productDetail.description %></h3>
+                                <div class="rating-container">
+                                    <div class="rating-box">
+                                        <img src="/images/rating-stars.png" width="100px">
+                                    </div>
+                                    <div class="rating-text">
+                                        <span><%= productDetail.rating.quantity %> Calificaciones</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <dl class="product-options">
+                                <dt class="size-name">
+                                    <label>Talle</label>
+                                </dt>
+                                <dl class="size-option">
+                                    <div class="input-box">
+                                        <select>
+                                            <% productDetail.talles.forEach(talle => { %>
+                                            <option title="<%= talle %>" class="size-options"><%= talle %></option>
+                                            <% }) %>
+                                        </select>
+                                    </div>
+                                </dl>
+                            </dl>
+
+                            <div class="product-detail">
+                                <p class="inventario">Disponibilidad: <span><%= productDetail.inventario.disponibilidad %></span></p>
+                                <p class="brand">Marca: <span><%= productDetail.brand %></span></p>
+                                <p class="weight">Peso paquete: <span><%= productDetail.inventario.peso_paq %> kg</span></p>
+                                <p class="return-option">Acepta devolucion: <span><%= productDetail.inventario.devolucion %></span></p>
+                                <p class="time-shipping">Tiempo de entrega: <span><%= productDetail.inventario.tiempoEntrega %></span></p>
+                            </div>
+
+                            <div class="product-description">
+                                
+                                    <%= productDetail.caracteristicas %>
+                                    
+                            </div>
+    
+                        </div>  <!--Col-detalle-->
+                        
+                        <!--Carrito: cuadro con las distintas opciones de compra-->
+                        <div class="col-basket">
+
+                            <div class="price-currency">
+                                <%
+                                
+                                var formatter = new Intl.NumberFormat('es-AR', {
+                                    style: 'decimal',
+                                    minimumFractionDigits: 0,
+                                });
+
+                                let regular_price = parseFloat(productDetail.regularPrice.replace('$', ''))*1000;
+                                let special_price = parseFloat(productDetail.specialPrice.replace('$', ''))*1000;
+                                let discount = (1 - special_price/regular_price)*100;
+                                let price_discount = discount.toFixed(0);
+                                let price_difference = formatter.format(regular_price - special_price);
+                                let afipRG = formatter.format((special_price*0.35).toFixed(0));  
+                                %>
+                                <div class="price-original">
+                                    Precio: 
+                                    <span>AR$ <%= regular_price %></span>
+                                </div>
+                                <div class="price-saving">
+                                    Ahorras: 
+                                    <span>AR$ <%= price_difference %></span>
+                                     (
+                                    <span><%= price_discount %>% </span>
+                                     )
+                                </div>
+                            </div>
+
+                            <div class="clear10px"></div>
+
+                            <div class="price-box">
+                                <div class="price-value">
+                                    <span>AR$ <%= formatter.format(special_price) %></span>
+                                </div>
+                                <div class="clear10px"></div>
+                                <div class="price-taxes">
+                                    <span>Incluye impuesto PAIS y percepción AFIP. Podés recuperar AR$ <%= afipRG %> de esta compra</span>
+                                </div>
+                                <div class="clear10px"></div>
+                                <div class="price-add-to-cart">
+                                    <p>
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <strong>Agregá el producto al carrito </strong>
+                                        para conocer los costos de envío y/o impuestos
+                                    </p>
+                                </div>
+                                <div class="clear10px"></div>
+                                <div class="price-delivery-promise">
+                                    <span>Recibí este producto de 15 y 20 días hábiles según la localidad y método de envío que selecciones al finalizar tu orden</span>
+                                </div>
+                            </div>
+
+                            <div class="payment-detail">
+                                <div class="cuotas-contenedor">
+                                    <div class="cuotas-promo">
+                                        <div class="payment-icon">
+                                            <i class="far fa-credit-card"></i>
+                                        </div>
+                                        <% if (productDetail.cuotas != ""){ %>
+                                        <span class="installments">Hasta <%= productDetail.cuotas.cantidad %> cuotas sin interés pagando con <strong><%= productDetail.cuotas.banco %></strong></span>
+                                        <% } %>
+                                    </div>
+                                    <div class="cuotas12">
+                                        <div class="payment-icon">
+                                            <i class="far fa-credit-card"></i>
+                                        </div>
+                                        <span class="installments">Hasta 12 cuotas fijas con todas las tarjetas</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="add-to-cart">
+                                <div class="payment-parameters">
+                                    <div class="qtty-box">
+                                        <label for="qtty">Cantidad</label>
+                                        <input type="text" name="qtty" id="qtty" value="1" class="input-text">
+                                    </div>
+                                    <img src="/images/tarjetas-gris-ar.webp" class="img-available-cards">
+                                </div>
+                                <div class="cart-buttons">
+                                    <form>
+                                        <a href="/product/edit/<%= productDetail.id %>">
+                                            <button type="button" title="Editar el Producto" class="button-buy">Editar el Producto</button>
+                                        </a>
+                                    </form>
+                                    <div class="clear10px"></div>
+                                    <form action="/product/<%= productDetail.id %>?_method=DELETE" method="POST">
+                                    <button type="submit" title="Borrar el producto" class="button-add-to-cart">Borrar el Producto</button>
+                                    </form>
+                                    <div class="clear10px"></div>
+                                </div>
+                            </div>            
+                        </div>   <!--Col-basket--> 
+
+                    </div>  <!--Middle row-->
+
+                    <div class="product-detail-bottom">
+                        <h3>Más detalles del producto</h3>
+                        <p><%= productDetail.detalle %></p>
+                    </div>
+
+                    
+
+                </div>  <!--Main container-->
+
+            </main>
+
+        <!-- Footer -->
+        <%- include('./partials/footer v2.ejs') %>
+
+        </body>
+
+    </html>

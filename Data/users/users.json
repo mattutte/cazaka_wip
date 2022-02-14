@@ -1,0 +1,153 @@
+[
+ {
+  "id": 1,
+  "email": "tomiley@gmail.com",
+  "password": 1234,
+  "direccion": "Paraná 123, Pilar",
+  "pais": "Argentina",
+  "seleccionFavorita": "Milan AC",
+  "equipoLocFav": "Boca",
+  "jugadorFavorito": "Maradona",
+  "mayor": true,
+  "images": "yo.jpeg",
+  "perfil": ""
+ },
+ {
+  "id": 2,
+  "email": "denichang@gmail.com",
+  "password": "abcd",
+  "direccion": "Av Libertador 1340 depto. 302, CABA",
+  "pais": "Argentina",
+  "seleccionFavorita": "Inter Milan",
+  "equipoLocFav": "Racing",
+  "jugadorFavorito": "Palermo",
+  "mayor": true,
+  "images": "yo.jpeg",
+  "perfil": ""
+ },
+ {
+  "id": 3,
+  "email": "elborto@gmail.com",
+  "password": "blabla",
+  "direccion": "donde está el agite",
+  "pais": "Argentina",
+  "seleccionFavorita": "Real Madrid",
+  "equipoLocFav": "River",
+  "jugadorFavorito": "Aimar",
+  "mayor": true,
+  "images": "yo.jpeg",
+  "perfil": ""
+ },
+ {
+  "id": 4,
+  "email": "matute@gmail.com",
+  "password": "imposibledesacar",
+  "direccion": "lejosenelnorte",
+  "pais": "Argentina",
+  "seleccionFavorita": "Barcelona",
+  "equipoLocFav": "Boca",
+  "jugadorFavorito": "Messi",
+  "mayor": true,
+  "images": "yo.jpeg",
+  "perfil": ""
+ },
+ {
+  "id": 5,
+  "email": "tomas@fñaldfnañs.com",
+  "password": "$2a$10$M3yhAfQh.vxkq2rMyXmspOalCT88Mknn8BUoRQ0WT1GFtXnoURMk2",
+  "direccion": "",
+  "pais": "Anayruca",
+  "seleccionFavorita": "",
+  "equipoLocFav": "",
+  "mayor": false,
+  "images": "foto-1638567141405.jpeg"
+ },
+ {
+  "id": 7,
+  "email": "theguy@me.com",
+  "password": "$2a$10$QRLhOChFl6FgbEhHLMR2juLkNi9x19HtZYMp5xHj9HA9vA.whBjyW",
+  "direccion": "",
+  "pais": "",
+  "seleccionFavorita": "",
+  "equipoLocFav": "",
+  "mayor": false,
+  "images": "foto-1638930368061.jpeg"
+ },
+ {
+  "id": 8,
+  "email": "",
+  "password": "$2a$10$zjPouYDCrxB9U82Ob.GNY.CmV8vWTlM.svTX/3b2bRL7LXaCyY2/i",
+  "direccion": "",
+  "pais": "",
+  "seleccionFavorita": "",
+  "equipoLocFav": "",
+  "mayor": false,
+  "images": ""
+ },
+ {
+  "id": 9,
+  "email": "",
+  "password": "$2a$10$t.kWtcXJxDwpmcZNhhG.lelHs70DhOowF4HpGWSd6MAF9HqMizB9y",
+  "direccion": "",
+  "pais": "",
+  "seleccionFavorita": "",
+  "equipoLocFav": "",
+  "mayor": false,
+  "images": ""
+ },
+ {
+  "id": 10,
+  "email": "",
+  "password": "$2a$10$zpNj.beffLcgnX8/NGrTx.mIZkt0KrejN9Oce6MdQktcukzNlAD0.",
+  "direccion": "",
+  "pais": "",
+  "seleccionFavorita": "",
+  "equipoLocFav": "",
+  "mayor": false,
+  "images": ""
+ },
+ {
+  "id": 11,
+  "email": "tomas",
+  "password": "$2a$10$TGkNRMa3nwTYJ.PxO5Svp.eP5lX9N9dZzPnGSggExh3WgPdOu.yDi",
+  "direccion": "",
+  "pais": "",
+  "seleccionFavorita": "",
+  "equipoLocFav": "",
+  "mayor": false,
+  "images": ""
+ },
+ {
+  "id": 12,
+  "email": "me",
+  "password": "$2a$10$lu.D/E.TqcoYS6kIV575yOBy3ITBZRdSDMFCbFA5nLVY2vVLR2Tji",
+  "direccion": "",
+  "pais": "UK",
+  "seleccionFavorita": "",
+  "equipoLocFav": "",
+  "mayor": false,
+  "images": ""
+ },
+ {
+  "id": 13,
+  "email": "analia@mia.com",
+  "password": "$2a$10$SjhHmjdLDGvcFEKXr9IuBeGjP59IBFi5FmERaiNg9bZ96Iz5X673C",
+  "direccion": "",
+  "pais": "UK",
+  "seleccionFavorita": "",
+  "equipoLocFav": "",
+  "mayor": false,
+  "images": "foto-1639017265908.jpeg"
+ },
+ {
+  "id": 14,
+  "email": "tomasheguy@gmail.com",
+  "password": "$2a$10$P4Y.rnn8NQ9YXbz6DoxEN.SywATZpuSgf2XBx206Oo21SOSrYM8lu",
+  "direccion": "",
+  "pais": "UK",
+  "seleccionFavorita": "",
+  "equipoLocFav": "",
+  "mayor": false,
+  "images": "foto-1639325362742.jpeg"
+ }
+]

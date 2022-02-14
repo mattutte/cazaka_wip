@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs',{titulo:"Perfil",stylesFile:"profile.css"}) %>
+<body>
+  <!-- Header -->
+  <%- include('./partials/header v2.ejs') %>
+    
+    
+  <!-- Profile -->
+  <mian>
+<form action="action_page.php" style="border:1px solid #ccc">
+    <div class="container">
+      <h1>Completar Perfil</h1>
+           <p>Por favor complete sus datos.</p>
+       <hr>
+ 
+      <label for="direccion"><b>Direccion</b></label>
+      <input type="text" placeholder="Ingresar direccion" name="direccion" required>
+  
+      <label for="pais"><b>Pais</b></label>
+      <input type="text" placeholder="Ingresar pais" name="pais" required>
+
+      <label for="seleccion"><b>Selección favorita</b></label>
+      <input type="text" placeholder="Ingresar equipo" name="seleccion" required>
+  
+      <label for="equipo"><b>Equipo local favorito</b></label>
+      <input type="text" placeholder="Ingresar equipo" name="equipo" required>
+  
+      <label for="jugador"><b>Jugador favorito</b></label>
+      <input type="text" placeholder="Ingresar jugador favorito" name="jugador" required>
+  
+      <label>
+      <input type="checkbox" checked="checked" name="mayorde13" style="margin-bottom:15px"> Soy mayor de 13 años
+      </label>
+        
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Borrar</button>
+        <button type="submit" class="signupbtn">Grabar</button>
+      </div>
+    </div>
+  </form>
+
+</mian>
+
+<!-- Footer -->
+<%- include('./partials/footer v2.ejs') %>
+
+</body>
+
+</html>
+
+

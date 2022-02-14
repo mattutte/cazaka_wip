@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('./partials/head.ejs',{titulo:"Account Edition",stylesFile:"edit_account.css"}) %>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header v2.ejs') %>
+    <script type="text/javascript" src="js/signupeditvalidations.js"></script>
+    
+    
+    <!-- Signin -->
+
+<main>
+
+    <div id='center-section' class='section_style'>
+        <div id='main-section' class='section_style'>
+            <div class='main-container'>
+                <div class='section-syle'>
+                    <form id="form" action="/editAccount/?_method=PUT" enctype="single/form-data" method="POST">
+                        <div class='box spacing-xl'>
+                            <div class='box-inner'>
+                                <!-- Titulo-->
+                                <h1 class='spacing-s'>
+                                    Edita tu perfil
+                                </h1>   
+
+                                <% if(locals.errores && errores != undefined){ %>
+                                    <% errores.errors.forEach(error =>{ if(typeof error.msg != 'object'){ %>
+                                        <t3> <%= error.msg %> </t3>
+                                        <br>
+                                    <% }}) %>
+                                    
+                                    
+                                  <% } %>
+
+                                <!-- Nombre -->
+                                <div class='row spacing-base'>
+                                    <label class='form-label'>
+                                        Tu nombre
+                                    </label>
+                                    <input type='text' id='user_name' class='input-text' placeholder='<%= user.first_name %>' value='<%= user.first_name%>' name='first_name'>
+                                </div>
+                                <p id="comentario-first_name"></p>
+                                <!-- Apellido -->
+                                <div class='row spacing-base'>
+                                    <label class='form-label'>
+                                        Tu apellido
+                                    </label>
+                                    <input type='text' id='user_lastname' class='input-text' placeholder='<%= user.last_name %>' value='<%= user.last_name %>' name='last_name'>
+                                </div>
+                                <p id="comentario-last_name"></p>
+                                <!-- Email -->
+                                <div class='row spacing-base'>
+                                    
+                                        Tu email
+                                        <input type='text' id='email' value='<%= user.email %>' readonly>
+                                    
+                                </div>
+                                <p id="comentario-email"></p>
+                                <!-- Contraseña -->
+                                <div>
+                                    <!-- Contraseña primer cuadro -->
+                                    <div class='row spacing-base'>
+                                        <label for='psw' class='form-label'>
+                                            Contraseña
+                                        </label>
+                                        <input type='password' id='password-input' class='input-text' placeholder='Como mínimo 8 caracteres' name='psw'>
+                                        <div class='box alert-inline'>
+                                            <div class='box-inner alert-container'>
+                                                <i class='icon'></i>
+                                                <span class='alert-content'></span>
+                                                <p id="comentario-psw"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Contraseña segundo cuadro -->
+                                    <div class='row spacing-base'>
+                                        <label for='pswrepeat' class='form-label'>
+                                            Vuelve a escribir la contraseña
+                                        </label>
+                                        <input type='password' id='user_pass2' class='input-text' placeholder='Vuelve a introducir la contraseña' name='pswrepeat'>
+                                    </div>
+                                    <p id="comentario-pswrepeat"></p>
+                                </div>
+                                <!-- Country -->
+                                <div class='row spacing-base'>
+                                    <label for='pais' class='form-label'>
+                                        Tu país
+                                    </label>
+                                    <input type='text' id='user_country' class='input-text' name='pais' placeholder='<%= user.country %>'>
+                                </div>
+                                <p id="comentario-pais"></p>
+                                <!-- Administrador -->
+                                <div>
+                                    <div class="listInlineSelect__selectBoxLabelWrapper">
+                                        <div class="inputField__label">
+                                          <label for="admin" class="form-label">
+                                            <span>Permisos de administrador?</span>
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <div class="listInlineSelect__selectBox-activeRegion spacing-base">
+                                        
+                                        <input type="radio" id="admin-si" name="admin" value="1" class="check-input" <%= user.admin_category == 1 ? 'checked' : false %>><span class='spacing-left'>Si</span>
+                                        <input type="radio" id="admin-no" name="admin" value="0" class="check-input left_50" <%= user.admin_category == 0 ? 'checked' : false %>><span class='spacing-left'>No</span>
+                
+                                      </div>      
+                                </div>
+                                <!-- Adulto -->
+                                <div>
+                                    <div class="listInlineSelect__selectBoxLabelWrapper">
+                                        <div class="inputField__label">
+                                          <label for="adult" class="form-label">
+                                            <span>Eres un adulto?</span>
+                                          </label>
+                                        </div>
+                                    </div>
+                                    <div class="listInlineSelect__selectBox-activeRegion spacing-base">
+                                        
+                                        <input type="radio" id="adult-si" name="mayor" value="1" class="check-input" <%= user.adult == 1 ? 'checked' : false %>><span class='spacing-left'>Si</span>
+                                        <input type="radio" id="adult-no" name="mayor" value="0" class="check-input left_50" <%= user.adult == 0 ? 'checked' : false %>><span class='spacing-left'>No</span>
+                
+                                    </div>      
+                                </div>
+                                <!-- Photo section -->
+                                <div>
+                                    <div class='division-container'>
+                                        <div class='division-line'></div>
+                                    </div>
+    
+                                    <h2 class='spacing-m'>Foto</h2>
+    
+                                    <div class="grid_cell">
+                                        <div class="grid_cell_wrapper">
+                                          <div class="listInlineSelect inputField h_align">
+                                            <% if(user.face_pic){ %>
+                                              <img src="/images/<%= user.face_pic %>" alt="Imagen Perfil" width="50" height="50">
+                                            <% } %>
+                                            <div class="listInlineSelect__selectBox">
+                                              <div class="listInlineSelect__selectBoxLabelWrapper">
+                                                <div class="inputField__label">
+                                                  <label for="image-main" class="form-label">
+                                                    <span>Imagen de perfil</span>
+                                                  </label>
+                                                </div>
+                                              </div>
+                                              <div class="listInlineSelect__selectBox-activeRegion">
+                                                <input type="file" id="facepic" name="facepic" value=<%= user.face_pic %> placeholder="Imagen principal" class="form-input">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <p id="comentario-face_pic"></p>
+    
+                                    <div class='division-container spacing-xl'>
+                                        <div class='division-line'></div>
+                                    </div>
+                                </div>
+
+                                <!-- Botones -->
+                                <div class='section-style spacing-xl'>
+                                    <span class='button button-primary button-full'>
+                                        <span class='button-inner'>
+                                            <button id='signup-button' class='button-input' type='submit'> 
+                                                <span class='button-text'>
+                                                    <span class='default-text'>Continuar</span>
+                                                </span>
+                                            </button>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+
+    <!-- Footer -->
+    <%- include('./partials/footer v2.ejs') %>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <!--Meta Data-->
+            <title>Cazaka Product Detail</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+            
+            <!--Stylesheets para los HTMLs-->
+            <link href="/css/Styles v2 (product).css" rel="stylesheet">
+            <link href="/css/product.css" rel="stylesheet">
+            <link href="/css/flag-icon.css" rel="stylesheet">
+
+            <!--Google link to fonts-->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+            <!--Google Fonts-->
+            <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+            <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+
+
+            <!--Icons-->
+            <script src="https://kit.font-awesome.com/e32b1dc814.js" crossorigin="anonymous"></script>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+        </head>
+
+        <body>
+            <!-- HEADER -------------------------------------------------------------------------------------------------------------->
+            <header class="Header">
+                <!-- MAIN HEADER ** TOP BAR --------------------------------------------------------------> 
+                <div class="main-header-top-bar">
+
+                    <div class="top-bar-left">
+                        <!-- Burger Menu -->
+                        <a class="nav-burger-menu-left nav-burger-menu">
+                            <i class="fas fa-bars"></i>
+                        </a>
+                        
+                        
+                        <div class="Covid-Info">
+                            <img src="/images/Casaka-small-f-negro.png" class="Covid-19" alt="Covid Info">
+                            <p>COVID-19 INFO</p>
+                        </div>
+                    </div>
+
+                    <div class="nav-search">
+                        <form class="nav-searchbar">
+                            <div class="nav-left">
+                                <div class="nav-search-dropdown">
+                                    <span class="nav-search-label">All</span>
+                                    <i class="fas fa-sort-down"></i>
+                                </div>
+
+                            </div>
+                            <div class="nav-fill">
+                                <input type="text" placeholder="search" class="nav-input">
+                            </div>
+                            <div class="nav-right">
+                                <div class="nav-search-submit">
+                                    <input type="submit" class="nav-input" value="Go">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                            </div>
+                            <div id="nav-cover"></div>
+                        </form>
+                    </div>
+
+                    <div class="top-bar-right">
+                        <a class="nav-burger-menu-right nav-burger-menu">
+                            <i class="fas fa-bars"></i>
+                        </a>
+                        <div class="lang-button">
+                            <span class="lang-box">
+                                <span class="lang-box-icon">
+                                    <span class="flag-icon flag-icon-us"></span>
+                                    <i class="fas fa-sort-down"></i>
+                                </span>
+                            </span>
+                        </div>
+                    
+                        <div class="lang-dropdown">
+                            <span class="nav-item">
+                                <span class="nav-text-default">Change language</span>
+                            </span>
+                            <span class="nav-item"> <!--Ingles (por defecto)-->
+                                <span class="nav-text">
+                                    <i class="icp-radio"></i>
+                                    <i class="icp-radio-active"></i>
+                                    English - EN
+                                </span>
+                                <span class="flag-icon flag-icon-us"></span>
+                            </span>
+                            <div class="nav-divider"></div>
+                            <a href="#" class="nav-link"> <!--Español-->
+                                <span class="nav-item">
+                                    <span class="nav-text">
+                                        <i class="icp-radio"></i>
+                                        <i class="icp-radio-active"></i>
+                                        Español - ES
+                                    </span>
+                                    <span class="flag-icon flag-icon-ar"></span>
+                                </span>
+                            </a>
+                            <a href="#" class="nav-link"> <!--Portugues-->
+                                <span class="nav-item">
+                                    <span class="nav-text">
+                                        <i class="icp-radio"></i>
+                                        <i class="icp-radio-active"></i>
+                                        Portugues - PT
+                                    </span>
+                                    <span class="flag-icon flag-icon-br"></span>
+                                </span>
+                            </a>
+                            <a href="#" class="nav-link"> <!--Chino-->
+                                <span class="nav-item">
+                                    <span class="nav-text">
+                                        <i class="icp-radio"></i>
+                                        <i class="icp-radio-active"></i>
+                                        简体中文 - ZH
+                                    </span>
+                                    <span class="flag-icon flag-icon-cn"></span>
+                                </span>
+                            </a>
+                        </div> 
+    
+                        <nav class="nav-right-menu">
+                            <div class="nav-right-items">
+                                <div class="nav-right-item"><a href="#">Sobre nosotros</a></div>
+                                <div class="nav-right-item"><a href="#">Registrate</a></div>
+                                <div class="nav-right-item"><a href="#">Sign in</a></div>
+                            </div>   
+                        </nav> 
+                    </div>
+                </div>
+
+                <!-- MAIN HEADER ** BOTTOM BAR -----------------------------------------------------------> 
+                <div class="main-header-bottom-bar">
+
+                    <nav class="main-menu">
+
+                        <div class="nav-logo">
+                            <img src="/images/Logo-horizontal-f-blanco.png" class="logo-horizontal-b" alt="logo horizontal Casaka"> 
+                        </div>
+
+                        <ul class="nav-groups">
+
+                            <!--CAMISETAS-->
+                            <li class="nav-group">
+                                <a class="nav-group-item"><span class="nav-group-text">Camisetas<i class="fas fa-sort-down header-bottom-arrow"></i></span></a>
+                                <ul class="nav-group-dropdown multi-column">
+                                    <!--Primera columna-->
+                                    <ul class="product-list multi" data-type="camisetas-tipo1">
+                                        <li class="product-list-title title">Camisetas tipo 1</li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta10</a>
+                                        </li>
+                                    </ul>
+                                    <!--Segunda columna-->
+                                    <ul class="product-list multi" data-type="camisetas-tipo2">
+                                        <li class="product-list-title title">Camisetas tipo 2</li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta10</a>
+                                        </li>
+                                    </ul>
+                                    <!--Tercer columna-->
+                                    <ul class="product-list multi" data-type="camisetas-tipo3">
+                                        <li class="product-list-title title">Camisetas tipo 3</li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Camiseta10</a>
+                                        </li>
+                                    </ul>
+                                    <!--Fila inferior con articulos-->
+                                    <ul class="article-list">
+                                        <li class="article-list-title title">For your Inspiration</li>
+                                        <li class="article-list-item">Are You Really A Millenial? check any jersey on social media</li>
+                                        <li class="article-list-item">The Latest Trend: Getting your favorite jersey signed</li>
+                                        <li class="article-list-item">5 things you didnt know about your favorite team jersey</li>
+                                    </ul>
+                                    <!--Imágenes de titulos-->
+                                    <img src='./images/national-jerseys.jpeg' class="product-image" data-match="camisetas-tipo1">
+                                    <img src='./images/signed-jerseys.jpeg' class="product-image" data-match="camisetas-tipo2">
+                                    <img src='./images/Authentic-jerseys.jpeg' class="product-image" data-match="camisetas-tipo3">
+                                </ul>
+                            </li>   <!-- ^ Cammisetas ^ -->
+
+                            <!--CLUBES-->
+                            <li class="nav-group">
+                                <a class="nav-group-item"><span class="nav-group-text">Clubes<i class="fas fa-sort-down header-bottom-arrow"></i></span></a>
+                                <ul class="nav-group-dropdown multi-column">
+                                    <!--Primera columna-->
+                                    <ul class="product-list multi">
+                                        <li class="product-list-title title">Clubes tipo 1</li>
+                                        <li class="product-list-item">
+                                            <a>Clubes1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes10</a>
+                                        </li>
+                                    </ul>
+                                    <!--Segunda columna-->
+                                    <ul class="product-list multi">
+                                        <li class="product-list-title title">Clubes tipo 2</li>
+                                        <li class="product-list-item">
+                                            <a>Clubes1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes10</a>
+                                        </li>
+                                    </ul>
+                                    <!--Tercer columna-->
+                                    <ul class="product-list multi">
+                                        <li class="product-list-title title">Clubes tipo 3</li>
+                                        <li class="product-list-item">
+                                            <a>Clubes1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Clubes10</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="article-list">
+                                        <li class="article-list-title title">For your Inspiration</li>
+                                        <li class="article-list-item">Are You Really A Millenial If You't Shop At Ikea?</li>
+                                        <li class="article-list-item">The Latest Trend: Purchasing Tables from Hipster Cafes</li>
+                                        <li class="article-list-item">15 Uncomfortable but Instagram-Worthy Chairs For Your Home Office</li>
+                                    </ul>
+                                </ul>
+                            </li>   <!-- ^ Clubes ^ -->
+
+                            <!--LIGAS-->
+                            <li class="nav-group">
+                                <a class="nav-group-item"><span class="nav-group-text">Ligas<i class="fas fa-sort-down header-bottom-arrow"></i></span></a>
+                                <ul class="nav-group-dropdown multi-column">
+                                    <!--Primera columna-->
+                                    <ul class="product-list multi">
+                                        <li class="product-list-title title">Ligas tipo 1</li>
+                                        <li class="product-list-item">
+                                            <a>Ligas1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas10</a>
+                                        </li>
+                                    </ul>
+                                    <!--Segunda columna-->
+                                    <ul class="product-list multi">
+                                        <li class="product-list-title title">Ligas tipo 2</li>
+                                        <li class="product-list-item">
+                                            <a>Ligas1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas10</a>
+                                        </li>
+                                    </ul>
+                                    <!--Tercer columna-->
+                                    <ul class="product-list multi">
+                                        <li class="product-list-title title">Ligas tipo 3</li>
+                                        <li class="product-list-item">
+                                            <a>Ligas1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Ligas10</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="article-list">
+                                        <li class="article-list-title title">For your Inspiration</li>
+                                        <li class="article-list-item">Are You Really A Millenial If You't Shop At Ikea?</li>
+                                        <li class="article-list-item">The Latest Trend: Purchasing Tables from Hipster Cafes</li>
+                                        <li class="article-list-item">15 Uncomfortable but Instagram-Worthy Chairs For Your Home Office</li>
+                                    </ul>
+                                </ul>
+                            </li>   <!-- ^ Ligas ^ -->
+
+                            <!--SELECCIONADOS-->
+                            <li class="nav-group">
+                                <a class="nav-group-item"><span class="nav-group-text">Seleccionados<i class="fas fa-sort-down header-bottom-arrow"></i></span></a>
+                                <ul class="nav-group-dropdown multi-column">
+                                    <!--Primera columna-->
+                                    <ul class="product-list multi">
+                                        <li class="product-list-title title">Seleccionados tipo 1</li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados10</a>
+                                        </li>
+                                    </ul>
+                                    <!--Segunda columna-->
+                                    <ul class="product-list multi">
+                                        <li class="product-list-title title">Seleccionados tipo 2</li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados10</a>
+                                        </li>
+                                    </ul>
+                                    <!--Tercer columna-->
+                                    <ul class="product-list multi">
+                                        <li class="product-list-title title">Seleccionados tipo 3</li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Seleccionados10</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="article-list">
+                                        <li class="article-list-title title">For your Inspiration</li>
+                                        <li class="article-list-item">Are You Really A Millenial If You't Shop At Ikea?</li>
+                                        <li class="article-list-item">The Latest Trend: Purchasing Tables from Hipster Cafes</li>
+                                        <li class="article-list-item">15 Uncomfortable but Instagram-Worthy Chairs For Your Home Office</li>
+                                    </ul>
+                                </ul>
+                            </li>   <!-- ^ Seleccionados ^ -->
+
+                            <!--COLECCIONABLES-->
+                            <li class="nav-group">
+                                <a class="nav-group-item"><span class="nav-group-text">Coleccionables</span><i class="fas fa-sort-down header-bottom-arrow"></i></a>
+                                <ul class="nav-group-dropdown multi-column">
+                                    <!--Primera columna-->
+                                    <ul class="product-list multi">
+                                        <li class="product-list-title title">Coleccionables tipo 1</li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables10</a>
+                                        </li>
+                                    </ul>
+                                    <!--Segunda columna-->
+                                    <ul class="product-list multi">
+                                        <li class="product-list-title title">Coleccionables tipo 2</li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables10</a>
+                                        </li>
+                                    </ul>
+                                    <!--Tercer columna-->
+                                    <ul class="product-list multi">
+                                        <li class="product-list-title title">Coleccionables tipo 3</li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables1</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables2</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables3</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables4</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables5</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables6</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables7</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables8</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables9</a>
+                                        </li>
+                                        <li class="product-list-item">
+                                            <a>Coleccionables10</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="article-list">
+                                        <li class="article-list-title title">For your Inspiration</li>
+                                        <li class="article-list-item">Are You Really A Millenial If You't Shop At Ikea?</li>
+                                        <li class="article-list-item">The Latest Trend: Purchasing Tables from Hipster Cafes</li>
+                                        <li class="article-list-item">15 Uncomfortable but Instagram-Worthy Chairs For Your Home Office</li>
+                                    </ul>
+                                </ul>
+                            </li>   <!-- ^ Coleccionables ^ -->
+                        </ul>
+                        
+                        <div class="main-menu-right">
+                            <a href="#" alt="Favorites"><i class="fas fa-heart"></i></a>
+                            <a href="#" alt="Shopping Cart"><i class="fas fa-shopping-cart" id="shopping-cart-top-menu"></i></a>
+                        </div>
+
+                    </nav>
+
+                </div>
+
+            </header>
+
+            <div class="clear10px"></div>
+
+            <!-- MAIN ---------------------------------------------------------------------------------------------------------------->
+            <main>
+                <!--Pagina principal: permite configurar el cuerpo central-->
+                <div class="main-container">
+
+                    <!--First row: encabezado del cuerpo principal-->
+                    <div class="row-upper">
+                        <div class="go_back">
+                            <a href="../" class="go_back-button">
+                                <i class="fas fa-chevron-left"></i>
+                                Volver atrás
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--Middle row: cuerpo principal. Contiene imagen, detalle y canasta del producto-->
+                    <div class="row-middle">
+
+                        <!--Imagen: es un cuadro con todo lo que refiere a imagen del producto-->
+                        <div class="col-imagen">
+                            <div class="product-img-block">
+                                <!--Galeria: imágenes disponibles del producto en formato pequeño-->
+                                <div class="product-img-box">
+                                    <div class="more-views">
+                                        <img id="img-gal-ppal" class="gallery-thumb" src="/images/camiseta3_frente.jpeg">
+                                        <img id="img-gal-back" class="gallery-thumb" src="/images/camiseta3_dorso.jpeg">
+                                        <!--<img id="img-gal-side" class="gallery-thumb" src="/">-->
+                                    </div>
+                                    <div class="product-img">
+                                        <img id="img-ppal" class="mainimg-big" src="/images/camiseta3.jpeg" width="100%">
+                                    </div>
+                                </div>
+
+                                <p class="caption">Pasa el mouse sobre la imagen para resaltar y haz click para hacer zoom</p>   
+                            </div>
+                        </div>  <!--Col-imagen-->
+                            
+                        <!--Detalle: este cuadro contiene unicamente detalles técnicos del producto-->
+                        <div class="col-detalle">
+
+                            <div class="product-name">
+                                <h1>Nike Youth Soccer Liverpool Home Jersey</h1>
+                                <h3>Camiseta del Liverpool Titular</h3>
+                                <div class="rating-container">
+                                    <div class="rating-box">
+                                        <img src="/images/rating-stars.png" width="100px">
+                                    </div>
+                                    <div class="rating-text">
+                                        <span>25 Calificaciones</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <dl class="product-options">
+                                <dt class="size-name">  
+                                    <label>Talle - Medium</label>
+                                </dt>
+                                <dl class="size-option">
+                                    <div class="input-box">
+                                        <select>
+                                            <option title="Small" class="size-options">Small</option>
+                                            <option title="Medium" class="size-options">Medium</option>
+                                            <option title="Large" class="size-options">Large</option>
+                                            <option title="Extra" class="size-options">Extra-Large</option>
+                                        </select>
+                                    </div>
+                                </dl>
+                            </dl>
+
+                            <div class="product-detail">
+                                <p class="availability">Disponibilidad: <span>Solo 1 en stock</span></p>
+                                <p class="brand">Marca: <span>Nike en Argentina</span></p>
+                                <p class="weight">Peso paquete: <span>0.850 kg</span></p>
+                                <p class="return-option">Acepta devolucion: <span>No</span></p>
+                                <p class="time-shipping">Tiempo de entrega: <span>24hs</span></p>
+                            </div>
+
+                            <div class="product-description">
+                                <ul>
+                                    <p class="product-desc"><li>Jersey</li></p>
+                                    <p class="product-desc"><li>La tecnología Dri-FIT te ayuda a mantenerte seco y cómodo...</li></p>
+                                    <p class="product-desc"><li>El diseño auténtico sigue el modelo de lo que usan los profesionales en los partidos en casa...</li></p>
+                                    <p class="product-desc"><li>Ajuste estándar para una sensación relajada y cómoda</li></p>
+                                    <p class="product-desc"><li>100% poliéster reciclado</li></p>
+                                </ul>
+                            </div>
+    
+                        </div>  <!--Col-detalle-->
+                        
+                        <!--Carrito: cuadro con las distintas opciones de compra-->
+                        <div class="col-basket">
+
+                            <div class="price-currency">
+                                <div class="price-original">
+                                    Precio: 
+                                    <span>AR$ 12.000</span>
+                                </div>
+                                <div class="price-saving">
+                                    Ahorras: 
+                                    <span>AR$ 1.500</span>
+                                     (
+                                    <span>AR$ 12.000</span>
+                                     )
+                                </div>
+                            </div>
+
+                            <div class="clear10px"></div>
+
+                            <div class="price-box">
+                                <div class="price-value">
+                                    <span>AR$ 10.500</span>
+                                </div>
+                                <div class="clear10px"></div>
+                                <div class="price-taxes">
+                                    <span>Incluye impuesto PAIS y percepción AFIP. Podés recuperar AR$ 1.125 de esta compra</span>
+                                </div>
+                                <div class="clear10px"></div>
+                                <div class="price-add-to-cart">
+                                    <p>
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <strong>Agregá el producto al carrito </strong>
+                                        para conocer los costos de envío y/o impuestos
+                                    </p>
+                                </div>
+                                <div class="clear10px"></div>
+                                <div class="price-delivery-promise">
+                                    <span>Recibí este producto de 15 y 20 días hábiles según la localidad y método de envío que selecciones al finalizar tu orden</span>
+                                </div>
+                            </div>
+
+                            <div class="payment-detail">
+                                <div class="cuotas-contenedor">
+                                    <div class="cuotas-promo">
+                                        <div class="payment-icon">
+                                            <i class="far fa-credit-card"></i>
+                                        </div>
+                                        <span class="installments">Hasta 3 cuotas sin interés pagando con <strong>Santander Rio</strong></span>
+                                    </div>
+                                    <div class="cuotas12">
+                                        <div class="payment-icon">
+                                            <i class="far fa-credit-card"></i>
+                                        </div>
+                                        <span class="installments">Hasta 12 cuotas fijas con todas las tarjetas</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="add-to-cart">
+                                <div class="payment-parameters">
+                                    <div class="qtty-box">
+                                        <label for="qtty">Cantidad</label>
+                                        <input type="text" name="qtty" id="qtty" value="1" class="input-text">
+                                    </div>
+                                    <img src="/images/tarjetas-gris-ar.webp" class="img-available-cards">
+                                </div>
+                                <div class="cart-buttons">
+                                    <form>
+                                        <button type="button" title="Comprar" class="button-buy">Comprar</button>
+                                    </form>
+                                    <div class="clear10px"></div>
+                                    <form>
+                                    <button type="button" title="Agregar al carrito" class="button-add-to-cart">Agregar al carrito</button>
+                                    </form>
+                                    <div class="clear10px"></div>
+                                </div>
+                            </div>            
+                        </div>   <!--Col-basket--> 
+
+                    </div>  <!--Middle row-->
+
+                    <div class="product-detail-bottom">
+                        <h3>Más detalles del producto</h3>
+                        <p>Representa a tu equipo con la camiseta de local del Liverpool FC Stadium. La tela altamente transpirable ayuda a mantener el sudor alejado de la piel, para que se mantenga fresco y cómodo en el campo o en las gradas. Este producto está elaborado con tejido de poliéster 100% reciclado.</p>
+                    </div>
+
+                    <!--Bottom row: contiene ofertas relacionadas-->
+                    <div class="row-bottom">
+
+                        <div class="title">
+                            <h2>Productos similares</h2>
+                        </div>
+
+                        <div class="carousel">
+
+                            <!--Carrusel de productos similares-->
+                            <ul class="products-slider">
+
+                                <!--Primer item del carousel-->
+                                <li id="item_0" class="slider-item">
+                                    <div class="item_image">
+                                        <img src="/images/camiseta1.jpeg">
+                                    </div>
+                                    <div class="item_description">
+                                        <h4>JUVENTUS 21/22 HOME JERSEY BY ADIDAS</h4>
+                                        <div class="price-discount">
+                                            <span class="price-list">AR$ 2.750</span>
+                                            <span class="discount">50% OFF</span>
+                                        </div>
+                                        <div class="price-box">
+                                            <p>AR$ 1.380</p>
+                                        </div>
+                                        <div class="item_afip">
+                                            <p>Incluye impuesto PAIS y percepción AFIP</p>
+                                        </div>
+                                        <div class="fav-icon">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <div class="clear20px"></div>
+                                        <div>
+                                            <span class="free-delivery"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--Segundo item del carousel-->
+                                <li id="item_1" class="slider-item">
+                                    <div class="item_image">
+                                        <img src="/images/camiseta2.jpeg">
+                                    </div>
+                                    <div class="item_description">
+                                        <h4>INTER MILAN 21/22 HOME JERSEY BY NIKE</h4>
+                                        <div class="price-discount">
+                                            <span class="price-list">AR$ 2.750</span>
+                                            <span class="discount">50% OFF</span>
+                                        </div>
+                                        <div class="price-box">
+                                            <p>AR$ 1.380</p>
+                                        </div>
+                                        <div class="item_afip">
+                                            <p>Incluye impuesto PAIS y percepción AFIP</p>
+                                        </div>
+                                        <div class="fav-icon">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <div class="clear20px"></div>
+                                        <div>
+                                            <span class="free-delivery"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--Tercer item del carousel-->
+                                <li id="item_2" class="slider-item">
+                                    <div class="item_image">
+                                        <img src="/images/camiseta4.jpeg">
+                                    </div>
+                                    <div class="item_description">
+                                        <h4>JUVENTUS 21/22 HOME JERSEY BY ADIDAS</h4>
+                                        <div class="price-discount">
+                                            <span class="price-list">AR$ 2.750</span>
+                                            <span class="discount">50% OFF</span>
+                                        </div>
+                                        <div class="price-box">
+                                            <p>AR$ 1.380</p>
+                                        </div>
+                                        <div class="item_afip">
+                                            <p>Incluye impuesto PAIS y percepción AFIP</p>
+                                        </div>
+                                        <div class="fav-icon">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <div class="clear20px"></div>
+                                        <div>
+                                            <span class="free-delivery"></span>
+                                        </div>
+                                    </div>
+                                <!--Cuarto item del carrusel-->
+                                </li>
+                                <!--Cuarto item del carousel-->
+                                <li id="item_3" class="slider-item">
+                                    <div class="item_image">
+                                        <img src="/images/camiseta5.jpeg" width="160px" height="160px">
+                                    </div>
+                                    <div class="item_description">
+                                        <h4>ITALY EURO 20/21 HOME JERSEY BY PUMA</h4>
+                                        <div class="price-discount">
+                                            <span class="price-list">AR$ 2.750</span>
+                                            <span class="discount">50% OFF</span>
+                                        </div>
+                                        <div class="price-box">
+                                            <p>AR$ 1.380</p>
+                                        </div>
+                                        <div class="item_afip">
+                                            <p>Incluye impuesto PAIS y percepción AFIP</p>
+                                        </div>
+                                        <div class="fav-icon">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <div class="clear20px"></div>
+                                        <div>
+                                            <span class="free-delivery"></span>
+                                        </div>
+                                    </div>
+                                <!--Quinto item del carousel-->
+                                </li>
+                                <!--Quinto item del carousel-->
+                                <li id="item_4" class="slider-item">
+                                    <div class="item_image">
+                                        <img src="/images/camiseta6.jpeg">
+                                    </div>
+                                    <div class="item_description">
+                                        <h4>ADIDAS ARSENAL TRAINING JERSEY 21/22</h4>
+                                        <div class="price-discount">
+                                            <span class="price-list">AR$ 2.750</span>
+                                            <span class="discount">50% OFF</span>
+                                        </div>
+                                        <div class="price-box">
+                                            <p>AR$ 1.380</p>
+                                        </div>
+                                        <div class="item_afip">
+                                            <p>Incluye impuesto PAIS y percepción AFIP</p>
+                                        </div>
+                                        <div class="fav-icon">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                        <div class="clear20px"></div>
+                                        <div>
+                                            <span class="free-delivery"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>   <!--Carousel de productos similares-->
+
+                            <!--Next and Previous buttons-->
+                            <a class="prev">&#10094</a>
+                            <a class="next">&#10095</a>
+                        </div>
+                    </div>  <!--Row bottom-->
+
+                </div>  <!--Main container-->
+
+            </main>
+
+            <!-- FOOTER -------------------------------------------------------------------------------------------------------------->
+            <footer class="main-footer">
+
+                <!-- FOOTER ** TOP BAR ------------------------------------------------------------------->
+                <div class="main-footer-top-bar">
+
+                    <div class="bottom-logo">
+                        <img src="/images/logo-footer.png" class="Logo-vertical-f-negro" alt="Logo Fondo Negro"> 
+                    </div>
+                    
+                    <nav class="Menu-Footer-resumidos">
+                        <ul>
+                            <li> <a href="#" class="Titulo-Menu">INFORMACION UTIL</a></li>
+                            <li> <a href="#" class="Titulo-Menu">AYUDA</a></li>
+                            <li> <a href="#" class="Titulo-Menu">CONOCENOS</a></li>
+                        </ul>   
+                    </nav> 
+                    
+                    <div class="bottom-menus">
+                        <nav class="bot-men-item Informacion-Util">
+                            <ul>
+                                <li class="bottom-titles"> <a href="#" class="Titulo-Menu">INFORMACION UTIL</a></li>
+                                <li class="bottom-items"> <a href="#">Politicas de Privacidad</a></li>
+                                <li class="bottom-items"> <a href="#">Medios de Pago</a></li>
+                                <li class="bottom-items"> <a href="#">Protocolo Covid-19</a></li>
+                                <li class="bottom-items"> <a href="#">Términos y condiciones</a></li>
+                                <li class="bottom-items"> <a href="#">Defensa del Consumidor</a></li>
+                            </ul>   
+                        </nav> 
+                
+                        <nav class="bot-men-item Ayuda">
+                            <ul>
+                                <li class="bottom-titles"> <a href="#" class="Titulo-Menu">AYUDA</a></li>
+                                <li class="bottom-items"> <a href="#">Preguntas Frecuentes</a></li>
+                                <li class="bottom-items"> <a href="#">Sucursales</a></li>
+                                <li class="bottom-items"> <a href="#">Pagos</a></li>
+                                <li class="bottom-items"> <a href="#">Entregas</a></li>
+                                <li class="bottom-items"> <a href="#">Cambios</a></li>
+                            </ul>   
+                        </nav>
+            
+                        <nav class="bot-men-item Conocenos">
+                            <ul>
+                                <li class="bottom-titles"> <a href="#" class="Titulo-Menu">CONOCENOS</a></li>
+                                <li class="bottom-items"> <a href="#">Nuestra Historia</a></li>
+                                <li class="bottom-items"> <a href="#">Trabaja con Nosotros</a></li>
+                                <li class="bottom-items"> <a href="#">Contáctanos</a></li>
+                                <li class="bottom-items"> <a href="#"><i class="fab fa-whatsapp"></i>  11-5799-0114</a></li>
+                            </ul>   
+                        </nav>
+                    </div>
+        
+                </div>
+
+                <!-- division ------------------------------------->
+                <div class="clear10px"></div>
+
+                <hr class="horizontal-bar">
+                
+                <!-- FOOTER ** BOTTOM BAR ---------------------------------------------------------------->
+                <div class="main-footer-bottom-bar">
+                    
+                    <div class="redes-sociales">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a> 
+                    </div> 
+                    <p class="COPYRIGHT">
+                        COPYRIGHT © 2021 The Argies INC. ALL RIGHTS RESERVED
+                    </p> 
+          
+                </div>
+
+            </footer>
+
+        </body>
+
+    </html>

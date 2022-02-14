@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('./partials/head.ejs',{titulo:"Signup",stylesFile:"styles2.css"}) %>
+<body>
+  <script type="text/javascript" src="js/signupvalidations.js"></script>
+    <!-- Header -->
+    <%- include('./partials/header v2.ejs') %>
+    
+    
+    <!-- Signin -->
+
+<main>
+
+
+
+<form id="form" action="/signup" enctype="multipart/form-data" style="border:1px solid #ccc" method="POST">
+    <div class="container">
+      <h1>Crear usuario</h1>
+
+      
+      
+      <% if(locals.errores && errores != undefined){ %>
+        <% errores.errors.forEach(error =>{ if(typeof error.msg != 'object'){ %>
+            <t3> <%= error.msg %> </t3>
+            <br>
+        <% }}) %>
+        
+        
+      <% } %>
+
+      <br>
+
+      <p>Por favor, completar para crear una cuenta:</p>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Ingresar Email" name="email" id="email-input" value="<%= locals.old && old.email? old.email:'' %>">
+      <p id="comentario-email"></p>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" id="password-input" placeholder="Ingrese Password" name="psw">
+      <p id="comentario-psw"></p>
+  
+      <label for="pswrepeat"><b>Repita el Password</b></label>
+      <input type="password" placeholder="Repita Password" name="pswrepeat">
+      <p id="comentario-pswrepeat"></p>
+  
+      
+      
+      <br>
+      
+      <h3>Agruegue datos adicionales:</h3>
+         <br>
+   
+         
+         <label for="first_name"><b>Nombre</b></label>
+         <input type="text" placeholder="su nombre..." name="first_name" value="<%= locals.old && old.first_name? old.first_name:''%>">
+         <p id="comentario-first_name"></p> 
+
+
+         <label for="last_name"><b>Apellido</b></label>
+         <input type="text" placeholder="su apellido..." name="last_name" value="<%= locals.old && old.last_name? old.last_name:''%>">
+         <p id="comentario-last_name"></p>
+         
+         <label for="pais"><b>Pais</b></label>
+         <input type="text" placeholder="Ingresar pais" name="pais" value="<%= locals.old && old.pais? old.pais:''%>">
+         <p id="comentario-pais"></p>
+
+         <label for="face_pic"><b>Foto de Cara</b></label>
+         <input  type="file" id="facepic" placeholder="Subir foto de cara" name="face_pic">
+         <p id="comentario-face_pic"></p>
+
+        
+    
+        <label>
+        <input type="checkbox" checked="<%= locals.admin && old.admin === 'on'? 'on':''%>" name="admin" style="margin-bottom:15px"> Soy usuario administrador
+        </label>
+        
+        <label>
+        <input type="checkbox" checked="<%= locals.old && old.mayor === 'on'? 'on':''%>" name="mayor" style="margin-bottom:15px"> Soy mayor de 13 años
+        </label>
+
+  
+      <p>Al crear la cuenta, adhiero a nuestros <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+  
+      <div class="clearfix">
+        <button type="reset" id="cancel-button" class="cancelbtn">Cancelar</button>
+        <button type="submit" name="sumbit" id="signup-button" class="signupbtn">Crear cuenta</button>
+      </div>
+    </div>
+  </form>
+
+
+</main>
+
+    <!-- Footer -->
+    <%- include('./partials/footer v2.ejs') %>
+    
+    
+
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+main {
+    background-color: white;
+    color: black;
+    font-family: Roboto;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+
+}
+
+.Cart {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 66%;
+    padding: 30px 10px;
+    padding-left: 30px;
+    border: 40px;
+
+}
+
+.Titles-Cart {
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 11px;
+    margin-bottom: 11px;
+    width: 95%;
+    border-top: 2px gray solid;
+    border-bottom: 2px gray solid;
+    
+}
+
+.items-title {
+    width: 60%;
+    text-align: left;
+}
+
+.precio-title {
+    width: 20%;
+    text-align: center;
+}
+
+.cantidad-title {
+    width: 20%;
+    text-align: center;
+}
+
+
+.Cart-Content {
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
+
+.Cart-Content img {
+    width: 20%;
+    padding: 0px 5px;
+}
+
+.detalle-producto {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    padding: 0px 5px;
+
+}
+
+.precio-producto {
+    width: 20%;
+    padding: 0px 5px;
+    text-align: center;
+}
+
+.dropdown-unidades {
+    width: 20%;
+    align-content: center;
+    padding: 0px 5px;
+}
+
+
+
+.subtotal {
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:flex-end;
+    align-items: center;
+    padding: 10px 0;
+    width: 95%;
+    border-top: 2px solid gray;
+    
+}
+
+.subtotal-titulo{
+    width:80%;
+    padding: 0px 0px;
+    text-align: right;
+}
+
+.subtotal-precio{
+    width: 20%;
+    padding: 0px 5px;
+    text-align: right;
+}
+
+.Summary {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: gray;
+    width: 33%;
+    padding: 0px 3px;
+    border: 20px;
+}
+
+.subtotal-summary {
+    text-align: right;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    
+    width: 95%;
+}
+
+.Summary h4{
+    width:74%;
+    padding: 5px 5px;
+    font-size: 9px;
+    text-align: left
+}
+
+.Summary h5{
+    width: 26%;
+    font-size: 8px;
+    padding: 5px 5px;
+    text-align: right;
+}
+
+.shipping {
+    text-align: right;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 95%;
+}
+
+.taxes {
+    text-align: right;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 95%;
+    padding-bottom: 8px;
+    border-bottom: 2px solid white;
+}
+
+.total-a-pagar {
+    text-align: right;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content:space-around;
+    width: 95%;
+}
+
+.submit-purchase {
+    display:block;
+    text-align: center;
+    font-size: 18px;
+    width: 95%;
+
+}
+
+
+
+@media (min-width: 510px){
+
+    
+
+    
+
+    .Summary h4{
+        
+        font-size: 10px;
+        text-align: left
+    }
+    
+    .Summary h5{
+        
+        font-size: 10px;
+        
+    }
+
+    
+
+    
+}
+
+
+
+@media (min-width: 650px){
+
+    
+
+    
+
+}
+
+
+
+@media (min-width: 1025px){
+
+    
+
+
+}

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Head -->
+    <% if(locals.usuarioCheckIn && usuarioCheckIn.seleccionFarofita){%>
+        <t3> <%- include('./partials/head.ejs',{titulo:"Hola, fanatico de "+ usuarioCheckIn.seleccionFarofita,stylesFile:"styles.css"}) %></t3>
+    <% }else{ %>
+        <%- include('./partials/head.ejs',{titulo:"Bienvenido a Casaka",stylesFile:"styles.css"}) %>
+    <% }%>
+<body>
+    
+    <!-- Header -->
+    <%- include('./partials/header v2.ejs') %>
+
+    <svg width='0' height='0' style='position:absolute; display: none'>
+        <symbol viewbox='0 0 30 20' id='sale' xmlns='http://www.w3.org/2000/svg'>
+            <g transform="translate(6 2)" fill="#FFF" fill-rule="evenodd">
+                <path d="M10.336.03L.049 10.317l7.66 7.66L17.997 7.692 18 .027 10.336.03zm6.814 7.31l-9.44 9.44-6.464-6.463 9.44-9.44 6.467-.003-.003 6.466z"></path>
+                <circle transform="rotate(-45 13.84 4.176)" cx="13.84" cy="4.176" r="1.328"></circle>
+                <path d="M9.633 6.39c-.206 0-.41.042-.6.125a1.918 1.918 0 00-.953.973 1.578 1.578 0 00-.105.632c.01.233.054.464.129.685.086.258.186.512.299.76.063.133.116.272.159.414.032.108.049.221.049.334a.66.66 0 01-.066.28.958.958 0 01-.426.42.618.618 0 01-.27.055.706.706 0 01-.283-.07 1.007 1.007 0 01-.284-.206 1.204 1.204 0 01-.205-.274.737.737 0 01-.09-.328.837.837 0 01.078-.373 1.38 1.38 0 01.297-.407l-.859-.86a2.237 2.237 0 00-.505.72 1.722 1.722 0 00-.138.709c.007.23.058.456.151.666.094.212.216.412.362.593l-.589.588.473.473.591-.592c.182.152.386.276.605.367.196.082.405.126.617.13.206.001.41-.04.599-.12.429-.198.77-.546.96-.979.078-.201.114-.417.107-.633a2.522 2.522 0 00-.125-.686 8.726 8.726 0 00-.287-.763 3.753 3.753 0 01-.16-.437 1.152 1.152 0 01-.05-.335c0-.093.02-.185.061-.268a.966.966 0 01.404-.404.61.61 0 01.526-.024c.103.045.195.11.271.19a.688.688 0 01.217.57c-.02.217-.148.444-.386.682l.859.859a2.42 2.42 0 00.458-.616c.103-.199.167-.416.19-.639a1.638 1.638 0 00-.069-.639 1.978 1.978 0 00-.318-.61l.645-.644-.475-.476-.636.636a2.194 2.194 0 00-.607-.36 1.735 1.735 0 00-.62-.118z"></path> 
+            </g>
+        </symbol>
+    </svg>
+    <svg width='13px' height='13px' xlmns='http://www.w3.org/2000/svg' style='display: none'>
+        <symbol viewbox='0 0 25 25' id='star' xlmns='http://www.w3.org/2000/svg'>
+            <path d="M24.8676481,9.0008973 C24.7082329,8.54565507 24.2825324,8.23189792 23.7931772,8.20897226 L16.1009423,8.20897226 L13.658963,0.793674161 C13.4850788,0.296529881 12.9965414,-0.0267985214 12.4623931,0.00174912135 L12.4623931,0.00174912135 C11.9394964,-0.00194214302 11.4747239,0.328465149 11.3146628,0.81767189 L8.87268352,8.23296999 L1.20486846,8.23296999 C0.689809989,8.22949161 0.230279943,8.55030885 0.0640800798,9.0294023 C-0.102119784,9.50849575 0.0623083246,10.0383495 0.472274662,10.3447701 L6.69932193,14.9763317 L4.25734261,22.4396253 C4.08483744,22.9295881 4.25922828,23.4727606 4.68662933,23.7767181 C5.11403038,24.0806756 5.69357086,24.0736812 6.11324689,23.7595003 L12.6333317,18.9599546 L19.1778362,23.7595003 C19.381674,23.9119158 19.6299003,23.9960316 19.8860103,23.9994776 C20.2758842,24.0048539 20.6439728,23.8232161 20.8724402,23.5127115 C21.1009077,23.202207 21.1610972,22.8017824 21.0337405,22.4396253 L18.5917612,14.9763317 L24.6967095,10.3207724 C25.0258477,9.95783882 25.0937839,9.43328063 24.8676481,9.0008973 Z" fill="#ddd"></path>
+            <polygon points="" fill="#8C8264"></polygon>
+        </symbol>
+        <symbol viewbox='0 0 25 25' id='star-filled' xlmns='http://www.w3.org/2000/svg'>
+            <path d="M24.8676481,9.0008973 C24.7082329,8.54565507 24.2825324,8.23189792 23.7931772,8.20897226 L16.1009423,8.20897226 L13.658963,0.793674161 C13.4850788,0.296529881 12.9965414,-0.0267985214 12.4623931,0.00174912135 L12.4623931,0.00174912135 C11.9394964,-0.00194214302 11.4747239,0.328465149 11.3146628,0.81767189 L8.87268352,8.23296999 L1.20486846,8.23296999 C0.689809989,8.22949161 0.230279943,8.55030885 0.0640800798,9.0294023 C-0.102119784,9.50849575 0.0623083246,10.0383495 0.472274662,10.3447701 L6.69932193,14.9763317 L4.25734261,22.4396253 C4.08483744,22.9295881 4.25922828,23.4727606 4.68662933,23.7767181 C5.11403038,24.0806756 5.69357086,24.0736812 6.11324689,23.7595003 L12.6333317,18.9599546 L19.1778362,23.7595003 C19.381674,23.9119158 19.6299003,23.9960316 19.8860103,23.9994776 C20.2758842,24.0048539 20.6439728,23.8232161 20.8724402,23.5127115 C21.1009077,23.202207 21.1610972,22.8017824 21.0337405,22.4396253 L18.5917612,14.9763317 L24.6967095,10.3207724 C25.0258477,9.95783882 25.0937839,9.43328063 24.8676481,9.0008973 Z" fill="#8C8264"></path>
+            <polygon points="" fill="#8C8264"></polygon>
+        </symbol>
+    </svg>
+    
+<main>
+    
+
+    <!--     <div class="banner">
+            <img width=100% src="images/chelseabanner.JPG">
+        </div> -->
+
+    <div class='main-banner'>
+        <a>
+            <figure class='component-figure'>
+                <picture class='main-component-figure'>
+                    <img class='main-ban-img' width=100% src="images/chelseabanner.JPG">
+                </picture>
+                <figcaption class='main-headlinebanner-container'>
+                    <div class='main-headlinebanner-text'>
+                        <a class='main-btn-buy'>
+                            Comprar
+                        </a>
+                    </div>
+                </figcaption>
+            </figure>
+        </a>
+    </div>
+
+    <!--     <div class="banners">
+            <div class="filauno">
+                <img class="novedades" src="images/spurs.JPG">
+                <img class="novedades" src="images/unitedbaner.JPG">
+            </div>
+            <div class="filauno">
+                <img class="novedades" src="images/mexicobanner.JPG">
+                <img class="novedades" src="images/estadosunidosbanner.JPG">
+            </div>
+        </div> -->
+
+    <!-- Banners Fila1 -->
+    <div class='row-banners hflex'>
+        <div class='banner-item' ban-row='first' side='left'>
+            <div>
+                <a>
+                    <figure class='image-card pos-rel component-figure'>
+                        <picture>
+                            <img class="ban-img component-image" src="images/spurs.JPG">
+                        </picture>
+                        <figcaption class='headlinebanner-container'>
+                            <div class='headlinebanner-text headlinebanner-heading'>
+                                <span class='headlinebanner-wrap'>
+                                </span>
+                                <a class='btn-buy'>
+                                    Comprar
+                                </a>
+                            </div>
+                        </figcaption>
+                        <a class='banner-ref'>
+                            
+                        </a>
+                    </figure>
+                </a>
+            </div>
+        </div>
+        <div class='banner-item' ban-row='first' side='right'>
+            <div>
+                <a>
+                    <figure class='image-card pos-rel component-figure'>
+                        <picture>
+                            <img class="ban-img component-image" src="images/unitedbaner.JPG">
+                        </picture>
+                        <figcaption class='headlinebanner-container'>
+                            <div class='headlinebanner-text headlinebanner-heading'>
+                                <span class='headlinebanner-wrap'>
+                                </span>
+                                <a class='btn-buy'>
+                                    Comprar
+                                </a>
+                            </div>
+                        </figcaption>
+                        <a class='banner-ref'>
+                            
+                        </a>
+                    </figure>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banners Fila2 -->
+    <div class='row-banners hflex'>
+        <div class='banner-item' ban-row='second' side='left'>
+            <div>
+                <a>
+                    <figure class='image-card pos-rel component-figure'>
+                        <picture>
+                            <img class="ban-img component-image" src="images/mexicobanner.JPG">
+                        </picture>
+                        <figcaption class='headlinebanner-container'>
+                            <div class='headlinebanner-text headlinebanner-heading'>
+                                <span class='headlinebanner-wrap'>
+                                </span>
+                                <a class='btn-buy'>
+                                    Comprar
+                                </a>
+                            </div>
+                        </figcaption>
+                        <a class='banner-ref'>
+                            
+                        </a>
+                    </figure>
+                </a>
+            </div>
+        </div>
+        <div class='banner-item' ban-row='second' side='right'>
+            <div>
+                <a>
+                    <figure class='image-card pos-rel component-figure'>
+                        <picture>
+                            <img class="ban-img component-image" src="images/estadosunidosbanner.JPG">
+                        </picture>
+                        <figcaption class='headlinebanner-container'>
+                            <div class='headlinebanner-text headlinebanner-heading'>
+                                <span class='headlinebanner-wrap'>
+                                </span>
+                                <a class='btn-buy'>
+                                    Comprar
+                                </a>
+                            </div>
+                        </figcaption>
+                        <a class='banner-ref'>
+                            
+                        </a>
+                    </figure>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner de sugerencias --------------->
+    
+    <!-- Picked for you -->
+    <section class="pickedForYou">
+        <div class='titulo-articulos row'>
+            <div class='width-style pad-style'>
+                <h2 class='titulares'>
+                    Picked for you
+                </h2>
+            </div>
+        </div>
+        <div class="articulos">
+            <% for(let i=0; i<4; i++){ %>
+                <%  
+                    rating_value = products[i].rating_value? products[i].rating_value : 0;
+                    rating_stars = Math.round(rating_value);
+                    rating_value = rating_value.toFixed(1);
+                    var currency_formatter = new Intl.NumberFormat('es-AR', {
+                        style: 'currency',
+                        currency: 'ARS',
+                        minimumFractionDigits: 2,
+                    })
+                    regular_price = products[i].regular_price;
+                    special_price = products[i].special_price;
+                %>
+                <article class='product'>
+                    <div class='product-details'>
+                        <!-- Image de producto-->
+                        <div class='row'>
+                            <div class='sale'>
+                                <!-- <svg xlmns='http://www.w3.org/2000/svg'>
+                                    <use xlink:href='#sale'></use>
+                                </svg> -->
+                                <p class='title'>
+                                    Sale
+                                </p>
+                            </div>
+                            <div class='image img-box'>
+                                <img width="200" src="images/<%= products[i].image_main %>">
+                            </div>
+                        </div>
+                        <!-- Cuadro de rating -->
+                        <div class='row'>
+                            <div class='ratings-wrapper width-style pad-style'>
+                                <div>
+                                    <div>
+                                        <a class='bv-main-container bv-hover'>
+                                            <!-- Estrellas -->
+                                            <div class='bv-stars-component-container'>
+                                                <div class='bv-stars-button-container'>
+                                                    <span class='bv-stars-svg-no-wrap'>
+                                                        <svg xlmns='http://www.w3.org/2000/svg' width='13px' height='13px' viewbox='0 0 25 25' style='width: 13px; height: 13px'>
+                                                            <use xlink:href="#star<%= rating_stars>0?'-filled':'' %>"></use>
+                                                        </svg>
+                                                        <svg xlmns='http://www.w3.org/2000/svg' width='13px' height='13px' viewbox='0 0 25 25' style='width: 13px; height: 13px'>
+                                                            <use xlink:href="#star<%= rating_stars>1?'-filled':'' %>"></use>
+                                                        </svg>
+                                                        <svg xlmns='http://www.w3.org/2000/svg' width='13px' height='13px' viewbox='0 0 25 25' style='width: 13px; height: 13px'>
+                                                            <use xlink:href="#star<%= rating_stars>2?'-filled':'' %>"></use>
+                                                        </svg>
+                                                        <svg xlmns='http://www.w3.org/2000/svg' width='13px' height='13px' viewbox='0 0 25 25' style='width: 13px; height: 13px'>
+                                                            <use xlink:href="#star<%= rating_stars>3?'-filled':'' %>"></use>
+                                                        </svg>
+                                                        <svg xlmns='http://www.w3.org/2000/svg' width='13px' height='13px' viewbox='0 0 25 25' style='width: 13px; height: 13px'>
+                                                            <use xlink:href="#star<%= rating_stars>4?'-filled':'' %>"></use>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!-- Valor numérico-->
+                                            <div class='bv-averageRating-component-container'>
+                                                <div class='bv-text'>
+                                                    <%= rating_value %>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Detalle de producto -->
+                        <div class='row'>
+                            <div class='product-summary width-style pad-style'>
+                                <div class='item-identifier'>
+                                    Item #<%=products[i].id+'Y'+products[i].year_created %>
+                                </div>
+                                <div ellipsis class='title'>
+                                    <a ellipsis>
+                                        <%= products[i].name_product %>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cuadro de precio -->
+                        <div class='row'>
+                            <div class='width-style pad-style'>
+                                <div class='pricing price-block'>
+                                    <ul>
+                                        <li class='price-container on-discount'>
+                                            <span>
+                                                <span class='price full-price'>
+                                                    <%= currency_formatter.format(special_price) %>
+                                                </span>
+                                            </span>
+                                        </li>
+                                        <li class='price-container on-contract'>
+                                            <span>
+                                                <span class='price full-price'> 
+                                                    <%= currency_formatter.format(regular_price) %>
+                                                </span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class='width-style pad-style'>
+                                <div class='benefits-wrapper promo-wrapper'>
+                                    <div class='text-wrapper'>
+                                        <span class='text-promotions'>
+
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            <% } %>
+        </div>
+    </section>
+
+    <div class='clearfix30'></div>
+
+    <!-- Most Sold -->
+    <section class="mostSold">
+        <div class='titulo-articulos row'>
+            <div class='width-style pad-style'>
+                <h2 class='titulares'>
+                    Most Sold
+                </h2>
+            </div>
+        </div>
+        <div class="articulos">
+            <% for(let i=4; i < Math.min(products.length, 8); i++){ %>
+                <%  
+                    rating_value = products[i].rating_value? products[i].rating_value : 0;
+                    rating_stars = Math.round(rating_value);
+                    rating_value = rating_value.toFixed(1);
+                    var currency_formatter = new Intl.NumberFormat('es-AR', {
+                        style: 'currency',
+                        currency: 'ARS',
+                        minimumFractionDigits: 2,
+                    })
+                    regular_price = products[i].regular_price;
+                    special_price = products[i].special_price;
+                %>
+                <article class='product'>
+                    <div class='product-details'>
+                        <!-- Image de producto-->
+                        <div class='row'>
+                            <div class='sale'>
+                                <!-- <svg xlmns='http://www.w3.org/2000/svg'>
+                                    <use xlink:href='#sale'></use>
+                                </svg> -->
+                                <p class='title'>
+                                    Sale
+                                </p>
+                            </div>
+                            <div class='image img-box'>
+                                <img width="200" src="images/<%= products[i].image_main %>">
+                            </div>
+                        </div>
+                        <!-- Cuadro de rating -->
+                        <div class='row'>
+                            <div class='ratings-wrapper width-style pad-style'>
+                                <div>
+                                    <div>
+                                        <a class='bv-main-container bv-hover'>
+                                            <!-- Estrellas -->
+                                            <div class='bv-stars-component-container'>
+                                                <div class='bv-stars-button-container'>
+                                                    <span class='bv-stars-svg-no-wrap'>
+                                                        <svg xlmns='http://www.w3.org/2000/svg' width='13px' height='13px' viewbox='0 0 25 25' style='width: 13px; height: 13px'>
+                                                            <use xlink:href="#star<%= rating_stars>0?'-filled':'' %>"></use>
+                                                        </svg>
+                                                        <svg xlmns='http://www.w3.org/2000/svg' width='13px' height='13px' viewbox='0 0 25 25' style='width: 13px; height: 13px'>
+                                                            <use xlink:href="#star<%= rating_stars>1?'-filled':'' %>"></use>
+                                                        </svg>
+                                                        <svg xlmns='http://www.w3.org/2000/svg' width='13px' height='13px' viewbox='0 0 25 25' style='width: 13px; height: 13px'>
+                                                            <use xlink:href="#star<%= rating_stars>2?'-filled':'' %>"></use>
+                                                        </svg>
+                                                        <svg xlmns='http://www.w3.org/2000/svg' width='13px' height='13px' viewbox='0 0 25 25' style='width: 13px; height: 13px'>
+                                                            <use xlink:href="#star<%= rating_stars>3?'-filled':'' %>"></use>
+                                                        </svg>
+                                                        <svg xlmns='http://www.w3.org/2000/svg' width='13px' height='13px' viewbox='0 0 25 25' style='width: 13px; height: 13px'>
+                                                            <use xlink:href="#star<%= rating_stars>4?'-filled':'' %>"></use>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!-- Valor numérico-->
+                                            <div class='bv-averageRating-component-container'>
+                                                <div class='bv-text'>
+                                                    <%= rating_value %>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Detalle de producto -->
+                        <div class='row'>
+                            <div class='product-summary width-style pad-style'>
+                                <div class='item-identifier'>
+                                    Item #<%=products[i].id+'Y'+products[i].year_created %>
+                                </div>
+                                <div ellipsis class='title'>
+                                    <a ellipsis>
+                                        <%= products[i].name_product %>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cuadro de precio -->
+                        <div class='row'>
+                            <div class='width-style pad-style'>
+                                <div class='pricing price-block'>
+                                    <ul>
+                                        <li class='price-container on-discount'>
+                                            <span>
+                                                <span class='price full-price'>
+                                                    <%= currency_formatter.format(special_price) %>
+                                                </span>
+                                            </span>
+                                        </li>
+                                        <li class='price-container on-contract'>
+                                            <span>
+                                                <span class='price full-price'> 
+                                                    <%= currency_formatter.format(regular_price) %>
+                                                </span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class='width-style pad-style'>
+                                <div class='benefits-wrapper promo-wrapper'>
+                                    <div class='text-wrapper'>
+                                        <span class='text-promotions'>
+
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            <% } %>
+        </div>
+    </section>
+
+    <!-- Banner de productos similares ------->
+    <div class="row-bottom">
+
+        <!-- Titulo -->
+        <div class="title">
+            <h2>Productos similares</h2>
+        </div>
+
+        <!-- Carusel -->
+        <div class="carousel">
+
+            <!--
+            <div class="arrows">
+
+                <a href="#" class="carousel-control-prev">
+                    <i class="fas fa-angle-left"></i>
+                </a>
+                <a href="#" class="carousel-control-next">
+                    <i class="fas fa-angle-right"></i>
+                </a>
+                
+            </div>
+            -->
+
+            <!--Carrusel de productos similares-->
+            <ul class="products-slider">
+                <% for(let i=0; i<products.length; i++){ %>
+                    <%
+                    //let regular_price = parseFloat(product.regularPrice.replace('$', ''));
+                    //let special_price = parseFloat(product.specialPrice.replace('$', ''));
+                    let regular_price = products[i].regular_price;
+                    let special_price = products[i].special_price;
+                    let discount = (1 - special_price/regular_price)*100;
+                    let price_discount = discount.toFixed(0);
+                    if(Number.isNaN(regular_price)){
+                        regulat_price = 0;
+                    }
+                    if(Number.isNaN(special_price)){
+                        special_price = 0;
+                    }
+                    price_discount = (price_discount>0)? price_discount : 0;
+
+                    let ars_format = Intl.NumberFormat('es-AR', {
+                        style: 'currency',
+                        currency: 'ARS'
+                    });
+                    %>
+                %>
+
+                    <!--Item <% i %> del carousel-->
+                    <li id="item_0" class="slider-item">
+                        <div class="item_image">
+                            <a href="/product/<%= products[i].id %>">
+                        <img src="/images/<%= products[i].image_main %>">
+                    </a>
+                        </div>
+                        <div class="item_description">
+                            <h4>
+                                <a href="/product/<%= products[i].id %>">
+                                    <%= products[i].name_product %>
+                                </a>
+                            </h4>
+                            <div class="price-discount">
+                                <% if(regular_price >= 0){ %>
+                                    <span class="price-list"><%= ars_format.format(regular_price) %></span>
+                                    <% } %>
+                                        <% if (price_discount > 0){ %>
+                                            <span class="discount"><%= price_discount + '%' +' OFF'%></span>
+                                            <% } %>
+                            </div>
+                            <div class="price-box">
+                                <% if(special_price > 0){ %>
+                                    <p>
+                                        <%= ars_format.format(special_price) %>
+                                    </p>
+                                <% } %>
+                            </div>
+                            <div class="item_afip">
+                                <p>Incluye impuesto PAIS y percepción AFIP</p>
+                            </div>
+                            <div class="fav-icon">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="clear20px"></div>
+                            <div>
+                                <span class="free-delivery"></span>
+                            </div>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>   <!--Carousel de productos similares-->
+            <!--Next and Previous buttons-->
+            <a class="prev">&#10094</a>
+            <a class="next">&#10095</a>
+        </div>
+
+    </div>
+</main>
+
+<!-- Footer -->
+<%- include('./partials/footer v2.ejs') %>
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #48aa42;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial;
+    font-size: 12px;
+    line-height: 18px;
+    color: #696969;
+    text-align: right;
+    min-width: 320px;
+    background: #fff;
+    position: relative;
+
+}
+
+.main-container {
+    background-color: #fff;
+    max-width: 1230px;
+    background: #fff;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 940px;
+}
+
+.row {
+    margin-left: -20px;
+}
+
+.row:before, .row:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.span12 {
+    width: 940px;
+}
+
+[class*="span"] {
+    float: left;
+    min-height: 1px;
+    margin-left: 20px;
+}
+
+.main-row {
+    padding: 5px 0 10px;
+}
+
+.col-main {
+    float: none;
+}
+
+.main-container .col-main {
+    margin-top: 0!important;
+}
+
+.col-main {
+    flex: 1 70%;
+    margin-top: 10px;
+}
+
+.page-title {
+    margin: 0 0 30px;
+    margin-bottom: 10px;
+    border-bottom: none;
+    text-align: left;
+    padding: 0 0 1px;
+}
+
+.page-title h1 {
+    font-weight: 700;
+    color: #ff3c3c;
+    padding: 20px 0;
+    font-size: 20px;
+    float: left;
+    margin: 0px;
+}
+
+.continuar-comprando {
+    color: #0066c0;
+    width: 117px;
+    float: right;
+    margin: 12px 30px;
+    text-align: center;
+}
+
+button.btn-checkout>span {
+    padding: 0 62px;
+}
+
+button.button>span {
+    float: left;
+    text-align: center;
+    white-space: nowrap;
+    background: #ff3c3c;
+    color: #fff;
+    font-family: arial,sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 32px;
+    height: 32px;
+    border-radius: 3px;
+}
+
+button, input, select, textarea {
+    font: 12px Arial,Helvetica,sans-serif;
+}
+
+button.btn-checkout>span {
+    font-size: 18px;
+    height: 49px;
+    line-height: 49px;
+    float: right;
+}
+
+button.btn-checkout span span {
+    padding: 0 29px;
+}
+
+button.button span span {
+    display: block;
+    float: left;
+}
+
+#shopping-cart-table {
+    border: 1px solid #000;
+    font-size: 17px!important;
+}
+
+.data-table {
+    width: 100%;
+}
+
+table {
+    display: table;
+    border: 1px solid #000;
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    font-size: 100%;
+    box-sizing: border-box;
+    text-indent: initial;
+}
+
+table #shopping-cart-table {
+    border: 1px solid #000;
+    font-size: 17px!important;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.data-table td {
+    border: 1px solid #d6d6d6;
+    padding: 14px 15px;
+}
+
+.cart-table-container thead tr {
+    font-size: 12px;
+    color: #000;
+    border: 1px solid #d6d6d6;
+}
+
+#shopping-cart-table-container .data-table td {
+    vertical-align: middle;
+    padding: 7px 12px;
+}
+
+.a-center {
+    text-align: center!important;
+}
+
+caption, td, th {
+    vertical-align: top;
+    text-align: left;
+    font-weight: 400;
+}
+
+#shopping-cart-tablecontainer .data-table td.block-img {
+    padding-top: 9px;
+}
+
+#shopping-cart-table-container .data-table td {
+    vertical-align: middle;
+    padding: 7px 12px;
+}
+
+.cart-table button.btn-change {
+    text-align: center;
+    border: 1px solid #d6d6d6;
+    border-radius: 0;
+}
+
+button.button {
+    border: 0;
+    overflow: visible;
+    cursor: pointer;
+    width: auto;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0;
+    font: 12px Arial,Helvetica,sans-serif;
+    vertical-align: middle;
+    color: #000;
+}
+
+.cart-qty span {
+    margin: 1px 5px;
+}
+
+.cart-table button.btn-change span {
+    background: 0 0;
+    color: #666;
+    font-size: 12px;
+    font-weight: 400;
+    height: 20px;
+    line-height: 20px;
+}
+
+input.qty {
+    color: #0078c2;
+    width: 40px!important;
+    text-align: center;
+}
+
+input.input-text, textarea {
+    border: 1px solid #bfbebe;
+    resize: none;
+    border-radius: 0;
+    padding: 3px 2px 4px;
+}
+
+button, input, select, textarea {
+    font: 12px Arial,Helvetica,sans-serif;
+    vertical-align: middle;
+    color: #000;
+}
+
+.btn-remove {
+    background: url(/images/delete.webp) left center no-repeat;
+    width: 31px;
+    height: 35px;
+    display: block;
+    overflow: hidden;
+    text-indent: -100px;
+    padding: 0;
+    margin: 0 auto;
+    color: #ccc;
+}
+
+#shopping-cart-table-container .cart-table .price {
+    color: #090909;
+    font-size: 18px;
+    font-weight: 400;
+    white-space: nowrap!important;
+}
+
+.block-img img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.product-name {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: muli-bold;
+    color: #000;
+}
+
+.product-name a {
+    color: #2f2f2f;
+    text-transform: none;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: Arial;
+}
+
+.item-options {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    padding-left: 0!important;
+    font-size: 15px;
+    line-height: 18px;
+    font-family: muli-regular;
+    color: #333;
+}
+
+@media (min-width: 768px) and (max-width: 979px){
+    input, textarea, .uneditable-input {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 1200px){
+    .row {
+        display: flex;
+        flex: 1 100%;
+        flex-direction: row;
+        margin-left: -20px;
+    }
+
+    .row:before, .row:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    .row:after {
+        clear: both;
+    }
+
+    .container {
+        width: 1170px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

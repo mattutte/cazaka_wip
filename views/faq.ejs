@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Head -->
+    <%- include('./partials/head.ejs',{titulo:"Help Center",stylesFile:"faq.css"}) %>
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <symbol id='creditCard' viewbox='0 0 100 70'>
+            <path d="M90,0H10C4.5,0,0,4.5,0,10v50c0,5.5,4.5,10,10,10h80c5.5,0,10-4.5,
+            10-10V10C100,4.5,95.5,0,90,0z M90,60H10V30h80V60zM90,15H10v-5h80V15z M20,
+            40.5v3h3v-3H20z M38,46.5v3h6v-3h3v-3h3v-3h-6v3h-3v3H38z M50,49.5v-3h-3v3H50z M35,
+            49.5v-3h-6v3H35zM38,43.5h3v-3h-6v6h3V43.5z M26,46.5h3v-3h3v-3h-6v3h-3v3h-3v3h6V46.5z">
+            </path>
+        </symbol>
+        <symbol id='twoArrows' viewbox='0 0 24 17'>
+            <g>
+                <polygon points="24,12.4 19.2,8.3 19.2,10.7 7.2,10.7 7.2,14.1 19.2,14.1 19.2,16.2 	"></polygon>
+                <polygon points="16.8,2.4 4.8,2.4 4.8,0 0,4.1 4.8,7.9 4.8,5.7 16.8,5.7 	"></polygon>
+            </g>
+        </symbol>
+        <symbol id="store" viewBox="0 0 33 33">
+            <path d="M25.6022727,0.333333333 L2.32954545,
+            0.333333333 L2.32954545,3.24242424 L25.6022727,3.24242424 L25.6022727,0.333333333 Z M27.0568182,
+            14.8787879 L27.0568182,11.969697 L25.6022727,4.6969697 L2.32954545,4.6969697 L0.875,
+            11.969697 L0.875,14.8787879 L2.32954545,14.8787879 L2.32954545,23.6060606 L16.875,
+            23.6060606 L16.875,14.8787879 L22.6931818,14.8787879 L22.6931818,23.6060606 L25.6022727,
+            23.6060606 L25.6022727,14.8787879 L27.0568182,14.8787879 Z M13.9659091,20.6969697 L5.23863636,
+            20.6969697 L5.23863636,14.8787879 L13.9659091,14.8787879 L13.9659091,20.6969697 Z">
+            </path>
+        </symbol>
+        <symbol id="cartSvg" viewBox="0 0 33 33">
+            <path d="M2.74094203,22.7859942 C3.99972464,22.7859942 5.02355072,23.8098203 5.02355072,
+            25.0686029 C5.02355072,26.3273855 3.99972464,27.3512116 2.74094203,27.3512116 C1.48215942,
+            27.3512116 0.458333333,26.3273855 0.458333333,25.0686029 C0.458333333,23.8098203 1.48215942,
+            22.7859942 2.74094203,22.7859942 Z M19.1757246,22.7859942 C20.4345072,22.7859942 21.4583333,
+            23.8098203 21.4583333,25.0686029 C21.4583333,26.3273855 20.4345072,27.3512116 19.1757246,
+            27.3512116 C17.916942,27.3512116 16.8931159,26.3273855 16.8931159,25.0686029 C16.8931159,
+            23.8098203 17.916942,22.7859942 19.1757246,22.7859942 Z M8.39682029,15.3405507 L7.61403768,
+            16.1087246 C7.00047246,16.7101159 6.66082029,17.5148116 6.65716812,18.3742899 C6.65473333,
+            18.9744638 6.81542899,19.5478551 7.11977681,20.0469855 L3.50168986,20.0469855 L3.50168986,
+            19.3810725 C3.50168986,18.9342899 3.6769942,18.5142899 3.99229855,18.1977681 L6.73021159,
+            15.4598551 L8.39682029,15.3405507 Z M10.7390812,15.1725507 L24.0877768,14.2193333 L25.5352551,
+            5.54176812 L5.49334203,3.0375942 L5.2449942,1.29672464 L1.67316812,0.583333333 L1.37368986,
+            2.07585507 L3.88882029,2.57863768 L5.58586377,14.4518551 L2.91612464,17.1215942 C2.31351594,
+            17.7254203 1.97995072,18.5276812 1.97995072,19.3810725 L1.97995072,21.5687246 L2.74082029,
+            21.5687246 L10.6636029,21.5687246 L22.2190812,21.5687246 L22.2190812,20.0469855 L9.14429855,
+            20.0469855 L8.66951594,19.5722029 C8.35055942,19.2544638 8.17647246,18.8308116 8.17890725,
+            18.3815942 C8.18134203,17.9311594 8.35786377,17.509942 8.67925507,17.1946377 L10.7390812,
+            15.1725507 Z">
+            </path>
+        </symbol>
+        <symbol id="returnsIcon" viewBox="0 0 33 33">
+            <path d="M14,0 C21.7314286,0 28,6.26857143 28,14 C28,21.7314286 21.7314286,28 14,28 C8.84,
+            28 4.33714286,25.2114286 1.90857143,21.0571429 L2.92,20.5085714 C5.15428571,24.3028571 9.28,
+            26.8514286 14,26.8514286 C21.0971429,26.8514286 26.8514286,21.0971429 26.8514286,
+            14 C26.8514286,6.90285714 21.0971429,1.14857143 14,1.14857143 C9.24,1.14857143 5.08,
+            3.73714286 2.86285714,7.58857143 L7.08,6.46857143 L7.37714286,7.6 L1.48571429,9.14857143 L0,
+            3.25714286 L1.13142857,2.96 L2.09714286,6.63428571 C4.56571429,2.65142857 8.97142857,0 14,
+            0 Z M7.77142857,10.4571429 L13.3714286,12.2669121 L13.3714286,20.2285714 L7.80765357,
+            18.3419058 L7.77142857,10.4571429 Z M20.2857143,10.5714286 L20.2857143,18.3327341 L14.6857143,
+            20.2285714 L14.7040269,12.2877548 L20.2857143,10.5714286 Z M14.0302482,8.17142857 L19.1428571,
+            9.71394198 L14.0302482,11.3714286 L8.8,9.71394198 L14.0302482,8.17142857 Z">
+            </path>
+        </symbol>
+        <symbol id="chevron-thin-right" viewBox="0 0 46 86">
+            <path d="M1,80.1c-1.3,1.4-1.3,3.5,0,4.9c1.3,1.3,3.5,1.4,4.8,0L45,45.4c1.3-1.4,1.3-3.5,
+            0-4.9L5.8,1 C4.5-0.3,2.3-0.3,1,1c-1.3,1.4-1.3,3.5,0,4.9L36.7,43L1,80.1z">
+            </path>
+        </symbol>
+    </svg>
+
+    <!-- Header -->
+    <%- include('./partials/header v2.ejs') %>
+    
+    
+    <!-- FAQ -->
+
+<main>
+    <div class='help-center'>
+        <div class='help-center-header'>    
+            <div class='new-page-width visual-nav'>
+                <div class='hc-breadcrumbs'>
+
+                </div>
+                <!-- Title - Help Center -->
+                <a>
+                    <h1>Help Center</h1>
+                </a>
+                <!-- Cards Section -->
+                <div class='clearfix visual-nav-inner'>
+                    <!-- Devoluciones -->
+                    <div class='visual-nav-cont'>
+                        <span class='icon-cont'>
+                            <svg class='two-arrows'>
+                                <use xlink:href='#returnsIcon'></use>
+                            </svg>
+                        </span>
+                        <a>Devoluciones</a>
+                        <a class='subLink'>Devoler un producto</a>
+                        <a class='subLink'>Política de devolucion</a>
+                    </div>
+                    <!-- Su Pedido -->
+                    <div class='visual-nav-cont'>
+                        <span class='icon-cont'>
+                            <svg class='cartIcon'>
+                                <use xlink:href='#cartSvg'></use>
+                            </svg>
+                        </span>
+                        <a>Su pedido</a>
+                        <a class='subLink'>Estado de la orden</a>
+                        <a class='subLink'>Opciones de envío</a>
+                    </div>
+                    <!-- Locales -->
+                    <div class='visual-nav-cont'>
+                        <span class='icon-cont'>
+                            <svg class='storeIcon'>
+                                <use xlink:href='#store'></use>
+                            </svg>
+                        </span>
+                        <a>Locales</a>
+                        <a class='subLink'>Horarios</a>
+                        <a class='subLink'>Ubicaciones</a>
+                    </div>
+                    <!-- Medios de Pago -->
+                    <div class='visual-nav-cont'>
+                        <span class='icon-cont'>
+                            <svg class='creditCard'>
+                                <use xlink:href='#creditCard'></use>
+                            </svg>
+                        </span>
+                        <a>Medios de pago</a>
+                        <a class='subLink'>Opciones</a>
+                        <a class='subLink'>Programa de puntos</a>
+                    </div>
+                    <!-- Envios -->
+                    <div class='visual-nav-cont'>
+                        <span class='icon-cont'>
+                            <svg class='creditCard'>
+                                <use xlink:href='#creditCard'></use>
+                            </svg>
+                        </span>
+                        <a>Envíos</a>
+                        <a class='subLink'>Tipos de envío</a>
+                        <a class='subLink'>Protocolo de envío</a>
+                    </div>
+                </div>
+                <span class='header-contact'>
+                    No puede encontrar la respuesta?
+                    <a>Contáctenos</a>
+                    <svg>
+                        <use xlink:href='#chevron-thin-right'></use>
+                    </svg>
+                </span>
+            </div>
+        </div>
+        <div class='help-center-body clearfix'>
+            <div class='new-page-width'>
+                <div class='popular-question'>
+                    <div class='support-left-nav'>
+                        <span class='support-link'>Todos</span>
+                        <span class='support-link'>Populares</span>
+                        <span class='support-link'>Descuentos</span>
+                        <span class='support-link'>Seguimiento orden</span>
+                        <span class='support-link'>Pagos</span>
+                        <span class='support-link'>Disponibilidad de producto</span>
+                        <span class='support-link'>Devoluciones</span>
+                        <span class='support-link'>Despachos</span>
+                        <span class='support-link'>Garantías</span>
+                        <span class='support-link'>Pagina Web</span>
+                    </div>
+                    <div class='faq-outer'>
+                        <h2 class='support-faq-header'>
+                            Frequently Asked Questions
+                        </h2>
+                        <div class='questions-list'>
+                            <ul class='faq-innerList'>
+                                <!-- Categoria - Populares-->
+                                <li class='faq-categoryTitle'>
+                                    Populares
+                                </li>
+                                <!-- Question 1 -->
+                                <li class='support-faq-outer'>
+                                    <span class='support-faq-question'>
+                                        Cómo devuelvo o cambio un producto?
+                                    </span>
+                                    <div class='faq-question-icon'>
+                                        <img src="/images/plus-sign.png" class="faq-pls-icon faq-inner-icon">
+                                    </div>
+                                </li>
+                                <!-- Question 2 -->
+                                <li class='support-faq-outer'>
+                                    <span class='support-faq-question'>
+                                        Si hago el pedido hoy, cuándo me llega?
+                                    </span>
+                                    <div class='faq-question-icon'>
+                                        <img src="/images/plus-sign.png" class="faq-pls-icon faq-inner-icon">
+                                    </div>
+                                </li>
+                                <!-- Question 3 -->
+                                <li class='support-faq-outer'>
+                                    <span class='support-faq-question'>
+                                        Quiero hacer una devolución. Debo pagar el envío?
+                                    </span>
+                                    <div class='faq-question-icon'>
+                                        <img src="/images/plus-sign.png" class="faq-pls-icon faq-inner-icon">
+                                    </div>
+                                </li>
+                                <!-- Question 4 -->
+                                <li class='support-faq-outer'>
+                                    <span class='support-faq-question'>
+                                        Por qué no puedo devolver my producto?
+                                    </span>
+                                    <div class='faq-question-icon'>
+                                        <img src="/images/plus-sign.png" class="faq-pls-icon faq-inner-icon">
+                                    </div>
+                                </li>
+                                <!-- Question 5 -->
+                                <li class='support-faq-outer'>
+                                    <span class='support-faq-question'>
+                                        Qué tan pronto vuelve a estar en stock un producto que no está disponible?
+                                    </span>
+                                    <div class='faq-question-icon'>
+                                        <img src="/images/plus-sign.png" class="faq-pls-icon faq-inner-icon">
+                                    </div>
+                                </li>
+                                <!-- Question 6 -->
+                                <li class='support-faq-outer'>
+                                    <span class='support-faq-question'>
+                                        Cuáles son los punto de venta más cercanos?
+                                    </span>
+                                    <div class='faq-question-icon'>
+                                        <img src="/images/plus-sign.png" class="faq-pls-icon faq-inner-icon">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='help-center-footer'>
+            <div class='hc-footer-btn clearfix'>
+                <span class='s-btn s-style-3'>Más categorias de ayuda</span>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<%- include('./partials/footer v2.ejs') %>
+
+</body>
+</html>

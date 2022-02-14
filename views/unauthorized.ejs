@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<%- include('./partials/head.ejs',{titulo:"Page Restricted",stylesFile:"unauthorized.css"}) %>
+<body>
+    <!-- Header -->
+    
+    <header>
+        <div class='main-header-top-bar' id='top_bar'>
+            <div class="nav-logo nav-logo-bottom">
+                <a href="/">
+                    <img src="/images/Logo-horizontal-f-blanco.png" class="logo-horizontal-b" alt="logo horizontal Casaka">
+                </a> 
+            </div>
+            <div class='nav-search'>
+                <form class='nav-searchbar'>
+                    <div class="nav-fill">
+                        <input type="text" placeholder="search" class="nav-input">
+                    </div>
+                    <div class="nav-right">
+                        <div class="nav-search-submit">
+                            <input type="submit" class="nav-input" value="Go">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-s">
+            <div class="page-s-wrap">
+                <img src='/images/Authorized_Access_Only.png'>
+                <div>
+                    <h2 class="page-s-title">
+                        Esta página es solo para usuarios registrados
+                    </h2>
+                    <p class='page-s-disculpa'>
+                        Por favor diríjase a la página de inicio para registrarse o ingresar con su usuario
+                    </p>
+                    <p class='page-s-disculpa'>
+                        Disculpe las molestias
+                    </p>
+                    <a href='/' class='link'>
+                        Ir a la página de inicio de Cazaca
+                    </a>
+                </div>
+            </div>
+        </div>  
+    </main>
+
+</body>
+
+</html>
+
+

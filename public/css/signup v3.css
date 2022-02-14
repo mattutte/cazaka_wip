@@ -1,0 +1,1022 @@
+.bar-header {
+    height: 60px;
+    margin: 0;
+}
+
+.col-lg-8, .col-md-5 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#company-title .fil0 {
+    fill:#fff;
+}
+
+ul {
+    margin-top: 3px;
+}
+
+.form-item ul, .form-item-password ul {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.bar-header .navbar-header {
+    padding: 14px 0 0 14px;
+}
+
+.logo-container {
+    box-sizing: border-box;
+    display: inline-block;
+    user-select: none;
+
+    color: rgb(33, 33, 33);
+    fill: currentcolor;
+    height: 80px;
+}
+
+
+
+.signup .signup-bar-bg {
+    position: static;
+/*     background-color: #007dba; */
+    background-color: #34568B;
+    height: 250px;
+}
+
+.signup .signup-bar-bg .company-name {
+    font-size: 36px;
+    color: #fff;
+    height: 250px;
+}
+
+.signup .signup-form {
+    margin-top: -250px;
+    padding-bottom: 30px;
+}
+
+.justify-content-end {
+    justify-content: flex-end!important;
+}
+
+.signup .signup-form .signup-header {
+    margin: 20px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.signup .signup-header h5 a:hover {
+    color: yellow;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.signup-header h5 a:link,
+.signup-header h5 a:visited,
+.signup-header h5 a:active {
+    color: rgb(148, 203, 255);
+}
+
+.signup .signup-form .signup-header .signup-desc {
+    padding-top: 10px;
+}
+
+.panel {
+    margin: 10px auto 30px;
+    width: 416px;
+    min-width: 290px;
+    padding: 0;
+    display: flex;
+}
+
+.panel-style {
+    background-color: rgb(255, 255, 255);
+    color: rgb(33, 33, 33);
+    border-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: inherit;
+    box-shadow: rgb(33 33 33 / 10%) 0px 4px 16px;
+}
+
+.panel .panel-content {
+    padding: 12px 32px 32px;
+    width: 100%;
+}
+
+.signup .margin-20 {
+    margin-bottom: 20px;
+}
+
+.justify-content-center {
+    justify-content: center!important;
+}
+
+.d-flex {
+    display: flex!important;
+}
+
+.align-self-center {
+    align-self: center!important;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.link, a {
+    color: #0096d6;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.form-container .form-item {
+    margin-bottom: 12px;
+}
+
+.form-item-style {
+    min-width: 0px;
+    position: relative;
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+}
+
+.form-label {
+    color: rgb(88, 88, 88);
+    overflow: hidden;
+    pointer-events: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 1;
+    max-width: calc(100% - 24px);
+    position: absolute;
+    transition: font-family 300ms linear 0s, transform 150ms cubic-bezier(0, 0, 0.2, 1) 0s;
+    transform: translate(16px, 12px);
+    transform-origin: left top;
+    will-change: font-family, transform;
+    font-size: 14px;
+}
+
+.form-label.clicked {
+    color: rgb(88, 88, 88);
+    cursor: text;
+    overflow: hidden;
+    pointer-events: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 1;
+    max-width: calc(100% - 32px);
+    position: absolute;
+    transition: font-family 300ms linear 0s, transform 150ms cubic-bezier(0, 0, 0.2, 1) 0s;
+    transform: translate(10px, 5px);
+    transform-origin: left top;
+    will-change: font-family, transform;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.form-label.valid {
+    display: none;
+}
+
+.form-item-style label:not([class*=valid]) + .field-input input {
+    padding: calc(19px) calc(11px) calc(3px);
+}
+
+.margin-l-4 {
+    margin-left: 4px;
+}
+
+.field-input {
+    align-items: center;
+    background-color: transparent;
+    border-color: rgb(173, 173, 173);
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    min-width: 144px;
+    overflow: hidden;
+    resize: none;
+    transition: background-color 150ms ease-out 0s, border-color 150ms linear 0s;
+    will-change: background-color, border-color;
+}
+
+.field-input input:focus {
+    outline: 0px;
+}
+
+.form-item.clicked .field-input {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(2, 122, 174);
+    border-width: 2px;
+}
+
+.form-item.clicked .field-input.invalid {
+    align-items: center;
+    background-color: transparent;
+    border-color: rgb(190, 19, 19);
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    min-width: 144px;
+    overflow: hidden;
+    resize: none;
+    transition: background-color 150ms ease-out 0s, border-color 150ms linear 0s;
+    will-change: background-color, border-color;
+}
+
+.form-item ul.errorFromController .helper-text.invalid, .options .errorFromScript.helper-text.invalid {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    min-width: 144px;
+    overflow: hidden;
+    resize: none;
+    transition: background-color 150ms ease-out 0s, border-color 150ms linear 0s;
+    will-change: background-color, border-color;
+}
+
+.caption {
+    color: rgb(190, 19, 19);
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.field-input input {
+    background: transparent;
+    border: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 33, 33);
+    display: block;
+    font: inherit;
+    margin: 0px;
+    min-width: 1px;
+    padding: calc(11px);
+    position: relative;
+    width: 100%;
+    resize: none;
+    opacity: 1;
+}
+
+.helper-text, .password-helper-text, .password-repeat-helper-text {
+    color: rgb(33, 33, 33);
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+    line-height: 14px;
+    opacity: 1;
+/*     padding-top: calc(10px); */
+    padding-top: 0px;
+    visibility: inherit;
+    margin-bottom: 2px;
+    min-width: 130px;
+}
+
+.helper-text .icon, .password-helper-text .icon{
+    align-items: center;
+    background-color: rgb(190, 19, 19);
+    border-radius: 50%;
+    display: inline-flex;
+    height: 10px;
+    max-width: 10px;
+    justify-content: center;
+    margin-right: calc(6px);
+    margin-left: 2px;
+    margin-top: 0px;
+    width: 100%;
+}
+
+.options .helper-text .icon {
+    height: 5px;
+    max-width: 5px;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+
+.helper-text, .password-helper-text, .password-repeat-helper-text {
+    color: rgb(33, 33, 33);
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+    line-height: 14px;
+    opacity: 1;
+/*     padding-top: calc(10px); */
+    padding-top: 0px;
+    visibility: inherit;
+    margin-bottom: 2px;
+    min-width: 130px;
+}
+
+.CustomImage {
+    box-sizing: border-box;
+    user-select: none;
+    width: 24px;
+    fill: currentcolor;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    height: calc(6px);
+    max-width: calc(6px);
+    padding: 0px;
+}
+
+.CustomImage g > path {
+    display: none;
+}
+
+.helper-text .text, .password-helper-text .text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 0px;
+}
+
+.helper-text {
+    display: none;
+}
+
+.helper-text.errorFromScript.invalid, .form-item ul.errorFromController .helper-text.invalid .options ul.errorFromController .helper-text.invalid {
+    display: block;
+}
+
+.errorFromScript {
+    display: block;
+}
+
+.form-item .errorFromController, .form-item.password .errorFromController {
+    display: block;
+}
+
+.form-container .form-item-password {
+    margin-bottom: 6px;
+}
+
+.form-item.password {
+    min-width: 0px;
+    position: relative;
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+}
+
+.panel .form-container .password-repeat {
+    margin-bottom: 12px;
+}
+
+.form-item label + .form-input input, .form-item label + .vn-textarea {
+    padding: calc(19px) calc(11px) calc(3px);
+}
+
+.field-input > .field-input-icon {
+    display: inline-flex;
+    padding: calc(7px) calc(15px) calc(7px) 0px;
+}
+
+.inline-pointer {
+    cursor: pointer;
+    display: inline-flex;
+}
+
+.svg-container {
+    fill: rgb(115, 115, 115);
+}
+
+.observations {
+    display: flex;
+    flex-direction: column;
+/*     margin-top: calc(6px); */
+    margin-top: 0px;
+    min-width: 125px;
+}
+
+.suggestions-container {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height .5s ease;
+    visibility: hidden;
+}
+
+.suggestions-container-exiting {
+    opacity: 1;
+    visibility: inherit;
+}
+
+.animated-height-wrapper {
+    display: flex;
+}
+
+.animated-height-wrapper-inner {
+    display: flex;
+}
+
+.suggestion-item {
+    display: flex;
+    margin-top: calc(2px);
+    margin-bottom: calc(2px);
+}
+
+.suggestion-item-text {
+    color: rgb(33, 33, 33);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.password-helper-text {
+    display: none;
+    margin-top: calc(2px);
+    margin-bottom: calc(2px);
+}
+
+.password-helper-text.invalid {
+    display: block;
+}
+
+.caption-text {
+    color: rgb(33, 33, 33);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.caption .text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 0px;
+}
+
+.form-item-style-2 {
+    color: rgb(173, 173, 173);
+    min-width: 0px;
+    position: relative;
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+}
+
+.signup .margin-16 {
+    margin-bottom: 16px;
+}
+
+.form-label-unfold {
+    color: rgb(88, 88, 88);
+    overflow: hidden;
+    pointer-events: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 1;
+    max-width: calc(100% - 52px);
+    position: absolute;
+    transition: font-family 300ms linear 0s, transform 150ms cubic-bezier(0, 0, 0.2, 1) 0s;
+    transform: translate(12px, calc(6px));
+    transform-origin: left top;
+    will-change: font-family, transform;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.icon-label {
+    margin-left: 4px;
+}
+
+.field-input-2 {
+    align-items: center;
+    background-color: transparent;
+    border-color: rgb(173, 173, 173);
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    min-width: 114px;
+    position: relative;
+    transition: background-color 150ms ease-in 0s, border-color 150ms ease-in 0s;
+    will-change: background-color, border-color;
+}
+
+.country-style {
+    color: rgb(33, 33, 33);
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    padding: calc(11px) 12px calc(11px) calc(11px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.form-item-style-2 label + div > div[role="button"] {
+    padding: calc(19px) calc(11px) calc(3px);
+}
+
+.field-input:hover {
+    background-color: rgba(33, 33, 33, 0.05);
+    border-color: rgb(115, 115, 115);
+}
+
+.market {
+    align-items: center;
+    color: rgb(33, 33, 33);
+    cursor: pointer;
+    display: inline-flex;
+    flex-flow: row wrap;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 24px;
+    position: relative;
+    transition: all 150ms linear 0s;
+    user-select: none;
+}
+
+.signup .margin-16 {
+    margin-bottom: 16px;
+}
+
+.text-wrapper {
+    word-break: break-word;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.market .checkbox-span {
+    align-items: inherit;
+    background-color: transparent;
+    border-color: rgb(173, 173, 173);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    display: inline-flex;
+    height: 24px;
+    position: relative;
+    transition: all 150ms ease 0s;
+    width: 24px;
+}
+
+.market input[type="checkbox"] {
+    border: 0px;
+    cursor: inherit;
+    height: 100%;
+    margin: 0px;
+    opacity: 0;
+    width: 100%;
+    z-index: 2;
+    inset: 0px;
+    position: absolute;
+}
+
+.market-CustomImage {
+    box-sizing: border-box;
+    user-select: none;
+    width: 24px;
+    color: rgb(33, 33, 33);
+    fill: currentcolor;
+    height: 24px;
+    display: none;
+}
+
+.market .checkbox-span-icon {
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+    height: 24px;
+    visibility: hidden;
+    width: 24px;
+}
+
+.market .checkbox-span.clicked .checkbox-span-icon {
+    color: rgb(2, 122, 174);
+    fill: rgb(2, 122, 174);
+}
+
+.market .checkbox-span.clicked .market-CustomImage {
+    display: block;
+}
+
+.market .checkbox-span.clicked .checkbox-span-icon {
+    visibility: inherit;
+}
+
+.market-CustomImage g > path {
+    display: none;
+}
+
+.market-CustomImage g > path.rounded.filled {
+    display: block;
+}
+
+.market .checkbox-span::after {
+    border: 2px solid rgb(2, 122, 174);
+    border-radius: 4px;
+    box-sizing: border-box;
+    content: " ";
+    inset: 0px;
+    opacity: 0;
+    transition: all 50ms ease 0s;
+    z-index: 1;
+    position: absolute;
+}
+
+.market .checkbox-span-text {
+    line-height: 20px;
+    margin-left: 12px;
+    max-width: calc(100% - 36px);
+    vertical-align: middle;
+    font-size: 11px;
+}
+
+.checkbox-span-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.market:hover {
+    color: rgb(33, 33, 33);
+}
+
+.market .checkbox-span:hover {
+    background-color: rgba(33, 33, 33, 0.05);
+    border-color: rgb(115, 115, 115);
+}
+
+.market .checkbox-span.clicked:hover {
+    background-color: rgb(3, 92, 132);
+    border-color: rgb(3, 92, 132);
+}
+
+.market .checkbox-span.clicked:hover .checkbox-span-icon {
+    fill: white;
+}
+
+.terms-and-conditions .signup-tnc {
+    padding: 0 0 20px;
+}
+
+.signup-button {
+    appearance: none;
+    margin: 0px;
+    overflow: visible;
+    text-decoration: none;
+    text-transform: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    outline: 0px;
+    box-shadow: none;
+    align-items: center;
+/*     background-color: rgb(2, 122, 174);
+    border-color: rgb(2, 122, 174); */
+    background-color: #34568B;
+    border-color: #34568B;
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    justify-content: center;
+    line-height: 20px;
+    min-width: 112px;
+    padding: 11px 23px;
+    position: relative;
+    transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s, color 0.3s ease 0s;
+    width: 100%;
+}
+
+.submit-button-text {
+    margin: 2px 0px;
+}
+
+.signup-button:hover {
+/*     background-color: rgb(3, 92, 132);
+    border-color: rgb(3, 92, 132); */
+    background-color: #28426d;
+    border-color: #28426d;
+}
+
+.remember-me {
+    margin-top: 10px;
+}
+
+.add-picture-wrapper{
+    font-family: inherit;
+    box-sizing: border-box;
+    padding-right: 4px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    min-width: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    z-index: 0;
+    max-width: 100%;
+    flex-direction: column;
+    padding-left: 4px;
+}
+
+.add-picture-container{
+    font-family: inherit;
+    justify-content: center;
+    padding-right: 0;
+    box-sizing: border-box;
+    padding-bottom: 0;
+    border-bottom-right-radius: inherit;
+    display: inline-flex;
+    margin-bottom: 0;
+    cursor: pointer;
+    border-top-left-radius: inherit;
+    position: relative;
+    margin-top: 0;
+    border-bottom-left-radius: inherit;
+    width: 100%;
+    padding-top: 0;
+    text-align: inherit;
+    margin-left: 0;
+    background-color: transparent;
+    touch-action: manipulation;
+    margin-right: 0;
+    flex-direction: column;
+    border-top-right-radius: inherit;
+    padding-left: 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    list-style: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.add-picture-box{
+    transform: none;
+    font-family: inherit;
+    padding-left: 12px;
+    height: 36px;
+    justify-content: center;
+    box-sizing: border-box;
+    border-bottom-left-radius: var(--button-corner-radius);
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    position: relative;
+    border-top-left-radius: var(--button-corner-radius);
+    display: flex;
+    border-bottom-right-radius: var(--button-corner-radius);
+    background-color: transparent;
+    z-index: 0;
+    padding-right: 12px;
+    flex-direction: row;
+    align-items: center; 
+    border-top-right-radius: var(--button-corner-radius);
+    border-left-width: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+}
+
+.add-picture-inner-box{
+    font-family: inherit;
+    justify-content: center;
+    display: flex;
+    margin-right: -3px;
+    margin-left: -3px;
+    align-items: center;
+    width: calc(100% + 6px);
+}
+
+.add-picture-inner-box-container{
+    font-family: inherit;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    margin-right: 3px;
+    margin-left: 3px;
+    min-width: 0;
+    z-index: 0;
+    max-width: 100%;
+    align-items: center;
+    padding: 2px 10px;
+    border-radius: 5px;
+    position: relative;
+    top: -10px;
+}
+
+.add-picture-span{
+    font-family: inherit;
+    word-break: break-word;
+    font-weight: 600;
+    color: #1877F2;
+    font-size: .9375rem;
+    max-width: 100%;
+    word-wrap: break-word;
+    display: block;
+    line-height: 1.3333;
+}
+
+.add-picture-text{
+    font-family: inherit;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    white-space: nowrap;
+    display: block;
+}
+
+.add-picture-inner-box-container:hover{
+    background-color: rgb(238, 236, 236);
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+}
+
+.add-picture{
+    display: flex;
+    flex-direction: column;
+}
+
+.add-picture-text input{
+    display: flex;
+    flex-direction: column;
+}
+
+#add-picture-btn, #add-pic {
+    cursor: pointer;
+}
+
+.options ul {
+    position: relative;
+    padding: 2px;
+    top: -30px;
+    padding-right: 5px;
+}
+
+.options .errorFromScript.helper-text {
+    position: relative;
+    padding: 2px;
+    top: -27px;
+    padding-right: 5px;
+}
+
+.file {
+    display:none;
+    display: inline-flex;
+    justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    top: -26px;
+}
+
+.file span {
+    word-break: break-all;
+    display:inline-block;
+    width: 135px;
+    color: rgb(86, 160, 63);
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 500;
+}
+
+.file.info {
+    display: block;
+}
+
+@media (max-width: 576px){
+    .caption {
+        padding: 0px 12px;
+    }
+}
+
+@media (min-width: 576px){
+    .container {
+        max-width: 540px;
+    }
+    .caption {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    h5 {
+        font-size: 20px;
+        line-height: 28px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 400;
+    }
+}
+
+@media (min-width: 768px){
+    .container {
+        max-width: 720px;
+    }
+    .col-md-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+    }
+}
+
+@media (min-width: 992px){
+    .container {
+        max-width: 960px;
+    }
+    .caption {
+        font-size: 10px;
+        line-height: 16px;
+    }
+    .options .caption {
+        font-size: 9px;
+        line-height: 10px;
+    }
+    .options ul {
+        position: relative;
+        padding: 2px;
+        top: -25px;
+    }    
+    h5 {
+        font-size: 24px;
+        line-height: 32px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 400;
+    }
+}
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (max-width: 575px) {
+    h5 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .signup .signup-wrapper {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .col-md-5 {
+        display: none;
+    }
+    .signup .signup-form .row {
+        justify-content: center!important;
+    }
+}

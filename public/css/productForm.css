@@ -1,0 +1,57 @@
+
+
+
+.products-wrapper {
+  padding: 15px;
+}
+
+.products-title {
+  margin-bottom: 15px;
+}
+
+.row.product-detail .common-input {
+  margin: 20px auto;
+  width: 40%;
+}
+
+.row.product-detail .select-input {
+  margin: 20px auto;
+  width: 38%;
+}
+
+.row.product-detail .common-input label {
+  float: left;
+  margin: 10px;
+}
+
+.row.product-detail .common-input input {
+  float: right;
+  margin: 10px;
+}
+
+.row.product-detail .select-input label {
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+
+.row.product-detail .select-input select {
+  float: right;
+  width: 50%;
+}
+
+
+.flexcontainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.divs {
+  background-color: #a2ebc3;
+  width: 289px;
+}
+
+/*guia flex https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+
