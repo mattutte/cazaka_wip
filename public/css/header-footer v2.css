@@ -785,7 +785,14 @@ header.for-all-views {
     white-space: nowrap;
 }
 
-.login-box .login-box-component.login-box-action-button input, .login-box .login-box-component.login-box-submit-button input {
+.login-box .login-box-component.login-box-submit-button button {
+    width: 100%;
+    height: 40px;
+}
+
+.login-box .login-box-component.login-box-action-button input, 
+.login-box .login-box-component.login-box-submit-button input, 
+.login-box .login-box-component.login-box-submit-button button {
     background-color: #000;
     border: 1px solid #000;
     border-radius: 3px;
@@ -798,7 +805,8 @@ header.for-all-views {
     transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s, color 0.3s ease 0s;
 }
 
-.login-box .login-box-component.login-box-submit-button input:hover {
+.login-box .login-box-component.login-box-submit-button input:hover,
+.login-box .login-box-component.login-box-submit-button button:hover {
     background-color: #333;
 }
 

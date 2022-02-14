@@ -98,8 +98,9 @@ let mainController = {
         const errores = validationResult(req);
         console.log(errores);
         console.log('entré al controlador de signin')
-        const errorMessage = 'el email o el password no coinciden con nuestros registros';
-        
+        const errorMessage = 'El email o password ingresados no son correctos';
+        let email_sent = req.body.email;
+        console.log('el email enviado es: ', email_sent)
 
         db.User.findOne({
             where: {
@@ -134,6 +135,7 @@ let mainController = {
             if(!foundUser) {
                 console.log('no encontró el usuario')
                 res.cookie('loginErrorType', 1, {maxAge: 60000});
+                res.cookie('email_sent', email_sent, {maxAge: 60000, encode: String});
                 if(pageTo == "/signin"){
                     res.render('signin v2', { errorMessage, errorType: 1});
                 }else{
@@ -167,11 +169,14 @@ let mainController = {
                 } else {
                     res.cookie('urlTo', pageTo, {maxAge: 60000, encode: String});
                     res.cookie('loginErrorType', 2, {maxAge: 60000});
-                    console.log("ya seteé la cookie de error");
+                    res.cookie('email_sent', email_sent, {maxAge: 60000, encode: String});
+                    console.log("ya seteé la cookie de error");         
                     console.log(req.cookies.loginErrorType);
+                    console.log(req.cookies.email_sent);
                     if(pageTo == "/signin"){
                         res.render('signin v2', { errorMessage, errorType: 2});
                     }else{
+                        console.log('urlTo: ', urlTo);
                         res.redirect(urlTo);
                     }
                 }
@@ -583,6 +588,7 @@ let mainController = {
         req.session.destroy(null);
         res.clearCookie('usuarioRecordado');
         res.clearCookie("urlTo");
+        res.clearCookie('email_sent');
         res.redirect('/');
     },
 

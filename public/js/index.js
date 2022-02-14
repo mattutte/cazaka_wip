@@ -19,7 +19,9 @@ window.addEventListener("load", function() {
     
     let submitButton = document.querySelector(".login-box-submit-button");
     let formulario = document.querySelector(".login-box form");
-    let email_sent = getCookie("eamil_sent");
+    let email_sent = getCookie("email_sent");
+    console.log('email_sent vale: ', email_sent)
+    document.cookie = "email_sent   = ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
 
     //Creacion de funciones
     function switchModal() {
@@ -84,13 +86,16 @@ window.addEventListener("load", function() {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
     };
 
+
     console.log('ejecuto scrip de signin en header');
     console.log('la cookie de urlTo vale: ', getCookie("urlTo"))
     console.log('la cookie de errorType vale: ', getCookie("loginErrorType"))
 
     //Preparacion del Modal segun error recibido del controlador
     let errorType = getCookie("loginErrorType");
+    console.log('el errorTyle enviado desde el backend es: ', getCookie("loginErrorType"))
     let modalMode = false;
+    email.value = email_sent? email_sent : '';
     if (getCookie("urlTo") != undefined){
         let errorFrom = getCookie("urlTo");
         console.log('el error viene de: ', errorFrom)
@@ -149,6 +154,9 @@ window.addEventListener("load", function() {
             checkbox.checked = true;
         }
     });
+
+    //Cookies a ejecutar cuando el eventlistener del submit está desactivado
+    setCookie('urlFrom', window.location.href, 60000);
 
     //Validaciones para Email
     email.addEventListener('blur', function(){
@@ -252,6 +260,7 @@ window.addEventListener("load", function() {
                         setCookie('keepMeLoggedIn', checkbox.checked, 0.007);//10min de duracion
                         console.log("valor grabado en la cookie desde submit:");
                         console.log(getCookie("urlFrom"));
+                        console.log('el email_sent agregado a la cookie es: ', email.value)
                         console.log(document.cookie)
                         formulario.submit();
 

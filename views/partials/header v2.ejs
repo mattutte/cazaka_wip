@@ -195,7 +195,7 @@
                                 <div class='login-box-text-input emailAddress login-box-component empty'>
                                     <div class='error'>
                                     </div>
-                                    <input type='email' placeholder='Dirección de correo electrónico' name='email'>
+                                    <input type='email' placeholder='Dirección de correo electrónico' name='email' value="<%= locals.email_sent? locals.email_sent : '' %>">
                                     <div class='tip'></div>
                                 </div>
                                 <!-- Campo de contraseña -->
@@ -229,7 +229,8 @@
                                 </p>
                                 <!-- Boton de submit -->
                                 <div class='login-box-submit-button login-box-component'>
-                                    <input type='button' value='INICIAR SESION'>
+                                    <!-- <input type='button' value='INICIAR SESION'> -->
+                                    <button>INICIAR SESION</button>
                                 </div>
                                 <div class='login-box-component action-link loginJoin'>
                                     No eres miembro? 

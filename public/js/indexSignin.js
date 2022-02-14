@@ -19,6 +19,10 @@ window.addEventListener("load", function() {
     let formulario = document.querySelector(".panel-content form");
     let submitButton = document.querySelector(".submit-button");
 
+    let email_sent = getCookie("email_sent");
+    console.log('email_sent vale: ', email_sent)
+    document.cookie = "email_sent   = ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+
     //Creacion de funciones
     function setCookie(cname, cvalue, exdays) {
         const d = new Date();
@@ -56,20 +60,25 @@ window.addEventListener("load", function() {
 
     //Inicializo errores
     console.log('el errorType vale: ', errorType2)
+    email.value = email_sent? email_sent : '';
     if(errorType2 != ""){
         let email_sent = getCookie("email_sent");
         console.log('email sent vale: ', email_sent)
         email.setAttribute('value', email_sent? email_sent : '');
         document.cookie = "email_sent= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
 
-        if(errorType2 == 1){
-            emailInput.classList.add('invalid');
-            emailError.innerHTML = 'El usurario ingresado no coincide con nuestra base de datos';
+        if(email.value != '' && password.value != ''){
+            if(errorType2 == 1){
+                emailError.innerHTML = 'El usurario ingresado no coincide con nuestra base de datos';
+                emailInput.classList.add('invalid');
+            } else {
+                passwordInput.classList.add('invalid');
+                passwordError.innerHTML = 'La contraseña ingresada es erronea';
+            }
         } else {
+            emailInput.classList.add('invalid');
             passwordInput.classList.add('invalid');
-            passwordError.innerHTML = 'La contraseña ingresada es erronea';
         }
-
     }else{
         email.setAttribute('value', "");
     }
@@ -139,6 +148,8 @@ window.addEventListener("load", function() {
         rememberSVG.classList.toggle("clicked");
     });
 
+    //Guardo pagina de origen en caso de que eventlistener de submit no funcione
+    setCookie('urlFrom', window.location.href, 0.007);
 
     //Validacion del boton Submit
     submitButton.addEventListener('click', function(e){
