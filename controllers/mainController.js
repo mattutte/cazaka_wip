@@ -101,6 +101,9 @@ let mainController = {
         const errorMessage = 'El email o password ingresados no son correctos';
         let email_sent = req.body.email;
         console.log('el email enviado es: ', email_sent)
+        res.clearCookie("usuarioRecordado");
+        req.session.usuario = null;
+        console.log(req.cookies.usuarioRecordado)
 
         db.User.findOne({
             where: {
@@ -156,12 +159,15 @@ let mainController = {
                 //console.log(check);
 
                 if(check){
+                    console.log('req.body.remember: '+req.body.keepMeLoggedIn);
+                    console.log('keepLoggedIn cookie vale: ', req.cookies.keepMeLoggedIn)
+
                     req.session.usuario = foundUser.email;
                     req.session.admin = foundUser.admin_category;
                     req.session.loggedin = true;
                     req.session.save();
-                    console.log('req.body.remember: '+req.body.keepMeLoggedIn);
-                    if (req.body.keepMeLoggedIn != undefined || req.cookies.keepMeLoggedIn) {
+                    
+                    if (req.body.keepMeLoggedIn != undefined && req.cookies.keepMeLoggedIn) {
                         console.group("se seleccionó opcion de mantener sesion");
                         res.cookie('usuarioRecordado', foundUser.email, { maxAge: 1800000 }); //Duracion de cookie: 30 minutos
                         res.clearCookie("keepMeLoggedIn");
@@ -590,6 +596,7 @@ let mainController = {
         res.clearCookie('usuarioRecordado');
         res.clearCookie("urlTo");
         res.clearCookie('email_sent');
+        res.clearCookie('keepMeLoggedIn');
         res.redirect('/');
     },
 
