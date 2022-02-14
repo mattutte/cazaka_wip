@@ -6,12 +6,13 @@
   <body>
     <!-- Header -->
     <%- include('./partials/header v2.ejs') %>
-    <script type="text/javascript" src="js/productValidation2.js"></script>
+    
+      
    
 
       <!-- Main section -->
       <main>
-        <form action="/product/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data" method="POST">
+        <form action="/product/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data" id="formAddProduct" method="POST">
           <!-- Title -------------------------------------------------------------------------->
           <div class="title">
             <h2>
@@ -224,7 +225,7 @@
                                         </div>
                                       </div>
                                       <div class="listInlineSelect__selectBox-activeRegion">
-                                        <select id="features_gender" name="features_gender" class="form-input">
+                                        <select id="features_genre" name="features_gender" class="form-input">
                                           <option value="Male" <% productToEdit.features_gender=="Male" ? "selected" :""
                                             %>>Masculino</Option>
                                           <option value="Female" <% productToEdit.features_gender=="Female" ? "selected"
@@ -264,7 +265,7 @@
                                             ? "selected" :"" %>>Alternativo</Option>
                                           <option value="Training" <% productToEdit.features_use=="Training"
                                             ? "selected" :"" %>>Entrenamiento</Option>
-                                          <option value="Others" <% productToEdit.features_gender=="Others" ? "selected"
+                                          <option value="Others" <% productToEdit.features_use=="Others" ? "selected"
                                             :"" %>>Otros</Option>
                                         </select>
                                         <p class="errorLabel" id="errorUseLabel"> </p>
@@ -385,7 +386,7 @@
                             </div>
                           </div>
                           <div class="listInlineSelect__selectBox-activeRegion">
-                            <select name="delivery_time" class="form-input">
+                            <select name="delivery_time" class="form-input" id="deliveryTime">
                               <option value="2hs" selected=<% productToEdit.delivery_time=="2hs" ? "selected" : "" %>
                                 >Dentro de las 2 hs Siguientes</option>
                               <option value="24hs" selected=<% productToEdit.delivery_time=="24hs" ? "selected" : "" %>
@@ -427,13 +428,12 @@
                           <div class="listInlineSelect__selectBoxLabelWrapper">
                             <div class="inputField__label">
                               <label for="regularPrice" class="form-label">
-                                <span>Peso del paquete (en Kg)</span>
+                                <span>Peso del paquete (en gramos)</span>
                               </label>
                             </div>
                           </div>
                           <div class="listInlineSelect__selectBox-activeRegion">
-                            <span>Kg </span><input type="text" id="weight_package" name="weight_package"
-                              placeholder="Ej: 1.25" class="form-input" value=<%=productToEdit.weight_package %>>
+                            <input type="text" id="weight_package" name="weight_package" placeholder="Ej: 1.25" class="form-input" value=<%=productToEdit.weight_package %>>
                           </div>
                           <p class="errorLabel" id="errorWeightLabel"> </p>
                         </div>
@@ -595,7 +595,7 @@
               <!-- Guardar cambios -------------------------------------->
               <div class="grid_cell" data-layout="6">
                 <div class="grid_cell_wrapper">
-                  <button type="submit" class="post-button" data-type="PRIMARY">Guardar producto</button>
+                  <button type="submit" id="submitButton" class="post-button" data-type="PRIMARY">Guardar producto</button>
                 </div>
               </div>
               <!-- Borrar cambios --------------------------------------->
@@ -611,6 +611,7 @@
 
       <!-- Footer -->
       <%- include('./partials/footer v2.ejs') %>
+      <script type="text/javascript" src="/js/productValidation2.js"></script>
 
   </body>
 
