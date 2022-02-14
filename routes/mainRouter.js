@@ -26,6 +26,7 @@ const upload = multer({ storage: storage }); // generar middleware upload
 const validations = require('../middleware/signupValidationMiddleware');
 const validations2 = require('../middleware/signupValidationMiddleware2');
 const validations_signin = require('../middleware/signinValidations');
+const validations_account = require('../middleware/profileUpdateMw');
 const validationsProduct = require('../middleware/productValidationJIC');
 
 
@@ -79,7 +80,7 @@ router.get('/account', redirect.account, mainController.account);
 
 router.get('/editAccount', redirect.account, mainController.editAccount);
 
-router.put('/editAccount', validations, mainController.updateAccount);
+router.put('/editAccount', upload.single('face_pic'), validations_account, mainController.updateAccount);
 
 router.get('/faq', mainController.faq);
 

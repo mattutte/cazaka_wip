@@ -16,7 +16,7 @@
         <div id='main-section' class='section_style'>
             <div class='main-container'>
                 <div class='section-syle'>
-                    <form id="form" action="/editAccount/?_method=PUT" enctype="single/form-data" method="POST">
+                    <form id="form" action="/editAccount/?_method=PUT" enctype="multipart/form-data" method="POST">
                         <div class='box spacing-xl'>
                             <div class='box-inner'>
                                 <!-- Titulo-->
@@ -53,7 +53,7 @@
                                 <div class='row spacing-base'>
                                     
                                         Tu email
-                                        <input type='text' id='email' value='<%= user.email %>' readonly>
+                                        <input type='text' id='email' value='<%= user.email %>' readonly name="email">
                                     
                                 </div>
                                 <p id="comentario-email"></p>
@@ -139,13 +139,13 @@
                                             <div class="listInlineSelect__selectBox">
                                               <div class="listInlineSelect__selectBoxLabelWrapper">
                                                 <div class="inputField__label">
-                                                  <label for="image-main" class="form-label">
+                                                  <label for="face_pic" class="form-label">
                                                     <span>Imagen de perfil</span>
                                                   </label>
                                                 </div>
                                               </div>
                                               <div class="listInlineSelect__selectBox-activeRegion">
-                                                <input type="file" id="facepic" name="facepic" value=<%= user.face_pic %> placeholder="Imagen principal" class="form-input">
+                                                <input type="file" id="facepic" name="face_pic" value=<%= user.face_pic %> class="form-input">
                                               </div>
                                             </div>
                                           </div>

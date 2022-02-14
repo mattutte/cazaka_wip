@@ -655,7 +655,7 @@ let mainController = {
             {where:{email: user_id}}
          )
          .then(function(){  
-            res.redirect('/account')
+            res.redirect('/account/')
         })
         .catch((error) => {
             console.log(error);
@@ -663,7 +663,7 @@ let mainController = {
         })
     } else {
         
-        res.render('signupv2', { errores: errores, old: req.body });
+        res.render('/account/', { errores: errores, old: req.body });
         
     }
     
