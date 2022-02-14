@@ -107,9 +107,13 @@ window.addEventListener("load", function() {
     if(errorType != undefined && modalMode){
         if(errorType == 1){
             //El usuario no existe
-            switchModal();
+            //switchModal();
             emailBox.classList.toggle('invalid');
-            emailError.innerHTML = "El usurario ingresado no coincide con nuestra base de datos";
+            if(email_sent){
+                emailError.innerHTML = "El usurario ingresado no coincide con nuestra base de datos";
+            } else {
+                emailError.innerHTML = "Usuario no válido";
+            }
         } else {
             //La contraseña es erronea
             console.log('entró donde debia');
@@ -118,6 +122,7 @@ window.addEventListener("load", function() {
             email.setAttribute('value', getCookie("email_sent"));
             document.cookie = "email_sent" + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
         }
+        console.log('el modal vale: ', modalMode)
         if(modalMode){
             switchModal();
         }

@@ -136,6 +136,7 @@ let mainController = {
                 console.log('no encontró el usuario')
                 res.cookie('loginErrorType', 1, {maxAge: 60000});
                 res.cookie('email_sent', email_sent, {maxAge: 60000, encode: String});
+                res.cookie('urlTo', pageTo, {maxAge: 60000, encode: String});
                 if(pageTo == "/signin"){
                     res.render('signin v2', { errorMessage, errorType: 1});
                 }else{
