@@ -668,16 +668,37 @@ let mainController = {
             } ,
             {where:{email: user_id}}
          )
-         .then(function(){  
-            res.redirect('/account/')
+         .then(function(){
+            db.User.findOne({
+                where: {
+                    email: user_id,
+                }
+            }).then((foundUser) => {
+                res.render('account', {user: foundUser});
+            })
+            .catch((error)=>{
+                console.log(error);
+                res.sendStatus(500);
+            })  
+            
         })
         .catch((error) => {
             console.log(error);
             res.send(500);
         })
     } else {
-        
-        res.render('/account/', { errores: errores, old: req.body });
+        db.User.findOne({
+            where: {
+                email: req.session.usuario,
+            }
+        }).then((foundUser) => {
+            res.render('edit_account2', {user: foundUser, errores: errores,});
+        })
+        .catch((error)=>{
+            console.log(error);
+            res.sendStatus(500);
+        });
+        //res.render('/account/', { errores: errores, old: req.body });
         
     }
     
