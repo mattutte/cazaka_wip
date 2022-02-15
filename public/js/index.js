@@ -263,6 +263,7 @@ window.addEventListener("load", function() {
                         setCookie('email_sent', email.value, 1);
                         setCookie('urlFrom', window.location.href, 0.007);
                         setCookie('keepMeLoggedIn', checkbox.checked, 0.007);//10min de duracion
+                        console.log('keepLoggedIn vale: ', checkbox.checked)
                         console.log("valor grabado en la cookie desde submit:");
                         console.log(getCookie("urlFrom"));
                         console.log('el email_sent agregado a la cookie es: ', email.value)

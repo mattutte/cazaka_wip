@@ -509,7 +509,7 @@ window.addEventListener("load", function() {
 
     //Inicializo
     getProducts(showProducts, errorMessage);
-    resultsCount(8);
+    resultsCount(12);
     CART.init();
     showCart();
 
