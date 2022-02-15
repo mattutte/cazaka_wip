@@ -100,6 +100,11 @@ window.addEventListener("load", function() {
 
 
     //Validaciones para Nombre
+
+    if(firstName.value != ''){
+        firstNameLabel.classList.add('clicked');
+    }
+
     firstName.addEventListener('focus', function(){
         firstNameErrorContrCancel.classList.remove('errorFromController');
         firstName.removeAttribute('value');
@@ -139,6 +144,11 @@ window.addEventListener("load", function() {
 
 
     //Validaciones para Apellido
+
+    if(lastName.value != ''){
+        lastNameLabel.classList.add('clicked');
+    }
+
     lastName.addEventListener('focus', function(){
         lastNameErrorContrCancel.classList.remove('errorFromController');
         lastName.removeAttribute('value');
@@ -178,6 +188,11 @@ window.addEventListener("load", function() {
 
 
     //Validaciones para Email
+
+    if(email.value != ''){
+        emailLabel.classList.add('clicked');
+    }
+
     email.addEventListener('focus', function(){
         emailErrorContrCancel.classList.remove('errorFromController');
         console.log(email.value);
@@ -216,6 +231,11 @@ window.addEventListener("load", function() {
     })
 
     //Validaciones para Password
+
+    if(password.value != ''){
+        passwordLabel.classList.add('clicked');
+    }
+
     password.addEventListener('focus', function(){
         passwordErrorContrCancel.classList.remove('errorFromController');
         console.log(password.value);
@@ -292,6 +312,11 @@ window.addEventListener("load", function() {
 
 
     //Validaciones para Pais o region
+
+    if(country.value != ''){
+        countryLabel.classList.add('clicked');
+    }
+
     country.addEventListener('focus', function(){
         countryErrorContrCancel.classList.remove('errorFromController');
         country.removeAttribute('value');
@@ -321,6 +346,14 @@ window.addEventListener("load", function() {
         }
     });
 
+    country.addEventListener('keyup', function(event){
+        // El número 13 es el "Enter" en el teclado
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            submitButton.click();
+        }
+    })
+
     addPicture.addEventListener('change', function(){
         addPictureErrorControllerActive.classList.remove('erroFromController');
         addPictureErrorControllerField.forEach(function(element){
@@ -340,14 +373,6 @@ window.addEventListener("load", function() {
             addPictureError.innerHTML = "Debe seleccionar una foto";
         }
     });
-
-    country.addEventListener('keyup', function(event){
-        // El número 13 es el "Enter" en el teclado
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            submitButton.click();
-        }
-    })
 
 
 /*     marketCheckLabel.addEventListener("click", function(e){
@@ -447,11 +472,12 @@ window.addEventListener("load", function() {
                 .then(function(respuesta){
                     return respuesta.json();                
                 })
-                .then(function(informacion){    
+                .then(function(informacion){
+                    console.log('informacion vale: ', informacion.usuario) 
                     if(informacion.usuario == null){
-                        setCookie('email_sent', email.value, 1);
+/*                         setCookie('email_sent', email.value, 1);
                         setCookie('urlFrom', window.location.href, 0.007);
-                        setCookie('keepMeLoggedIn', keepMeLoggedIn.checked, 0.007);//10min de duracion
+                        setCookie('keepMeLoggedIn', keepMeLoggedIn.checked, 0.007);//10min de duracion */
                         console.log('va a hacer el submit')
                         console.log('el formulario es: ', formulario)
                         formulario.submit();

@@ -223,7 +223,7 @@ let mainController = {
     },
 
     signup: (req, res) => {
-        res.render('signupv2')
+        res.render('signup v3')
     },
 
     crearperfil: (req, res) => {
@@ -236,28 +236,25 @@ let mainController = {
                 errores2.push(error.msg);
             }
         });
+
+        const nuevoUsuario = {
+            //id: usuarios[usuarios.length - 1].id + 1, // le crea un id 1 mas alto que el del ultimo
+            email: req.body.email? req.body.email : '',
+            first_name: req.body.first_name? req.body.first_name : '',
+            last_name: req.body.last_name? req.body.last_name : '',
+            country: req.body.pais? req.body.pais : '',
+            face_pic: req.file? req.file.filename : '',
+            admin_category: req.body.admin == 'on'? 1 : 0,
+            adult: req.body.mayor == 'on'? 1 : 0,
+        };
+
+        console.log('errores vale: ',errores)
         if (errores.isEmpty()) {
-
-
 
             const bcrypt = require('bcryptjs');
             const passEncriptada = bcrypt.hashSync(req.body.psw, 10);
+            nuevoUsuario.passwd = passEncriptada;
 
-            const nuevoUsuario = {
-
-                //id: usuarios[usuarios.length - 1].id + 1, // le crea un id 1 mas alto que el del ultimo
-                email: req.body.email,
-                passwd: passEncriptada,
-                first_name: req.body.first_name,
-                last_name: req.body.last_name,
-                country: req.body.pais,
-                face_pic: req.file.filename,
-                admin_category: req.body.admin == 'on'? 1 : 0,
-                adult: req.body.mayor == 'on'? 1 : 0,
-                
-                
-
-            };
             console.log('datos de usuario:')
             console.log(nuevoUsuario);
             db.User.create(nuevoUsuario)
@@ -276,9 +273,9 @@ let mainController = {
             
         } else {
             //console.log(errores);
-            res.render('signupv2', { errores: errores, old: req.body });
+            //res.render('signupv2', { errores: errores, old: req.body });
             //console.log('hay errores, renderiza la página')
-            //res.render('signup v3', {errores: errores2})
+            res.render('signup v3', {errores: errores2, usuario: nuevoUsuario})
             //res.send(errores);
         }
 

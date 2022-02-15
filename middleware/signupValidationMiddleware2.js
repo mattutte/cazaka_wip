@@ -33,14 +33,17 @@ const validations =[
                         .isLength(2).withMessage({message: 'Su nombre o apellido debe contar con mas de dos letras', errorCode: 'fname-2'}).bail(),
     check('last_name').notEmpty().withMessage({message: 'Debe informar su apellido', errorCode: 'lname-1'}).bail()
                       .isLength(2).withMessage({message: 'Su nombre o apellido debe contar con mas de dos letras', errorCode: 'lname-2'}).bail(),
-    check('face_pic').notEmpty().withMessage({message: 'Debe subir una foto', errorCode: 'pic-1'}).bail()
-                      .custom((value, {req}) => {
-                          if(req.file){
-                              return true; // return "non-falsy" value to indicate valid data"
-                          }else{
-                              return ({message: 'Los formatos aceptados son jpg, jpeg y png', errorCode: 'pic-2'}); // return "falsy" value to indicate invalid data
-                          }
-                          })
-    
-]
+    check('face_pic').custom((value, {req}) => {
+                        if(req.file.filename === ''){
+                          return ({message: 'debe subir una imagen', errorCode: 'pic-1'});
+                        }
+                        else if(req.file.mimetype === 'image/jpg' || req.file.mimetype === 'image/jpeg' || req.file.mimetype === 'image/png' || req.file.mimetype === 'image/gif'  ){
+                            return true; // return "non-falsy" value to indicate valid data"
+                        }else{
+                            console.log('el formato del archivo no es el indicado');
+                            return ({message: 'Debe subir un archivo, con formato gif, jpg, jpeg o png.', errorCode: 'pic-2'}); // return "falsy" value to indicate invalid data
+                        }
+                        })
+
+];
 module.exports = validations;

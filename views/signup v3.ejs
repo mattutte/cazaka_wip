@@ -55,7 +55,7 @@
 
     if(locals.usuario && usuario != undefined){
 
-        let usuario = locals.usuario;
+        usuario = locals.usuario;
 
         console.log('el usuario vale: ')
         console.log(usuario)
@@ -121,19 +121,19 @@
                                     </a>
                                 </div>
                                 <!-- Formulario -->
-                                <form class='form-container' action="/signup" method="post">
+                                <form class='form-container' action="/signup" method="post" enctype="multipart/form-data">
                                     <!-- Nombre y Apellido -->
                                     <div class='row-names'>
                                         <!-- Nombre -->
-                                        <div class='form-item first-name form-item-style'>
+                                        <div class="form-item first-name form-item-style <%= erroresFirstName.length > 0? 'clicked' : '' %>">
                                             <label for='firstName' class='form-label' id='firstName-label'>
                                                 Nombre
                                                 <span class='margin-l-4'>*</span>
                                             </label>
-                                            <div class='field-input'>
+                                            <div class="field-input <%= erroresFirstName.length > 0? 'errorFromController invalid' : '' %>">
                                                 <input type='text' id='firstName-input' name='first_name' value="<%= usuario.first_name? usuario.first_name : ''%>">
                                             </div>
-                                            <ul class='<%= erroresFirstName.length > 0? 'errorFromController' : '' %>'>
+                                            <ul class='<%= erroresFirstName.length > 0? 'errorFromController invalid' : '' %>'>
                                                 <% erroresFirstName.forEach(error => { %>
                                                     <li>
                                                         <p id='firstName-helper-text' class='helper-text <%= erroresFirstName.length > 0? 'invalid' : '' %>'>
@@ -170,12 +170,12 @@
                                             </p>
                                         </div>
                                         <!-- Apellido -->
-                                        <div class='form-item last-name form-item-style'>
+                                        <div class="form-item last-name form-item-style <%= erroresLastName.length > 0? 'clicked' : '' %>">
                                             <label for='lastName' class='form-label' id='lastName-label'>
                                                 Apellido
                                                 <span class='margin-l-4'>*</span>
                                             </label>
-                                            <div class='field-input'>
+                                            <div class="field-input <%= erroresLastName.length > 0? 'errorFromController invalid' : '' %>">
                                                 <input type='text' id='lastName-input' name='last_name' value="<%= usuario.last_name? usuario.last_name : ''%>">
                                             </div>
                                             <ul class='<%= erroresLastName.length > 0? 'errorFromController' : '' %>'>
@@ -216,15 +216,15 @@
                                         </div>
                                     </div>
                                     <!-- Email -->
-                                    <div class='form-item email form-item-style'>
+                                    <div class="form-item email form-item-style <%= erroresEmail.length > 0? 'clicked' : '' %>">
                                         <label for='email' class='form-label' id='email-label'>
                                             Dirección de correo electrónico
                                             <span class='margin-l-4'>*</span>
                                         </label>
-                                        <div class='field-input'>
+                                        <div class="field-input <%= erroresEmail.length > 0? 'errorFromController invalid' : '' %>">
                                             <input type='text' id='email-input' name='email' value="<%= usuario.email? usuario.email : ''%>">
                                         </div>
-                                        <ul class='<%= erroresEmail.length > 0? 'errorFromController' : '' %>'>
+                                        <ul class="<%= erroresEmail.length > 0? 'errorFromController' : '' %>">
                                             <% erroresEmail.forEach(error => { %>
                                                 <li>
                                                     <p id='email-helper-text-controller' class='helper-text controller <%= erroresEmail.length > 0? 'invalid' : '' %>'>
@@ -261,14 +261,14 @@
                                         </p>
                                     </div>
                                     <!-- Contraseña -->
-                                    <div class='form-item password form-item-style'>
+                                    <div class="form-item password form-item-style <%= erroresPassword.length > 0? 'clicked' : '' %>">
                                         <div class='form-item-style'>
                                             <label for='password' class='form-label' id='password-label'>
                                                 Contraseña
                                                 <span class='margin-l-4'>*</span>
                                             </label>
-                                            <div class='field-input'>
-                                                <input type='password' id='password-input' name='psw' value="<%= usuario.passwd? usuario.passwd : ''%>">
+                                            <div class="field-input <%= erroresPassword.length > 0? 'errorFromController invalid' : '' %>">
+                                                <input type='password' id='password-input' name='psw'>
                                                 <div class='field-input-icon'>
                                                     <div class='inline-pointer svg-container'>
                                                         <svg viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' class='CustomImage'>
@@ -342,7 +342,7 @@
                                                 <span class='margin-l-4'>*</span>
                                             </label>
                                             <div class='field-input'>
-                                                <input type='password' id='password-repeat-input' name='psw2' value="<%= usuario.passwd? usuario.passwd : ''%>">
+                                                <input type='password' id='password-repeat-input' name='psw2'>
                                                 <div class='field-input-icon'>
                                                     <div class='inline-pointer svg-container'>
                                                         <svg viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' class='CustomImage'>
@@ -385,12 +385,12 @@
                                             </div>
                                         </div>
                                     </div> -->
-                                    <div class='form-item country form-item-style'>
+                                    <div class="form-item country form-item-style <%= erroresCountry.length > 0? 'clicked' : '' %>">
                                         <label for='country' class='form-label' id='country-label'>
                                             País o región
                                             <span class='margin-l-4'>*</span>
                                         </label>
-                                        <div class='field-input'>
+                                        <div class="field-input <%= erroresCountry.length > 0? 'errorFromController invalid' : '' %>">
                                             <input type='text' id='country-input' name='pais' value="<%= usuario.country? usuario.country : ''%>">
                                         </div>
                                         <ul class='<%= erroresCountry.length > 0? 'errorFromController' : '' %>'>
@@ -541,12 +541,12 @@
                                         <span class='submit-button-text'>CREAR CUENTA</span>
                                     </button>
                                     <!-- Recordarme -->
-                                    <div class="remember-me">
+<!--                                     <div class="remember-me">
                                         <input class="remember-me-input" type="checkbox" checked='checked' id="keepMeLoggedIn" name='keepMeLoggedIn'>
                                         <label class="remember-me-label" for="keepMeLoggedIn">
                                           Recordarme
                                         </label>
-                                    </div>
+                                    </div> -->
                                 </form>
                             </div>
                         </div>
